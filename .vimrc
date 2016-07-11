@@ -58,9 +58,6 @@ noremap <silent> <expr> k (v:count == 0? 'gk' : 'k')
 nnoremap <silent> n nzz
 nnoremap <silent> N Nzz
 
-noremap H ^
-noremap L $
-
 " spacemacs-like keybindings
 nnoremap <Leader>bb :buffers<CR>:buffer<Space>
 nmap <LEADER>bd :bdelete<CR>
