@@ -72,6 +72,8 @@ nmap <LEADER>feR :source ~/.vimrc<CR>
 
 nmap <LEADER><TAB> <C-^>
 nmap <Leader>j= mzgg=G`z
+nmap <Leader>hh ^
+nmap <Leader>ll $
 
 nmap <LEADER>qq :qa<CR>
 nmap <Leader>qQ :qa!<CR>
