@@ -9,6 +9,7 @@ set shortmess=atI
 set backup
 "set backupext=.bak
 set backupdir=/tmp/
+set dir=/tmp/
 
 set encoding=utf-8
 
