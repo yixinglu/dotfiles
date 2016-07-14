@@ -43,7 +43,7 @@ set hlsearch
 nnoremap <CR> :nohlsearch<CR><CR>
 
 set tabstop=4
-autocmd FileType h,cpp,cc,c,python set expandtab tabstop=4 shiftwidth=2 softtabstop=2
+autocmd FileType h,cpp,cc,cxx,c,python set expandtab tabstop=4 shiftwidth=2 softtabstop=2
 
 " line break
 "set lbr tw=100
