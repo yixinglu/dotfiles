@@ -5,11 +5,21 @@
 	pager = diff-so-fancy | less --tabs=4 -RFX
 [alias]
 	dsf = "!f() { [ -z \"$GIT_PREFIX\" ] || cd \"$GIT_PREFIX\" && git diff --color \"$@\" | diff-so-fancy  | less --tabs=4 -RFX; }; f"
-	lo = log --pretty=oneline -n 20 --graph --abbrev-commit
+	l = log --pretty=oneline -n 20 --graph --abbrev-commit
 	s = status -s
 	cl = clone --recursive
 	cm = commit -am
 	co = checkout
 	tags = tag -l
-	branches = branch -a
+	br = branch -a
+	unadd = reset HEAD
 	remotes = remote -v
+[color]
+	ui = auto
+[color "branch"]
+	current = yellow reverse
+	local = yellow
+[color "status"]
+	added = red
+	changed = yellow
+	untracked = cyan
