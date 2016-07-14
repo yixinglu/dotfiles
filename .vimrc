@@ -42,11 +42,8 @@ set incsearch
 set hlsearch
 nnoremap <CR> :nohlsearch<CR><CR>
 
-"All tab characters are 4 space characters.
-set expandtab
-set tabstop=4
-set shiftwidth=2
-set softtabstop=2
+"All tab characters are 2 space characters.
+autocmd FileType h,cpp,cc,c,python set expandtab tabstop=4 shiftwidth=2 softtabstop=2
 
 " line break
 "set lbr tw=100
