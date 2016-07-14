@@ -11,5 +11,5 @@ ln -s `pwd`/.vimrc ~/.vimrc
 Reference
 ---------
 
-google: manage dotfiles with github
+Google: manage dotfiles with GitHub
 

@@ -27,6 +27,7 @@ set cursorline " highlight current line
 set cmdheight=1 " Height of the command bar
 set laststatus=2 " Always show the status line
 "set spell
+set hidden
 
 set relativenumber
 set number
