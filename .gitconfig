@@ -8,7 +8,7 @@
 	l = log --pretty=oneline -n 20 --graph --abbrev-commit
 	s = status -s
 	cl = clone --recursive
-	cm = commit -am
+	ci = commit -am
 	co = checkout
 	tags = tag -l
 	br = branch -a
