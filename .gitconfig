@@ -9,11 +9,15 @@
 	s = status -s
 	cl = clone --recursive
 	ci = commit -am
+	ca = commit --amend
 	co = checkout
+	cb = checkout -b
 	tags = tag -l
-	br = branch -a
+	b = branch
+	ba = branch -av
+	bd = branch -d
 	unadd = reset HEAD
-	remotes = remote -v
+	r = remote -v
 [color]
 	ui = auto
 [color "branch"]
