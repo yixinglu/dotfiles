@@ -16,7 +16,7 @@
 	b = branch
 	ba = branch -av
 	bd = branch -d
-	unadd = reset HEAD
+	throw = reset HEAD
 	r = remote -v
 [color]
 	ui = auto
