@@ -24,6 +24,7 @@ set showcmd " show command in bottom bar
 set showmatch " Show matching brackets
 set cursorline " highlight current line
 "set cursorcolumn
+set colorcolumn=121
 set cmdheight=1 " Height of the command bar
 set laststatus=2 " Always show the status line
 "set spell
