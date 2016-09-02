@@ -6,6 +6,10 @@ BASEDIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 rm -f ~/.vimrc
 ln -s ${BASEDIR}/vimrc ~/.vimrc
 
+#vimperator for firefox
+rm -f ~/.vimperatorrc
+ln -s ${BASEDIR}/vimperatorrc ~/.vimperatorrc
+
 # git
 rm -f ~/.gitconfig
 ln -s ${BASEDIR}/gitconfig ~/.gitconfig
