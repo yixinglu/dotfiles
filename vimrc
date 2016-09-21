@@ -55,8 +55,8 @@ autocmd FileType h,hpp,cpp,cc,cxx,c,python set expandtab tabstop=4 shiftwidth=2 
 " line break
 "set lbr tw=100
 
-colorscheme darkblue
-":color desert
+"colorscheme darkblue
+colorscheme desert
 
 noremap <silent> <expr> j (v:count == 0? 'gj' : 'j')
 noremap <silent> <expr> k (v:count == 0? 'gk' : 'k')
