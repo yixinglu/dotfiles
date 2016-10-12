@@ -1,0 +1,11 @@
+#
+# Reference:
+#   http://nerderati.com/2011/03/17/simplify-your-life-with-an-ssh-config-file/
+#   http://linux.die.net/man/5/ssh_config
+#
+
+Host do-sgp
+	# Do NOT forget to change the /etc/hosts file for IP
+	HostName shadowsocks-digitalocean
+	Port 22
+	User root

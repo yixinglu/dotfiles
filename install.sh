@@ -6,7 +6,7 @@ BASEDIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 rm -f ~/.vimrc
 ln -s ${BASEDIR}/vimrc ~/.vimrc
 
-#vimperator for firefox
+# vimperator for firefox
 rm -f ~/.vimperatorrc
 ln -s ${BASEDIR}/vimperatorrc ~/.vimperatorrc
 
@@ -22,3 +22,6 @@ ln -s ${BASEDIR}/bash_aliases ~/.bash_aliases
 rm -f ~/.tmux.conf
 ln -s ${BASEDIR}/tmux.conf ~/.tmux.conf
 
+# ssh_config
+rm -f ~/.ssh/config
+ln -s ${BASEDIR}/ssh_config ~/.ssh/config
