@@ -25,3 +25,11 @@ ln -s ${BASEDIR}/tmux.conf ~/.tmux.conf
 # ssh_config
 rm -f ~/.ssh/config
 ln -s ${BASEDIR}/ssh_config ~/.ssh/config
+
+# zsh
+if [[ ! -d ~/.oh-my-zsh ]]; then
+	sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+fi
+rm -rf ~/.zshrc
+ln -s ${BASEDIR}/zsh/zshrc ~/.zshrc
+ln -s ${BASEDIR}/zsh/custom/*.zsh ~/.oh-my-zsh/custom
