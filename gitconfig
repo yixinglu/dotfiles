@@ -8,15 +8,12 @@
 	l = log --pretty=oneline -n 20 --graph --abbrev-commit --decorate
 	s = status -s
 	cl = clone --recursive
-	ci = commit -am
-	ca = commit --amend
+	ci = commit
 	co = checkout
-	cb = checkout -b
 	tags = tag -l
 	b = branch
 	ba = branch -av
-	bd = branch -d
-	throw = reset HEAD
+	throw = checkout
 	r = remote -v
 [color]
 	ui = auto
