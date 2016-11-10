@@ -7,9 +7,9 @@ syntax on
 set shortmess=atI
 
 if has("gui_running")
-	set guioptions-=T
-	set guioptions-=r
-	set lines=999 columns=999
+  set guioptions-=T
+  set guioptions-=r
+  set lines=999 columns=999
 endif
 
 set backup
@@ -84,11 +84,7 @@ nmap <Leader>ll $
 nmap <LEADER>qq :qa<CR>
 nmap <Leader>qQ :qa!<CR>
 
-nmap <LEADER>wc :q<CR>
-nmap <LEADER>wh <C-W>h
-nmap <LEADER>wj <C-W>j
-nmap <LEADER>wk <C-W>k
-nmap <LEADER>wl <C-W>l
-nmap <LEADER>ws <C-W>s
-nmap <LEADER>wv <C-W>v
+nmap <LEADER>w <C-W>
+" close current window
+nmap <LEADER>wd <C-W>c
 nmap <LEADER>ww <C-W><C-W>
