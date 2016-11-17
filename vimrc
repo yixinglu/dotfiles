@@ -6,12 +6,6 @@ let mapleader = "\<Space>"
 syntax on
 set shortmess=atI
 
-if has("gui_running")
-  set guioptions-=T
-  set guioptions-=r
-  set lines=999 columns=999
-endif
-
 set backup
 "set backupext=.bak
 set backupdir=/tmp/

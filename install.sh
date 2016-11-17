@@ -3,8 +3,9 @@
 BASEDIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
 # vim
-rm -f ~/.vimrc
+rm -f ~/.vimrc ~/.gvimrc
 ln -s ${BASEDIR}/vimrc ~/.vimrc
+ln -s ${BASEDIR}/gvimrc ~/.gvimrc
 
 # vimperator for firefox
 rm -f ~/.vimperatorrc
@@ -30,6 +31,6 @@ ln -s ${BASEDIR}/ssh_config ~/.ssh/config
 if [[ ! -d ~/.oh-my-zsh ]]; then
 	sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 fi
-rm -rf ~/.zshrc
+rm -rf ~/.zshrc ~/.oh-my-zsh/custom/*.zsh
 ln -s ${BASEDIR}/zsh/zshrc ~/.zshrc
 ln -s ${BASEDIR}/zsh/custom/*.zsh ~/.oh-my-zsh/custom
