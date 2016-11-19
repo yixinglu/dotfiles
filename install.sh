@@ -7,6 +7,10 @@ rm -f ~/.vimrc ~/.gvimrc
 ln -s ${BASEDIR}/vimrc ~/.vimrc
 ln -s ${BASEDIR}/gvimrc ~/.gvimrc
 
+# spacemacs
+rm -f ~/.spacemacs
+ln -s ${BASEDIR}/spacemacs ~/.spacemacs
+
 # vimperator for firefox
 rm -f ~/.vimperatorrc
 ln -s ${BASEDIR}/vimperatorrc ~/.vimperatorrc
