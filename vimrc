@@ -66,7 +66,7 @@ nmap <leader>bp :bp<CR>
 nmap <leader>bR :e<CR>
 
 nnoremap <Leader>fs :w<CR>
-nnoremap <Leader>ff :Explore<CR>
+nnoremap <Leader>fj :Explore<CR>
 nmap <leader>fed :e ~/.vimrc<CR>
 nmap <leader>feR :source ~/.vimrc<CR>
 
