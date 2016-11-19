@@ -60,25 +60,25 @@ nnoremap <silent> N Nzz
 
 " spacemacs-like keybindings
 nnoremap <Leader>bb :buffers<CR>:buffer<Space>
-nmap <LEADER>bd :bdelete<CR>
-nmap <LEADER>bn :bn<CR>
-nmap <LEADER>bp :bp<CR>
-nmap <LEADER>bR :e<CR>
+nmap <leader>bd :bdelete<CR>
+nmap <leader>bn :bn<CR>
+nmap <leader>bp :bp<CR>
+nmap <leader>bR :e<CR>
 
 nnoremap <Leader>fs :w<CR>
 nnoremap <Leader>ff :Explore<CR>
-nmap <LEADER>fed :e ~/.vimrc<CR>
-nmap <LEADER>feR :source ~/.vimrc<CR>
+nmap <leader>fed :e ~/.vimrc<CR>
+nmap <leader>feR :source ~/.vimrc<CR>
 
-nmap <LEADER><TAB> <C-^>
+nmap <leader><TAB> <C-^>
 nmap <Leader>j= mzgg=G`z
 nmap <Leader>hh ^
 nmap <Leader>ll $
 
-nmap <LEADER>qq :qa<CR>
+nmap <leader>qq :qa<CR>
 nmap <Leader>qQ :qa!<CR>
 
-nmap <LEADER>w <C-W>
+nmap <leader>w <C-W>
 " close current window
-nmap <LEADER>wd <C-W>c
-nmap <LEADER>ww <C-W><C-W>
+nmap <leader>wd <C-W>c
+nmap <leader>ww <C-W><C-W>
