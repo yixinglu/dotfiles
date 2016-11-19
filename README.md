@@ -8,6 +8,12 @@ ln -s /path/to/dotfiles/.vimrc ~/.vimrc
 ln -s `pwd`/.vimrc ~/.vimrc
 ```
 
+Install
+-------
+
+    $ cd /path/to/dotfiles
+    $ ./install.sh
+
 Reference
 ---------
 
