@@ -38,3 +38,7 @@ fi
 rm -rf ~/.zshrc ~/.oh-my-zsh/custom/*.zsh
 ln -s ${BASEDIR}/zsh/zshrc ~/.zshrc
 ln -s ${BASEDIR}/zsh/custom/*.zsh ~/.oh-my-zsh/custom
+
+# clang format
+rm -f ~/.clang-format
+ln -s ${BASEDIR}/clang-format ~/.clang-format
