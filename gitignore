@@ -1,0 +1,8 @@
+# jetbrains
+.idea/
+
+*.obj
+*.out
+
+*~
+*.swp

@@ -3,6 +3,7 @@
 	email = yxlyee@gmail.com
 [core]
 	pager = diff-so-fancy | less --tabs=4 -RFX
+	excludesfile = ~/.gitignore
 [alias]
 	dsf = "!f() { [ -z \"$GIT_PREFIX\" ] || cd \"$GIT_PREFIX\" && git diff --color \"$@\" | diff-so-fancy  | less --tabs=4 -RFX; }; f"
 	l = log --pretty=oneline -n 20 --graph --abbrev-commit --decorate

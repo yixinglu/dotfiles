@@ -7,6 +7,7 @@ gvimrc
 vimperatorrc
 spacemacs
 gitconfig
+gitignore
 bash_aliases
 tmux.conf
 tmux/plugins/tpm
