@@ -11,7 +11,8 @@ ln -s `pwd`/.vimrc ~/.vimrc
 Install
 -------
 
-    $ cd /path/to/dotfiles
+    $ git clone --recursive https://github.com/yixinglu/dotfiles.git
+    $ cd dotfiles
     $ ./install.sh
 
 Reference
