@@ -72,6 +72,8 @@ nmap <leader>fed :e ~/.vimrc<CR>
 nmap <leader>feR :source ~/.vimrc<CR>
 nmap <leader>tl :setlocal wrap!<CR>:setlocal wrap?<CR>
 
+"imap jj <Esc>
+
 nmap <leader><TAB> <C-^>
 nmap <Leader>j= mzgg=G`z
 nmap <Leader>hh ^
