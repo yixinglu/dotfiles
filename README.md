@@ -21,6 +21,6 @@ Install
 Reference
 ---------
 
-1. [Google: manage dotfiles with GitHub](http://www.anishathalye.com/2014/08/03/managing-your-dotfiles/)
+1. [Google: manage dotfiles with GitHub](https://www.google.com/#q=manage+dotfiles+with+GitHub)
 2. [Your unofficial guide to dotfiles on GitHub](https://dotfiles.github.io/)
 3. [Managing Your Dotfiles](http://www.anishathalye.com/2014/08/03/managing-your-dotfiles/)
