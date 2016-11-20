@@ -23,7 +23,8 @@ if [[ ! -d ~/.oh-my-zsh ]]; then
 fi
 
 for file in $FILES; do
-    echo "link file: ~/.$file"
-    rm -f ~/.$file
-    ln -s $BASEDIR/$file ~/.$file
+    dst_path=~/.$file
+    echo "link file: $dst_path"
+    rm -f $dst_path
+    ln -s $BASEDIR/$file $dst_path
 done
