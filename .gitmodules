@@ -1,6 +1,6 @@
 [submodule "thirdparty/diff-so-fancy"]
 	path = thirdparty/diff-so-fancy
-	url = git@github.com:so-fancy/diff-so-fancy.git
+	url = https://github.com/so-fancy/diff-so-fancy.git
 [submodule "tmux/plugins/tpm"]
 	path = tmux/plugins/tpm
-	url = git@github.com:tmux-plugins/tpm.git
+	url = https://github.com/tmux-plugins/tpm.git
