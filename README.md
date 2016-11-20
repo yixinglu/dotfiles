@@ -3,6 +3,9 @@ dotfiles
 
 Use `ln` and `git` to manage linux dot files.
 
+Usage of `ln`
+-------------
+
 ```shell
 ln -s /path/to/dotfiles/.vimrc ~/.vimrc
 ln -s `pwd`/.vimrc ~/.vimrc
@@ -18,5 +21,6 @@ Install
 Reference
 ---------
 
-Google: manage dotfiles with GitHub
-
+1. [Google: manage dotfiles with GitHub](http://www.anishathalye.com/2014/08/03/managing-your-dotfiles/)
+2. [Your unofficial guide to dotfiles on GitHub](https://dotfiles.github.io/)
+3. [Managing Your Dotfiles](http://www.anishathalye.com/2014/08/03/managing-your-dotfiles/)
