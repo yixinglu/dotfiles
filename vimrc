@@ -11,7 +11,7 @@ set backup
 set backupdir=/tmp/
 set dir=/tmp/
 
-set encoding=utf-8
+"set encoding=utf-8
 
 filetype plugin indent on
 set autoindent
@@ -49,7 +49,6 @@ autocmd FileType h,hpp,cpp,cc,cxx,c,python set expandtab tabstop=4 shiftwidth=2 
 " line break
 "set lbr tw=100
 
-"colorscheme darkblue
 colorscheme desert
 
 noremap <silent> <expr> j (v:count == 0? 'gj' : 'j')
