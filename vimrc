@@ -53,6 +53,8 @@ colorscheme desert
 
 noremap <silent> <expr> j (v:count == 0? 'gj' : 'j')
 noremap <silent> <expr> k (v:count == 0? 'gk' : 'k')
+"noremap <silent> k kzz
+"noremap <silent> j jzz
 
 nnoremap <silent> n nzz
 nnoremap <silent> N Nzz
@@ -68,6 +70,7 @@ nnoremap <Leader>fs :w<CR>
 nnoremap <Leader>fj :Explore<CR>
 nmap <leader>fed :e ~/.vimrc<CR>
 nmap <leader>feR :source ~/.vimrc<CR>
+nmap <leader>tl :setlocal wrap!<CR>:setlocal wrap?<CR>
 
 nmap <leader><TAB> <C-^>
 nmap <Leader>j= mzgg=G`z
