@@ -46,9 +46,7 @@ values."
      (git :variables git-magit-status-fullscreen t)
      markdown
      ;; org
-     ;; (shell :variables
-     ;;        shell-default-height 30
-     ;;        shell-default-position 'bottom)
+     (shell :variables shell-default-position 'full)
      spell-checking
      (syntax-checking :variables syntax-checking-enable-by-default nil)
      ;; version-control
