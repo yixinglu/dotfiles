@@ -60,6 +60,7 @@ values."
               chinese-enable-fcitx t
               chinese-enable-avy-pinyin nil
               chinese-enable-youdao-dict t)
+     mu4e
      )
    ;; List of additional packages that will be installed without being
    ;; wrapped in a layer. If you need some configuration for these
@@ -308,6 +309,8 @@ executes.
  This function is mostly useful for variables that need to be set
 before packages are loaded. If you are unsure, you should try in setting them in
 `dotspacemacs/user-config' first."
+
+  (spacemacs/set-leader-keys "xyt" 'youdao-dictionary-search-at-point+)
 
   ;; Bind clang-format-buffer to tab on the c++-mode only:
   (add-hook 'c++-mode-hook 'clang-format-bindings)
