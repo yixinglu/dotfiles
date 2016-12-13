@@ -25,6 +25,6 @@ fi
 for file in $FILES; do
     dst_path=~/.$file
     echo "link file: $dst_path"
-    rm -f $dst_path
+    rm -rf $dst_path
     ln -s $BASEDIR/$file $dst_path
 done
