@@ -20,6 +20,7 @@ oh-my-zsh/custom/*.zsh
 if [[ ! -d ~/.oh-my-zsh ]]; then
     echo "install oh-my-zsh."
     sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+    cp -r $BASEDIR/oh-my-zsh/custom/plugins/* ~/.oh-my-zsh/custom/plugins/
 fi
 
 for file in $FILES; do
