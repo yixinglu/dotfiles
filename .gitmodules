@@ -4,3 +4,9 @@
 [submodule "tmux/plugins/tpm"]
 	path = tmux/plugins/tpm
 	url = https://github.com/tmux-plugins/tpm.git
+[submodule "oh-my-zsh/custom/plugins/youtube-dl"]
+	path = oh-my-zsh/custom/plugins/youtube-dl
+	url = https://github.com/rg3/youtube-dl.git
+[submodule "oh-my-zsh/custom/plugins/you-get"]
+	path = oh-my-zsh/custom/plugins/you-get
+	url = https://github.com/soimort/you-get.git
