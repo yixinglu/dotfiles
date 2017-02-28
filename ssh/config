@@ -6,6 +6,12 @@
 
 Host do-sgp
 	# Do NOT forget to change the /etc/hosts file for IP
-	HostName shadowsocks-digitalocean
+	HostName vps-digitalocean
+	Port 22
+	User root
+
+Host linode
+	# Do NOT forget to change the /etc/hosts file for IP
+	HostName vps-linode
 	Port 22
 	User root
