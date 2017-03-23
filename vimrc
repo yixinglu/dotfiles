@@ -33,6 +33,8 @@ set hidden
 set relativenumber
 set number
 
+set wildmenu
+
 set list
 set listchars=tab:›\ ,trail:•,extends:#,nbsp:. " Highlight problematic whitespace
 
