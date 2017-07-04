@@ -2,11 +2,13 @@
 	name = yixinglu
 	email = yxlyee@gmail.com
 [core]
-	pager = diff-so-fancy | less --tabs=4 -RFX
+#	pager = diff-so-fancy | less --tabs=4 -RFX
 	excludesfile = ~/.gitignore
 	autocrlf = input
 [alias]
-	dsf = "!f() { [ -z \"$GIT_PREFIX\" ] || cd \"$GIT_PREFIX\" && git diff --color \"$@\" | diff-so-fancy  | less --tabs=4 -RFX; }; f"
+	lol = log --graph --decorate --pretty=oneline --abbrev-commit
+	lola = log --graph --decorate --pretty=oneline --abbrev-commit --all
+#	dsf = "!f() { [ -z \"$GIT_PREFIX\" ] || cd \"$GIT_PREFIX\" && git diff --color \"$@\" | diff-so-fancy  | less --tabs=4 -RFX; }; f"
 	l = log --pretty=oneline -n 20 --graph --abbrev-commit --decorate
 	s = status -s
 	cl = clone --recursive
@@ -27,6 +29,6 @@
 	changed = yellow
 	untracked = cyan
 [https]
-	proxy = socks5://127.0.0.1:1080
+	proxy = https://127.0.0.1:8888
 [http]
-	proxy = socks5://127.0.0.1:1080
+	proxy = http://127.0.0.1:8888
