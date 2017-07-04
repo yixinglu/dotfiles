@@ -44,8 +44,8 @@ values."
      better-defaults
      emacs-lisp
      (git :variables git-magit-status-fullscreen t)
-     markdown
-     ;; org
+     (markdown :variables markdown-live-preview-engine 'vmd)
+     org
      (shell :variables shell-default-position 'full)
      spell-checking
      (syntax-checking :variables syntax-checking-enable-by-default nil)
@@ -61,6 +61,9 @@ values."
               chinese-enable-avy-pinyin nil
               chinese-enable-youdao-dict t)
      mu4e
+     go
+     graphviz
+     python
      )
    ;; List of additional packages that will be installed without being
    ;; wrapped in a layer. If you need some configuration for these

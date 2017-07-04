@@ -3,6 +3,8 @@
 #   http://nerderati.com/2011/03/17/simplify-your-life-with-an-ssh-config-file/
 #   http://linux.die.net/man/5/ssh_config
 #
+Host *
+  ServerAliveInterval 60
 
 Host do-sgp
 	# Do NOT forget to change the /etc/hosts file for IP
