@@ -33,3 +33,8 @@
 	proxy = https://127.0.0.1:8888
 [http]
 	proxy = http://127.0.0.1:8888
+[merge]
+	tool = vimdiff
+	conflictstyle = diff3
+[mergetool]
+	prompt = false
