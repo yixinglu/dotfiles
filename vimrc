@@ -65,8 +65,8 @@ colorscheme desert
 
 noremap <silent> <expr> j (v:count == 0? 'gj' : 'j')
 noremap <silent> <expr> k (v:count == 0? 'gk' : 'k')
-"noremap <silent> k kzz
-"noremap <silent> j jzz
+noremap <silent> k kzz
+noremap <silent> j jzz
 
 nnoremap <silent> n nzz
 nnoremap <silent> N Nzz

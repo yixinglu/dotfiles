@@ -10,3 +10,9 @@
 [submodule "oh-my-zsh/custom/plugins/you-get"]
 	path = oh-my-zsh/custom/plugins/you-get
 	url = https://github.com/soimort/you-get.git
+[submodule "tmux/plugins/tmux-sensible"]
+	path = tmux/plugins/tmux-sensible
+	url = https://git::@github.com/tmux-plugins/tmux-sensible
+[submodule "tmux/plugins/tmux-resurrect"]
+	path = tmux/plugins/tmux-resurrect
+	url = https://git::@github.com/tmux-plugins/tmux-resurrect
