@@ -17,3 +17,5 @@ Host linode
 	HostName vps-linode
 	Port 22
 	User root
+	PubKeyAuthentication yes
+	IdentityFile ~/.ssh/id_rsa.linode
