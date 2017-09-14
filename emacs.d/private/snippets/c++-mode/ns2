@@ -1,0 +1,11 @@
+# -*- mode: snippet -*-
+# name: namespace nested 2 times
+# key: ns2
+# --
+namespace ${1:outer} {
+namespace ${2:inner} {
+
+$0
+
+}  // namespace $2
+}  // namespace $1

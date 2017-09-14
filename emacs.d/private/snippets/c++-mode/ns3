@@ -1,0 +1,13 @@
+# -*- mode: snippet -*-
+# name: namespace nested 3 times
+# key: ns3
+# --
+namespace ${1:name1} {
+namespace ${2:name2} {
+namespace ${3:name3} {
+
+$0
+
+}  // namespace $3
+}  // namespace $2
+}  // namespace $1
