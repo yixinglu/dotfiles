@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: clang-fomat on/off
+# key: cfof
+# --
+// clang-format off
+$0
+// clang-format on

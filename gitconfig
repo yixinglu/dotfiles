@@ -20,6 +20,7 @@
 	ba = branch -avv
 	throw = checkout
 	r = remote -v
+	f = fetch -p
 [color]
 	ui = auto
 [color "branch"]
