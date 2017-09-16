@@ -6,11 +6,11 @@
 	excludesfile = ~/.gitignore
 	autocrlf = input
 [alias]
+#	dsf = "!f() { [ -z \"$GIT_PREFIX\" ] || cd \"$GIT_PREFIX\" && git diff --color \"$@\" | diff-so-fancy  | less --tabs=4 -RFX; }; f"
+	l = log --graph --decorate --pretty=oneline --abbrev-commit -n 20
 	lol = log --graph --decorate --pretty=oneline --abbrev-commit
 	lola = log --graph --decorate --pretty=oneline --abbrev-commit --all
 	lolan = log --graph --decorate --pretty=oneline --abbrev-commit --all --name-status
-#	dsf = "!f() { [ -z \"$GIT_PREFIX\" ] || cd \"$GIT_PREFIX\" && git diff --color \"$@\" | diff-so-fancy  | less --tabs=4 -RFX; }; f"
-	l = log --pretty=oneline -n 20 --graph --abbrev-commit --decorate
 	s = status -s
 	cl = clone --recursive
 	ci = commit
