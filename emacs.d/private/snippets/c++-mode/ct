@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: clang-tidy skip
+# key: ct
+# --
+// NOLINT
