@@ -1,0 +1,10 @@
+# -*- mode: snippet -*-
+# name: default assignment and copy constructor
+# key: ac
+# --
+  ${1:ClassName}(const $1&) = default;
+  $1($1&&) = default;
+  $1& operator=(const $1&) = default;
+  $1& operator=($1&&) = default;
+
+  $0

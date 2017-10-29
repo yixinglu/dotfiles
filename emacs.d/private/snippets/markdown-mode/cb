@@ -1,0 +1,10 @@
+# -*- mode: snippet -*-
+# name: codeblock
+# key: cb
+# --
+
+\`\`\`${1:language}
+${2:code}
+\`\`\`
+
+$0
