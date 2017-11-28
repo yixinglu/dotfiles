@@ -36,8 +36,8 @@ values."
      ;; Uncomment some layer names and press <SPC f e R> (Vim style) or
      ;; <M-m f e R> (Emacs style) to install them.
      ;; ----------------------------------------------------------------
-     ivy
-     ;; helm
+     ;; ivy
+     helm
      (auto-completion :variables
                       auto-completion-enable-sort-by-usage t
                       auto-completion-enable-snippets-in-popup t
@@ -59,7 +59,7 @@ values."
      fasd
      yaml
      (ibuffer :variables ibuffer-group-buffers-by 'projectile)
-     cscope
+     ;; cscope
      (c-c++ :variables
             c-c++-enable-clang-support t
             c-c++-default-mode-for-headers 'c++-mode)
@@ -331,6 +331,7 @@ before packages are loaded. If you are unsure, you should try in setting them in
   (add-hook 'c++-mode-hook 'clang-format-bindings)
   (add-hook 'c-mode-common-hook 'google-set-c-style)
   (add-hook 'c-mode-common-hook 'google-make-newline-indent)
+  (add-hook 'c++-mode-hook 'flycheck-mode)
   (defun clang-format-bindings ()
     (define-key c++-mode-map [tab] 'clang-format-buffer))
 
