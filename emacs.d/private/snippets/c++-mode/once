@@ -2,7 +2,7 @@
 # name: #ifndef-google
 # key: once
 # --
-#ifndef ${1:`(let ((src "_SRC_") (replaced-dir-name (replace-regexp-in-string "/" "_" (file-name-directory (buffer-file-name))))) (upcase (concat (substring replaced-dir-name (+ (string-width src) (string-match src replaced-dir-name)) nil) (file-name-nondirectory (file-name-sans-extension (buffer-file-name))))))`_H}
+#ifndef ${1:`(cpp-header-guard)`_H}
 #define $1
 
 $0
