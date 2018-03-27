@@ -42,10 +42,10 @@
 	oldHighlight = red bold 52
 	newNormal = green bold
 	newHighlight = green bold 22
-[https]
-	proxy = https://127.0.0.1:8888
-[http]
-	proxy = http://127.0.0.1:8888
+#[https]
+#	proxy = https://127.0.0.1:8888
+#[http]
+#	proxy = http://127.0.0.1:8888
 [merge]
 	tool = vimdiff
 	conflictstyle = diff3

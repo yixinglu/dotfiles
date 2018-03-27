@@ -18,6 +18,20 @@ Install
     $ cd dotfiles
     $ ./install.sh
 
+macOS
+-----
+
+### brew install
+
+* fasd
+* z
+* ripgrep
+
+### brew cask install
+
+* v2rayx
+* shadowsocksx-ng
+
 Reference
 ---------
 
