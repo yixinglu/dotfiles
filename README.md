@@ -29,6 +29,7 @@ macOS
 
 ### brew cask install
 
+* clashx
 * v2rayx
 * shadowsocksx-ng
 
