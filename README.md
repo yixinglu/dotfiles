@@ -6,10 +6,8 @@ Use `ln` and `git` to manage linux dot files.
 Usage of `ln`
 -------------
 
-```shell
-ln -s /path/to/dotfiles/.vimrc ~/.vimrc
-ln -s `pwd`/.vimrc ~/.vimrc
-```
+    ln -s /path/to/dotfiles/.vimrc ~/.vimrc
+    ln -s `pwd`/.vimrc ~/.vimrc
 
 Install
 -------
@@ -26,6 +24,8 @@ macOS
 * fasd
 * z
 * ripgrep
+* aria2
+* youtube-dl
 
 ### brew cask install
 
