@@ -58,11 +58,12 @@ This function should only modify configuration layer settings."
             shell-default-position 'bottom)
      spell-checking
      (syntax-checking :variables syntax-checking-enable-by-default nil)
+     semantic
      treemacs
      ;; version-control
 
      (ibuffer :variables ibuffer-group-buffers-by 'projects)
-     ;; osx
+     osx
      fasd
      yaml
      ibuffer
@@ -233,9 +234,10 @@ It should only modify the values of Spacemacs settings."
 
    ;; Default font or prioritized list of fonts.
    dotspacemacs-default-font '("Source Code Pro"
-                               :size 10.0
+                               :size 13
                                :weight normal
-                               :width normal)
+                               :width normal
+                               :powerline-scale 1.1)
 
    ;; The leader key (default "SPC")
    dotspacemacs-leader-key "SPC"
@@ -265,7 +267,7 @@ It should only modify the values of Spacemacs settings."
    ;; and TAB or `C-m' and `RET'.
    ;; In the terminal, these pairs are generally indistinguishable, so this only
    ;; works in the GUI. (default nil)
-   dotspacemacs-distinguish-gui-tab nil
+   dotspacemacs-distinguish-gui-tab t
 
    ;; Name of the default layout (default "Default")
    dotspacemacs-default-layout-name "Default"
