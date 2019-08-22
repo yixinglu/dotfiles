@@ -85,6 +85,7 @@ This function should only modify configuration layer settings."
      ;; graphviz
      python
      vimscript
+     javascript
      )
 
    ;; List of additional packages that will be installed without being
