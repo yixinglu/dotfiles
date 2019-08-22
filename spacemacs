@@ -70,9 +70,16 @@ This function should only modify configuration layer settings."
      ;; (ibuffer :variables ibuffer-group-buffers-by 'projectile)
      ;; cscope
      (c-c++ :variables
-            c-c++-enable-clang-support t
+            c-c++-enable-auto-newline t
+            ;; c-c++-enable-google-style t
+            ;; c-c++-enable-google-newline t
+            c-c++-adopt-subprojects t
+            ;; c-c++-enable-clang-support t
+            c-c++-enable-clang-format-on-save t
             c++-enable-organize-includes-on-save t
-            c-c++-default-mode-for-headers 'c++-mode)
+            c-c++-default-mode-for-headers 'c++-mode
+            c-c++-backend 'lsp-ccls
+            c-c++-lsp-sem-highlight-rainbow t)
      (chinese :variables
               ;; chinese-enable-fcitx t
               ;; chinese-enable-avy-pinyin nil
@@ -90,8 +97,7 @@ This function should only modify configuration layer settings."
    ;; To use a local version of a package, use the `:location' property:
    ;; '(your-package :location "~/path/to/your-package/")
    ;; Also include the dependencies as they will not be resolved automatically.
-   dotspacemacs-additional-packages '(google-c-style
-                                      editorconfig)
+   dotspacemacs-additional-packages '(editorconfig)
 
    ;; A list of packages that cannot be updated.
    dotspacemacs-frozen-packages '()
@@ -216,7 +222,8 @@ It should only modify the values of Spacemacs settings."
    ;; List of themes, the first of the list is loaded when spacemacs starts.
    ;; Press `SPC T n' to cycle to the next theme in the list (works great
    ;; with 2 themes variants, one dark and one light)
-   dotspacemacs-themes '(spacemacs-dark
+   dotspacemacs-themes '(doom-one
+                         spacemacs-dark
                          spacemacs-light)
 
    ;; Set the theme for the Spaceline. Supported themes are `spacemacs',
@@ -480,26 +487,21 @@ This function is called immediately after `dotspacemacs/init', before layer
 configuration.
 It is mostly for variables that should be set before packages are loaded.
 If you are unsure, try setting them in `dotspacemacs/user-config' first."
+  ;; Reference https://emacs-china.org/t/elpa/9854
   (setq configuration-layer-elpa-archives
     '(("melpa-cn" . "http://mirrors.tuna.tsinghua.edu.cn/elpa/melpa/")
       ("org-cn"   . "http://mirrors.tuna.tsinghua.edu.cn/elpa/org/")
       ("gnu-cn"   . "http://mirrors.tuna.tsinghua.edu.cn/elpa/gnu/")))
-  ;; (setq configuration-layer-elpa-archives
-  ;;       '(("melpa-cn" . "http://mirrors.163.com/elpa/melpa/")
-  ;;         ("org-cn"   . "http://mirrors.163.com/elpa/org/")
-  ;;         ("gnu-cn"   . "http://mirrors.163.com/elpa/gnu/")))
   (add-hook 'evil-insert-state-entry-hook (lambda () (send-string-to-terminal "\033[5 q")))
   (add-hook 'evil-normal-state-entry-hook (lambda () (send-string-to-terminal "\033[0 q")))
 
   (spacemacs/set-leader-keys "oy" 'youdao-dictionary-search-at-point+)
 
   ;; Bind clang-format-buffer to tab on the c++-mode only:
-  (add-hook 'c++-mode-hook 'clang-format-bindings)
-  (add-hook 'c-mode-common-hook 'google-set-c-style)
-  (add-hook 'c-mode-common-hook 'google-make-newline-indent)
-  (add-hook 'c++-mode-hook 'flycheck-mode)
-  (defun clang-format-bindings ()
-    (define-key c++-mode-map [tab] 'clang-format-buffer))
+  ;; (add-hook 'c++-mode-hook 'clang-format-bindings)
+  ;; (add-hook 'c++-mode-hook 'flycheck-mode)
+  ;; (defun clang-format-bindings ()
+  ;;   (define-key c++-mode-map [tab] 'clang-format-buffer))
 
   (setq ns-use-srgb-colorspace nil)
   (setq powerline-default-separator 'utf-8)
@@ -518,11 +520,6 @@ This function is called at the very end of Spacemacs startup, after layer
 configuration.
 Put your configuration code here, except for variables that should be set
 before packages are loaded."
-  (use-package google-c-style
-    :defer t
-    :config
-    (add-hook 'c-mode-common-hook 'google-set-c-style)
-    (add-hook 'c-mode-common-hook 'google-make-newline-indent))
 
   (editorconfig-mode 1)
   )
@@ -539,9 +536,29 @@ This function is called at the very end of Spacemacs initialization."
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(evil-want-Y-yank-to-eol nil)
+ '(global-centered-cursor-mode t)
+ '(hl-todo-keyword-faces
+   (quote
+    (("TODO" . "#dc752f")
+     ("NEXT" . "#dc752f")
+     ("THEM" . "#2aa198")
+     ("PROG" . "#268bd2")
+     ("OKAY" . "#268bd2")
+     ("DONT" . "#d70008")
+     ("FAIL" . "#d70008")
+     ("DONE" . "#00af00")
+     ("NOTE" . "#875f00")
+     ("KLUDGE" . "#875f00")
+     ("HACK" . "#875f00")
+     ("TEMP" . "#875f00")
+     ("FIXME" . "#dc752f")
+     ("XXX+" . "#dc752f")
+     ("\\?\\?\\?+" . "#dc752f"))))
  '(package-selected-packages
    (quote
-    (stickyfunc-enhance srefactor reveal-in-osx-finder osx-trash osx-dictionary osx-clipboard launchctl yasnippet-snippets xterm-color unfill smeargle shell-pop orgit org-projectile org-category-capture org-present org-pomodoro alert log4e gntp org-mime org-download org-cliplink org-brain mwim multi-term mmm-mode markdown-toc markdown-mode magit-svn magit-gitflow magit-popup htmlize helm-org-rifle helm-org helm-gitignore helm-git-grep helm-company helm-c-yasnippet gnuplot gitignore-templates gitignore-mode gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link gh-md fuzzy flyspell-correct-helm flyspell-correct flycheck-pos-tip pos-tip evil-org evil-magit magit transient git-commit with-editor eshell-z eshell-prompt-extras esh-help company-statistics company auto-yasnippet yasnippet auto-dictionary ac-ispell auto-complete ws-butler writeroom-mode visual-fill-column winum volatile-highlights vi-tilde-fringe uuidgen treemacs-projectile treemacs-evil treemacs ht pfuture toc-org symon symbol-overlay string-inflection spaceline-all-the-icons spaceline powerline restart-emacs request rainbow-delimiters popwin persp-mode password-generator paradox spinner lv overseer org-bullets open-junk-file move-text macrostep lorem-ipsum link-hint indent-guide hungry-delete hl-todo highlight-parentheses highlight-numbers parent-mode highlight-indentation helm-xref helm-themes helm-swoop helm-purpose window-purpose imenu-list helm-projectile projectile helm-mode-manager helm-make helm-flx helm-descbinds helm-ag google-translate golden-ratio flycheck-package package-lint flycheck pkg-info epl flx-ido flx fill-column-indicator fancy-battery eyebrowse expand-region evil-visualstar evil-visual-mark-mode evil-tutor evil-textobj-line evil-surround evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-lisp-state evil-lion evil-indent-plus evil-iedit-state iedit evil-goggles evil-exchange evil-escape evil-ediff evil-cleverparens smartparens paredit evil-args evil-anzu anzu eval-sexp-fu elisp-slime-nav editorconfig dumb-jump doom-modeline shrink-path all-the-icons memoize devdocs define-word column-enforce-mode clean-aindent-mode centered-cursor-mode auto-highlight-symbol auto-compile packed ace-link ace-jump-helm-line helm helm-core popup use-package pcre2el org-plus-contrib evil goto-chg dotenv-mode diminish bind-map bind-key which-key undo-tree nameless hydra font-lock+ evil-unimpaired async aggressive-indent ace-window))))
+    (lsp-ui lsp-treemacs helm-lsp cquery company-lsp ccls lsp-mode dash-functional doom-themes stickyfunc-enhance srefactor reveal-in-osx-finder osx-trash osx-dictionary osx-clipboard launchctl yasnippet-snippets xterm-color unfill smeargle shell-pop orgit org-projectile org-category-capture org-present org-pomodoro alert log4e gntp org-mime org-download org-cliplink org-brain mwim multi-term mmm-mode markdown-toc markdown-mode magit-svn magit-gitflow magit-popup htmlize helm-org-rifle helm-org helm-gitignore helm-git-grep helm-company helm-c-yasnippet gnuplot gitignore-templates gitignore-mode gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link gh-md fuzzy flyspell-correct-helm flyspell-correct flycheck-pos-tip pos-tip evil-org evil-magit magit transient git-commit with-editor eshell-z eshell-prompt-extras esh-help company-statistics company auto-yasnippet yasnippet auto-dictionary ac-ispell auto-complete ws-butler writeroom-mode visual-fill-column winum volatile-highlights vi-tilde-fringe uuidgen treemacs-projectile treemacs-evil treemacs ht pfuture toc-org symon symbol-overlay string-inflection spaceline-all-the-icons spaceline powerline restart-emacs request rainbow-delimiters popwin persp-mode password-generator paradox spinner lv overseer org-bullets open-junk-file move-text macrostep lorem-ipsum link-hint indent-guide hungry-delete hl-todo highlight-parentheses highlight-numbers parent-mode highlight-indentation helm-xref helm-themes helm-swoop helm-purpose window-purpose imenu-list helm-projectile projectile helm-mode-manager helm-make helm-flx helm-descbinds helm-ag google-translate golden-ratio flycheck-package package-lint flycheck pkg-info epl flx-ido flx fill-column-indicator fancy-battery eyebrowse expand-region evil-visualstar evil-visual-mark-mode evil-tutor evil-textobj-line evil-surround evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-lisp-state evil-lion evil-indent-plus evil-iedit-state iedit evil-goggles evil-exchange evil-escape evil-ediff evil-cleverparens smartparens paredit evil-args evil-anzu anzu eval-sexp-fu elisp-slime-nav editorconfig dumb-jump doom-modeline shrink-path all-the-icons memoize devdocs define-word column-enforce-mode clean-aindent-mode centered-cursor-mode auto-highlight-symbol auto-compile packed ace-link ace-jump-helm-line helm helm-core popup use-package pcre2el org-plus-contrib evil goto-chg dotenv-mode diminish bind-map bind-key which-key undo-tree nameless hydra font-lock+ evil-unimpaired async aggressive-indent ace-window)))
+ '(pdf-view-midnight-colors (quote ("#5f5f87" . "#ffffff"))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
