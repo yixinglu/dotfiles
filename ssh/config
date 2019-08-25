@@ -3,19 +3,15 @@
 #   http://nerderati.com/2011/03/17/simplify-your-life-with-an-ssh-config-file/
 #   http://linux.die.net/man/5/ssh_config
 #
+
 Host *
   ServerAliveInterval 60
 
-Host do-sgp
-	# Do NOT forget to change the /etc/hosts file for IP
-	HostName vps-digitalocean
-	Port 22
-	User root
+# common configuration
+Include ~/.ssh/config.d/git/config
+# Include ~/.ssh/config.d/gcp/config
 
-Host linode
-	# Do NOT forget to change the /etc/hosts file for IP
-	HostName vps-linode
-	Port 22
-	User root
-	PubKeyAuthentication yes
-	IdentityFile ~/.ssh/id_rsa.linode
+# development machine
+Include ~/.ssh/config.d/petaextreme/config
+Include ~/.ssh/config.d/suju/config
+Include ~/.ssh/config.d/vesoft/config
