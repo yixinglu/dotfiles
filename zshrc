@@ -6,3 +6,4 @@ ZSH_THEME="bira"
 plugins=(fasd git docker osx) # you-get youtube-dl python
 
 source $ZSH/oh-my-zsh.sh
+source /usr/local/etc/profile.d/z.sh
