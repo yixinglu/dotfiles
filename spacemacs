@@ -71,8 +71,8 @@ This function should only modify configuration layer settings."
             ;; c-c++-enable-google-newline t
             c-c++-adopt-subprojects t
             ;; c-c++-enable-clang-support t
-            c-c++-enable-clang-format-on-save t
-            c++-enable-organize-includes-on-save t
+            c-c++-enable-clang-format-on-save nil
+            ;; c++-enable-organize-includes-on-save t
             c-c++-default-mode-for-headers 'c++-mode
             c-c++-backend 'lsp-ccls
             c-c++-lsp-sem-highlight-rainbow t)
@@ -528,6 +528,7 @@ Put your configuration code here, except for variables that should be set
 before packages are loaded."
 
   (editorconfig-mode 1)
+  (global-centered-cursor-mode)
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
