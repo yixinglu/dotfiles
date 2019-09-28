@@ -55,7 +55,7 @@ This function should only modify configuration layer settings."
             ;; shell-default-height 30
             shell-default-position 'bottom)
      spell-checking
-     (syntax-checking :variables syntax-checking-enable-by-default nil)
+     (syntax-checking :variables syntax-checking-enable-by-default t)
      semantic
      treemacs
      ;; version-control
@@ -66,13 +66,13 @@ This function should only modify configuration layer settings."
      yaml
      ;; cscope
      (c-c++ :variables
-            c-c++-enable-auto-newline t
+            c-c++-enable-auto-newline nil
             ;; c-c++-enable-google-style t
             ;; c-c++-enable-google-newline t
             c-c++-adopt-subprojects t
             ;; c-c++-enable-clang-support t
-            c-c++-enable-clang-format-on-save nil
-            ;; c++-enable-organize-includes-on-save t
+            c-c++-enable-clang-format-on-save t
+            c++-enable-organize-includes-on-save nil
             c-c++-default-mode-for-headers 'c++-mode
             c-c++-backend 'lsp-ccls
             c-c++-lsp-sem-highlight-rainbow t)
@@ -81,7 +81,15 @@ This function should only modify configuration layer settings."
               ;; chinese-enable-avy-pinyin nil
               chinese-enable-youdao-dict t)
      ;; mu4e
-     go
+     (go :variables
+         go-tab-width nil
+         go-use-golangci-lint t
+         go-format-before-save t
+         gofmt-command "goimports"
+         go-use-test-args "-race -timeout 10s"
+         godoc-at-point-function 'godoc-gogetdoc
+         go-backend 'lsp
+         )
      graphviz
      python
      vimscript
@@ -280,7 +288,7 @@ It should only modify the values of Spacemacs settings."
    ;; and TAB or `C-m' and `RET'.
    ;; In the terminal, these pairs are generally indistinguishable, so this only
    ;; works in the GUI. (default nil)
-   dotspacemacs-distinguish-gui-tab t
+   dotspacemacs-distinguish-gui-tab nil
 
    ;; Name of the default layout (default "Default")
    dotspacemacs-default-layout-name "Default"
