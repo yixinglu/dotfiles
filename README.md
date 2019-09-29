@@ -21,11 +21,13 @@ macOS
 
 ### brew install
 
-* fasd
-* z
-* ripgrep
 * aria2
+* fasd
+* fzf
+* navi
+* ripgrep
 * youtube-dl
+* z
 
 ### brew cask install
 
