@@ -65,7 +65,7 @@ This function should only modify configuration layer settings."
      yaml
      ;; cscope
      (c-c++ :variables
-            c-c++-enable-auto-newline t
+            ;; c-c++-enable-auto-newline t
             ;; c-c++-enable-google-style t
             ;; c-c++-enable-google-newline t
             c-c++-adopt-subprojects t
@@ -243,7 +243,7 @@ It should only modify the values of Spacemacs settings."
 
    ;; Default font or prioritized list of fonts.
    dotspacemacs-default-font '("Source Code Pro"
-                               :size 14.0
+                               :size 16.0
                                :weight normal
                                :width normal)
 
@@ -463,7 +463,7 @@ It should only modify the values of Spacemacs settings."
    ;; `trailing' to delete only the whitespace at end of lines, `changed' to
    ;; delete only whitespace for changed lines or `nil' to disable cleanup.
    ;; (default nil)
-   dotspacemacs-whitespace-cleanup nil
+   dotspacemacs-whitespace-cleanup 'trailing
 
    ;; Either nil or a number of seconds. If non-nil zone out after the specified
    ;; number of seconds. (default nil)
@@ -495,6 +495,7 @@ If you are unsure, try setting them in `dotspacemacs/user-config' first."
           ("gnu-cn"   . "http://mirrors.tuna.tsinghua.edu.cn/elpa/gnu/")))
 
   (spacemacs/set-leader-keys "oy" 'youdao-dictionary-search-at-point+)
+  (spacemacs/set-leader-keys "os" 'yas-insert-snippet)
 
   ;; Bind clang-format-buffer to tab on the c++-mode only:
   ;; (add-hook 'c++-mode-hook 'clang-format-bindings)
@@ -520,6 +521,9 @@ configuration.
 Put your configuration code here, except for variables that should be set
 before packages are loaded."
   (spacemacs/toggle-centered-point-globally-on)
+  (spacemacs/toggle-auto-fill-mode-on)
+  (spacemacs/toggle-fill-column-indicator-on)
+  (set-fill-column 120)
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
