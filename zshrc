@@ -33,9 +33,9 @@ plugins=(
   # you-get
   # youtube-dl
 
+fpath=(~/.zsh/completion $fpath)
+. ~/.bash_aliases
+
 source "$(navi widget zsh)"
 source $ZSH/oh-my-zsh.sh
-
-fpath=(~/.zsh/completion $fpath)
-
-. ~/.bash_aliases
+source /usr/local/etc/profile.d/z.sh
