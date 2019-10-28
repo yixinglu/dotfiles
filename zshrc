@@ -18,6 +18,9 @@ export LANGUAGE="en_US.UTF-8"
 # Set fzf installation directory path
 export FZF_BASE=/usr/bin/fzf
 
+# Navi
+export PATH=$PATH:"$ZSH_CUSTOM/plugins/navi"
+
 ZSH_THEME="bira"
 # ZSH_THEME="maran"
 
@@ -29,9 +32,10 @@ plugins=(
   git
   osx
   python
-  )
+  navi
   # you-get
   # youtube-dl
+  )
 
 fpath=(~/.zsh/completion $fpath)
 . ~/.bash_aliases

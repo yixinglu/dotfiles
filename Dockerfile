@@ -17,6 +17,7 @@ RUN apt-get update && apt-get install -y \
     curl \
     fonts-powerline \
     git \
+    gnupg \
     linuxbrew-wrapper \
     locales \
     man-db \
@@ -38,7 +39,6 @@ RUN apt-get update && apt-get install -y \
   && adduser --quiet --disabled-password --shell /bin/zsh --home /home/$USER_NAME --gecos "User" $USER_NAME \
   # update the password
   && echo "${USER_NAME}:${USER_PASSWORD}" | chpasswd && usermod -aG sudo $USER_NAME
-  # && rm -rf /var/lib/apt/lists/*
 
 # the user we're applying this too (otherwise it most likely install for root)
 USER $USER_NAME
@@ -46,10 +46,12 @@ WORKDIR /home/$USER_NAME
 
 # terminal colors with xterm
 ENV TERM xterm
-# set the zsh theme
-ENV ZSH_THEME agnoster
 
 # oh my zsh
 RUN wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | zsh || true
+
+# navi
+ENV ZSH_CUSTOM /home/$USER_NAME/.oh-my-zsh/custom
+RUN mkdir -p $ZSH_CUSTOM/plugins && git clone https://github.com/denisidoro/navi $ZSH_CUSTOM/plugins/navi
 
 ENTRYPOINT ["zsh"]
