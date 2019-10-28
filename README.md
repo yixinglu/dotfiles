@@ -35,6 +35,22 @@ macOS
 * v2rayx
 * shadowsocksx-ng
 
+Docker
+------
+
+Use `docker` to unify development environment.
+
+TODO:
+- [ ] Configure `spacemacs`
+- [ ] Configure terminal color
+- [ ] Install `ccls`
+- [ ] Improve `oh-my-zsh`
+- [ ] Use `docker-compose` to manage volumes and docker startup
+- [ ] Install `fasd`/`fzf`/`navi`/`ripgrep` tools
+- [ ] Configure `golang` runtime
+- [ ] Install `graphviz`
+- [ ] Mount dotfiles volume to container
+
 Reference
 ---------
 
