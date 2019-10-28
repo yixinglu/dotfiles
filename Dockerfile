@@ -21,6 +21,7 @@ RUN apt-get update && apt-get install -y \
     locales \
     man-db \
     openssh-client \
+    software-properties-common \
     sudo \
     texinfo \
     tmux \
@@ -39,9 +40,10 @@ RUN apt-get update && apt-get install -y \
   && echo "${USER_NAME}:${USER_PASSWORD}" | chpasswd && usermod -aG sudo $USER_NAME
   # && rm -rf /var/lib/apt/lists/*
 
-
 # the user we're applying this too (otherwise it most likely install for root)
 USER $USER_NAME
+WORKDIR /home/$USER_NAME
+
 # terminal colors with xterm
 ENV TERM xterm
 # set the zsh theme
@@ -50,5 +52,4 @@ ENV ZSH_THEME agnoster
 # oh my zsh
 RUN wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | zsh || true
 
-USER yee
-WORKDIR /home/yee
+ENTRYPOINT ["zsh"]
