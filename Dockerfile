@@ -15,10 +15,12 @@ RUN apt-get update && apt-get install -y \
     build-essential \
     ca-certificates \
     curl \
+    fasd \
     fonts-powerline \
-    fzf \
     git \
     gnupg \
+    graphviz \
+    libncurses5-dev \
     linuxbrew-wrapper \
     locales \
     man-db \
@@ -29,17 +31,20 @@ RUN apt-get update && apt-get install -y \
     tmux \
     vim \
     wget \
+    zlib1g-dev \
     zsh \
-  # install emacs,fasd,graphviz
+  # install emacs
   && add-apt-repository ppa:kelleyk/emacs \
-  && add-apt-repository ppa:aacebedo/fasd \
-  && add-apt-repository universe \
   && apt-get update \
-  && apt-get install -y emacs26 fasd graphviz \
+  && apt-get install -y emacs26 \
   # ripgrep
   && curl -LO https://github.com/BurntSushi/ripgrep/releases/download/11.0.2/ripgrep_11.0.2_amd64.deb \
   && dpkg -i ripgrep_11.0.2_amd64.deb \
   && rm -rf ripgrep_11.0.2_amd64.deb \
+  # fzf
+  && git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf \
+  && ~/.fzf/install \
+  && rm -rf ~/.fzf \
   # set up locale
   && locale-gen en_US.UTF-8 \
   # add a user (--disabled-password: the user won't be able to use the account until the password is set)
