@@ -16,6 +16,7 @@ RUN apt-get update && apt-get install -y \
     ca-certificates \
     curl \
     fonts-powerline \
+    fzf \
     git \
     gnupg \
     linuxbrew-wrapper \
@@ -29,10 +30,16 @@ RUN apt-get update && apt-get install -y \
     vim \
     wget \
     zsh \
-  # install emacs
+  # install emacs,fasd,graphviz
   && add-apt-repository ppa:kelleyk/emacs \
+  && add-apt-repository ppa:aacebedo/fasd \
+  && add-apt-repository universe \
   && apt-get update \
-  && apt-get install -y emacs26 \
+  && apt-get install -y emacs26 fasd graphviz \
+  # ripgrep
+  && curl -LO https://github.com/BurntSushi/ripgrep/releases/download/11.0.2/ripgrep_11.0.2_amd64.deb \
+  && dpkg -i ripgrep_11.0.2_amd64.deb \
+  && rm -rf ripgrep_11.0.2_amd64.deb \
   # set up locale
   && locale-gen en_US.UTF-8 \
   # add a user (--disabled-password: the user won't be able to use the account until the password is set)
@@ -53,5 +60,3 @@ RUN wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -
 # navi
 ENV ZSH_CUSTOM /home/$USER_NAME/.oh-my-zsh/custom
 RUN mkdir -p $ZSH_CUSTOM/plugins && git clone https://github.com/denisidoro/navi $ZSH_CUSTOM/plugins/navi
-
-ENTRYPOINT ["zsh"]
