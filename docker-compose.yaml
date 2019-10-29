@@ -4,22 +4,22 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-      args:
-        USER_NAME: yee
-        USER_PASSWORD: yee
+      # args:
+      #   USER_NAME: yee
+      #   USER_PASSWORD: yee
     image: yee/dev:latest
     volumes:
-      - ./spacemacs:/home/yee/.spacemacs:rw
-      - ./emacs/spacemacs.d:/home/yee/.emacs.d:rw
-      - ./emacs.d/private:/home/yee/.emacs.d/private:rw
-      - ./zshrc:/home/yee/.zshrc:rw
-      - ./gitconfig:/home/yee/.gitconfig:rw
-      - ./gitignore:/home/yee/.gitignore:rw
-      - ./clang-format:/home/yee/.clang-format:rw
-      - ./vimrc:/home/yee/.vimrc:rw
-      - ./tmux.conf:/home/yee/.tmux.conf:rw
-      - ./tmux/plugins:/home/yee/.tmux/plugins:rw
-      - ./ssh:/home/yee/.ssh:rw
-      - ./oh-my-zsh/custom:/home/yee/.oh-my-zsh/custom
-      # - /mnt/Workspace:/home/yee/Workspace:rw
+      - ./spacemacs:/home/root/.spacemacs:rw
+      - ./emacs/spacemacs.d:/home/root/.emacs.d:rw
+      - ./emacs.d/private:/home/root/.emacs.d/private:rw
+      - ./zshrc:/home/root/.zshrc:rw
+      - ./gitconfig:/home/root/.gitconfig:rw
+      - ./gitignore:/home/root/.gitignore:rw
+      - ./clang-format:/home/root/.clang-format:rw
+      - ./vimrc:/home/root/.vimrc:rw
+      - ./tmux.conf:/home/root/.tmux.conf:rw
+      - ./tmux/plugins:/home/root/.tmux/plugins:rw
+      - ./ssh:/home/root/.ssh:rw
+      - ./oh-my-zsh/custom:/home/root/.oh-my-zsh/custom
+      # - /mnt/Workspace:/home/root/Workspace:rw
     entrypoint: ["/bin/zsh"]

@@ -1,7 +1,7 @@
 FROM fedora:31
 
-ARG USER_NAME="yee"
-ARG USER_PASSWORD="yee"
+# ARG USER_NAME="yee"
+# ARG USER_PASSWORD="yee"
 
 LABEL MAINTAINER="Yee <xinglu.yee@gmail.com>"
 
@@ -46,10 +46,10 @@ RUN git clone https://github.com/clvv/fasd.git \
   && make install \
   && rm -rf fasd
 
-RUN adduser --create-home --system --user-group --no-log-init --password $USER_PASSWORD --shell /bin/zsh $USER_NAME
+# RUN adduser --create-home --system --user-group --no-log-init --password $USER_PASSWORD --shell /bin/zsh $USER_NAME
 
-USER $USER_NAME
-WORKDIR /home/$USER_NAME
+# USER $USER_NAME
+# WORKDIR /home/$USER_NAME
 
 # terminal colors with xterm
 ENV TERM=xterm
