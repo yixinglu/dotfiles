@@ -45,11 +45,11 @@ TODO
 
 - [ ] Configure `spacemacs`
 - [ ] Configure terminal color
-- [ ] Install `ccls`
-- [ ] Improve `oh-my-zsh`
+- [X] Install `ccls`
+- [X] Improve `oh-my-zsh`
 - [ ] Use `docker-compose` to manage volumes and docker startup
 - [X] Install `fasd`/`fzf`/`navi`/`ripgrep` tools
-- [ ] Configure `golang` runtime
+- [X] Configure `golang` runtime
 - [X] Install `graphviz`
 - [ ] Mount dotfiles volume to container
 

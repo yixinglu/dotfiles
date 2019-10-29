@@ -1,67 +1,84 @@
-FROM ubuntu:18.04
+FROM fedora:31
 
 ARG USER_NAME="yee"
 ARG USER_PASSWORD="yee"
 
-LABEL MAINTAINER="Yee <yxlyee@gmail.com>"
+LABEL MAINTAINER="Yee <xinglu.yee@gmail.com>"
 
-COPY ubuntu/apt/sources.list.d/aliyun.list /etc/apt/sources.list
+RUN yum update -y && yum install -y \
+  adobe-source-code-pro-fonts \
+  aspell \
+  ccls \
+  curl \
+  dstat \
+  emacs \
+  fzf \
+  gdb \
+  git \
+  git-lfs \
+  golang \
+  graphviz \
+  iproute \
+  make \
+  man-db \
+  nc \
+  net-tools \
+  openssh \
+  openssh-clients \
+  powerline-fonts \
+  procps-ng \
+  ripgrep \
+  sudo \
+  sysstat \
+  tcpdump \
+  tmux \
+  vim \
+  wget \
+  which \
+  xterm \
+  zsh
 
-RUN apt-get update && apt-get install -y \
-    apt-utils \
-    autoconf \
-    automake \
-    autotools-dev \
-    build-essential \
-    ca-certificates \
-    curl \
-    fasd \
-    fonts-powerline \
-    git \
-    gnupg \
-    graphviz \
-    libncurses5-dev \
-    linuxbrew-wrapper \
-    locales \
-    man-db \
-    openssh-client \
-    software-properties-common \
-    sudo \
-    texinfo \
-    tmux \
-    vim \
-    wget \
-    zlib1g-dev \
-    zsh \
-  # install emacs
-  && add-apt-repository ppa:kelleyk/emacs \
-  && apt-get update \
-  && apt-get install -y emacs26 \
-  # ripgrep
-  && curl -LO https://github.com/BurntSushi/ripgrep/releases/download/11.0.2/ripgrep_11.0.2_amd64.deb \
-  && dpkg -i ripgrep_11.0.2_amd64.deb \
-  && rm -rf ripgrep_11.0.2_amd64.deb \
-  # fzf
-  && git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf \
-  && ~/.fzf/install \
-  && rm -rf ~/.fzf \
-  # set up locale
-  && locale-gen en_US.UTF-8 \
-  # add a user (--disabled-password: the user won't be able to use the account until the password is set)
-  && adduser --quiet --disabled-password --shell /bin/zsh --home /home/$USER_NAME --gecos "User" $USER_NAME \
-  # update the password
-  && echo "${USER_NAME}:${USER_PASSWORD}" | chpasswd && usermod -aG sudo $USER_NAME
+# fasd
+RUN git clone https://github.com/clvv/fasd.git \
+  && cd fasd \
+  && make install \
+  && rm -rf fasd
 
-# the user we're applying this too (otherwise it most likely install for root)
+RUN adduser --create-home --system --user-group --no-log-init --password $USER_PASSWORD --shell /bin/zsh $USER_NAME
+
 USER $USER_NAME
 WORKDIR /home/$USER_NAME
 
 # terminal colors with xterm
-ENV TERM xterm
+ENV TERM=xterm
 
 # oh my zsh
 RUN wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | zsh || true
 
 # navi
-ENV ZSH_CUSTOM /home/$USER_NAME/.oh-my-zsh/custom
-RUN mkdir -p $ZSH_CUSTOM/plugins && git clone https://github.com/denisidoro/navi $ZSH_CUSTOM/plugins/navi
+ENV ZSH_CUSTOM=/home/$USER_NAME/.oh-my-zsh/custom
+RUN mkdir -p $ZSH_CUSTOM/plugins \
+  && git clone https://github.com/denisidoro/navi $ZSH_CUSTOM/plugins/navi
+
+ENV PATH=$PATH:"$ZSH_CUSTOM/plugins/navi"
+
+# golang
+ENV GO111MODULE=on
+ENV GOPROXY=https://goproxy.cn
+ENV GOPATH="/home/$USER_NAME/go"
+ENV PATH=${PATH}:${GOPATH}/bin
+RUN go get -v golang.org/x/tools/gopls@latest \
+  && go get -u -v golang.org/x/tools/cmd/godoc \
+  && go get -u -v golang.org/x/tools/cmd/goimports \
+  && go get -u -v golang.org/x/tools/cmd/gorename \
+  && go get -u -v golang.org/x/tools/cmd/guru \
+  && go get -u -v github.com/cweill/gotests/... \
+  && go get -u -v github.com/davidrjenni/reftools/cmd/fillstruct \
+  && go get -u -v github.com/fatih/gomodifytags \
+  && go get -u -v github.com/godoctor/godoctor \
+  && go get -u -v github.com/golangci/golangci-lint/cmd/golangci-lint \
+  && go get -u -v github.com/haya14busa/gopkgs/cmd/gopkgs \
+  && go get -u -v github.com/josharian/impl \
+  && go get -u -v github.com/mdempsky/gocode \
+  && go get -u -v github.com/rogpeppe/godef \
+  && go get -u -v github.com/zmb3/gogetdoc
