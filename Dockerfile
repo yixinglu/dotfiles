@@ -28,9 +28,11 @@ RUN yum update -y && yum install -y \
   powerline-fonts \
   procps-ng \
   ripgrep \
+  smartmontools \
   sudo \
   sysstat \
   tcpdump \
+  telnet \
   tmux \
   vim \
   wget \

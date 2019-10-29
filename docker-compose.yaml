@@ -9,17 +9,17 @@ services:
         USER_PASSWORD: yee
     image: yee/dev:latest
     volumes:
-      - ./spacemacs:./.spacemacs:rw
-      - ./emacs/spacemacs.d:./.emacs.d:rw
-      - ./emacs.d/private:./.emacs.d/private:rw
-      - ./zshrc:./.zshrc:rw
-      - ./gitconfig:./.gitconfig:rw
-      - ./gitignore:./.gitignore:rw
-      - ./clang-format:./.clang-format:rw
-      - ./vimrc:./.vimrc:rw
-      - ./tmux.conf:./.tmux.conf:rw
-      - ./tmux/plugins:./.tmux/plugins:rw
-      - ./ssh:./.ssh:rw
-      - ./oh-my-zsh/custom:./.oh-my-zsh/custom
-      - /mnt/Workspace:./Workspace:rw
+      - ./spacemacs:$HOME/.spacemacs:rw
+      - ./emacs/spacemacs.d:$HOME/.emacs.d:rw
+      - ./emacs.d/private:$HOME/.emacs.d/private:rw
+      - ./zshrc:$HOME/.zshrc:rw
+      - ./gitconfig:$HOME/.gitconfig:rw
+      - ./gitignore:$HOME/.gitignore:rw
+      - ./clang-format:$HOME/.clang-format:rw
+      - ./vimrc:$HOME/.vimrc:rw
+      - ./tmux.conf:$HOME/.tmux.conf:rw
+      - ./tmux/plugins:$HOME/.tmux/plugins:rw
+      - ./ssh:$HOME/.ssh:rw
+      - ./oh-my-zsh/custom:$HOME/.oh-my-zsh/custom
+      - /mnt/Workspace:$HOME/Workspace:rw
     entrypoint: ["/bin/zsh"]
