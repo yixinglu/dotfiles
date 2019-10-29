@@ -47,11 +47,11 @@ TODO
 - [ ] Configure terminal color
 - [X] Install `ccls`
 - [X] Improve `oh-my-zsh`
-- [ ] Use `docker-compose` to manage volumes and docker startup
+- [X] Use `docker-compose` to manage volumes and docker startup
 - [X] Install `fasd`/`fzf`/`navi`/`ripgrep` tools
 - [X] Configure `golang` runtime
 - [X] Install `graphviz`
-- [ ] Mount dotfiles volume to container
+- [X] Mount dotfiles volume to container
 
 Reference
 ---------

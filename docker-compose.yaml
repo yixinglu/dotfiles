@@ -1,0 +1,25 @@
+version: "3.2"
+services:
+  dev:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        USER_NAME: yee
+        USER_PASSWORD: yee
+    image: yee/dev:latest
+    volumes:
+      - ./spacemacs:./.spacemacs:rw
+      - ./emacs/spacemacs.d:./.emacs.d:rw
+      - ./emacs.d/private:./.emacs.d/private:rw
+      - ./zshrc:./.zshrc:rw
+      - ./gitconfig:./.gitconfig:rw
+      - ./gitignore:./.gitignore:rw
+      - ./clang-format:./.clang-format:rw
+      - ./vimrc:./.vimrc:rw
+      - ./tmux.conf:./.tmux.conf:rw
+      - ./tmux/plugins:./.tmux/plugins:rw
+      - ./ssh:./.ssh:rw
+      - ./oh-my-zsh/custom:./.oh-my-zsh/custom
+      - /mnt/Workspace:./Workspace:rw
+    entrypoint: ["/bin/zsh"]
