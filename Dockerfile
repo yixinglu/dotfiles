@@ -1,7 +1,7 @@
 FROM fedora:31
 
-# ARG USER_NAME="yee"
-# ARG USER_PASSWORD="yee"
+ARG USER_NAME="yee"
+ARG USER_PASSWORD="yee"
 
 LABEL MAINTAINER="Yee <xinglu.yee@gmail.com>"
 
@@ -48,11 +48,12 @@ RUN git clone https://github.com/clvv/fasd.git \
 
 # RUN adduser --create-home --system --user-group --no-log-init --password $USER_PASSWORD --shell /bin/zsh $USER_NAME
 
-# USER $USER_NAME
-# WORKDIR /home/$USER_NAME
+USER $USER_NAME
+WORKDIR /home/$USER_NAME
 
 # terminal colors with xterm
-ENV TERM=xterm
+# ENV TERM=xterm
+ENV TERM=xterm-256color
 
 # oh my zsh
 RUN wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | zsh || true

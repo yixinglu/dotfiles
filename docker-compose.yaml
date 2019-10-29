@@ -4,9 +4,9 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-      # args:
-      #   USER_NAME: yee
-      #   USER_PASSWORD: yee
+      args:
+        USER_NAME: root
+        # USER_PASSWORD: yee
     image: yee/dev:latest
     volumes:
       - ./spacemacs:/home/root/.spacemacs:rw
