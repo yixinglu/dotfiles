@@ -23,3 +23,6 @@
 [submodule "navi"]
 	path = oh-my-zsh/custom/plugins/navi
 	url = https://github.com/denisidoro/navi
+[submodule "oh-my-zsh/custom/plugins/fasd"]
+	path = oh-my-zsh/custom/plugins/fasd
+	url = https://github.com/clvv/fasd.git

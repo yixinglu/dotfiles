@@ -6,7 +6,7 @@ export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.ustc.edu.cn/homebrew-bottles
 # golang settings
 export GO111MODULE=on
 export GOPATH=$HOME/go
-export GOROOT=/usr/lib/golang
+# export GOROOT=/usr/lib/golang
 export GOPROXY=https://goproxy.cn
 export PATH=$PATH:$GOPATH/bin
 

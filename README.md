@@ -23,6 +23,7 @@ macOS
 
 * aria2
 * fzf
+* fasd # depended by spacemacs
 * navi
 * ripgrep
 * youtube-dl
@@ -38,6 +39,18 @@ Docker
 ------
 
 Use `docker` to unify development environment.
+
+Preinstall
+----------
+
+```bash
+# Install fasd
+$ cd $ZSH/custom/plugins/fasd
+$ sudo make install
+# Install navi
+$ cd $ZSH/custom/navi
+$ sudo make install
+```
 
 TODO
 ----
