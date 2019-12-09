@@ -22,7 +22,6 @@ macOS
 ### brew install
 
 * aria2
-* fasd
 * fzf
 * navi
 * ripgrep

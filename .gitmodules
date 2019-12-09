@@ -20,3 +20,6 @@
 	path = emacs/spacemacs.d
 	url = https://github.com/syl20bnr/spacemacs
 	branch = develop
+[submodule "navi"]
+	path = oh-my-zsh/custom/plugins/navi
+	url = https://github.com/denisidoro/navi
