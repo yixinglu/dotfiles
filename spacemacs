@@ -45,6 +45,7 @@ This function should only modify configuration layer settings."
      better-defaults
      emacs-lisp
      (git :variables git-magit-status-fullscreen t)
+     github
      ;; ivy
      helm
      markdown
@@ -52,16 +53,16 @@ This function should only modify configuration layer settings."
      org
      (shell :variables
             ;; shell-default-height 30
-            shell-default-position 'bottom)
+            shell-default-position 'full)
      spell-checking
      (syntax-checking :variables syntax-checking-enable-by-default t)
      semantic
-     treemacs
+     ;; treemacs
      ;; version-control
 
      (ibuffer :variables ibuffer-group-buffers-by 'projects)
      osx
-     fasd
+     ;; fasd
      yaml
      ;; cscope
      (c-c++ :variables
@@ -69,12 +70,14 @@ This function should only modify configuration layer settings."
             ;; c-c++-enable-google-style t
             ;; c-c++-enable-google-newline t
             c-c++-adopt-subprojects t
-            ;; c-c++-enable-clang-support t
-            c-c++-enable-clang-format-on-save t
+            c-c++-enable-clang-support nil
+            c-c++-enable-clang-format-on-save nil
             c++-enable-organize-includes-on-save nil
             c-c++-default-mode-for-headers 'c++-mode
+            ;; c-c++-backend 'lsp-clangd
             c-c++-backend 'lsp-ccls
-            c-c++-lsp-sem-highlight-rainbow t)
+            c-c++-lsp-enable-semantic-highlight 'rainbow)
+     (cmake :variables cmake-backend 'lsp)
      (chinese :variables
               ;; chinese-enable-fcitx t
               ;; chinese-enable-avy-pinyin nil
@@ -90,12 +93,26 @@ This function should only modify configuration layer settings."
          go-backend 'lsp
          )
      graphviz
-     python
+     (python :variables
+             python-backend 'lsp
+             python-test-runner 'pytest
+             python-formatter 'yapf
+             python-format-on-save nil
+             python-fill-column 120
+             python-save-before-test t
+             python-sort-imports-on-save nil
+             )
      vimscript
      javascript
      dap
-     prodigy
-     docker
+     ;; prodigy
+     ;; docker
+     csv
+     nginx
+     protobuf
+     major-modes
+     command-log
+     ;; pdf-tools
      )
 
    ;; List of additional packages that will be installed without being
@@ -233,9 +250,10 @@ It should only modify the values of Spacemacs settings."
    ;; List of themes, the first of the list is loaded when spacemacs starts.
    ;; Press `SPC T n' to cycle to the next theme in the list (works great
    ;; with 2 themes variants, one dark and one light)
-   dotspacemacs-themes '(tsdh-dark
-                         tsdh-light
+   dotspacemacs-themes '(doom-one
                          wombat
+                         tsdh-dark
+                         tsdh-light
                          spacemacs-dark
                          spacemacs-light)
 
@@ -286,7 +304,7 @@ It should only modify the values of Spacemacs settings."
    ;; and TAB or `C-m' and `RET'.
    ;; In the terminal, these pairs are generally indistinguishable, so this only
    ;; works in the GUI. (default nil)
-   dotspacemacs-distinguish-gui-tab nil
+   dotspacemacs-distinguish-gui-tab t
 
    ;; Name of the default layout (default "Default")
    dotspacemacs-default-layout-name "Default"
@@ -515,6 +533,7 @@ If you are unsure, try setting them in `dotspacemacs/user-config' first."
   ;;   (define-key c++-mode-map [tab] 'clang-format-buffer))
 
   (setq ns-use-srgb-colorspace nil)
+  (setq evil-jumps-cross-buffers nil)
   (setq powerline-default-separator 'utf-8)
   )
 
@@ -535,7 +554,7 @@ before packages are loaded."
   (global-centered-cursor-mode)
   (spacemacs/toggle-centered-point-globally-on)
   (spacemacs/toggle-auto-fill-mode-on)
-  (spacemacs/toggle-fill-column-indicator-on)
+  ;; (spacemacs/toggle-fill-column-indicator-on)
   (set-fill-column 120)
   )
 
@@ -551,9 +570,28 @@ This function is called at the very end of Spacemacs initialization."
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(evil-want-Y-yank-to-eol nil)
+ '(hl-todo-keyword-faces
+   (quote
+    (("TODO" . "#dc752f")
+     ("NEXT" . "#dc752f")
+     ("THEM" . "#2aa198")
+     ("PROG" . "#268bd2")
+     ("OKAY" . "#268bd2")
+     ("DONT" . "#d70008")
+     ("FAIL" . "#d70008")
+     ("DONE" . "#00af00")
+     ("NOTE" . "#875f00")
+     ("KLUDGE" . "#875f00")
+     ("HACK" . "#875f00")
+     ("TEMP" . "#875f00")
+     ("FIXME" . "#dc752f")
+     ("XXX+" . "#dc752f")
+     ("\\?\\?\\?+" . "#dc752f"))))
  '(package-selected-packages
    (quote
-    (auto-complete ws-butler writeroom-mode winum which-key volatile-highlights vi-tilde-fringe uuidgen use-package treemacs-projectile treemacs-evil toc-org symon symbol-overlay string-inflection spaceline-all-the-icons restart-emacs request rainbow-delimiters popwin persp-mode pcre2el password-generator paradox overseer org-plus-contrib org-bullets open-junk-file nameless move-text macrostep lorem-ipsum link-hint indent-guide hungry-delete hl-todo highlight-parentheses highlight-numbers highlight-indentation helm-xref helm-themes helm-swoop helm-purpose helm-projectile helm-mode-manager helm-make helm-flx helm-descbinds helm-ag google-translate golden-ratio font-lock+ flycheck-package flx-ido fill-column-indicator fancy-battery eyebrowse expand-region evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-textobj-line evil-surround evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-lisp-state evil-lion evil-indent-plus evil-iedit-state evil-goggles evil-exchange evil-escape evil-ediff evil-cleverparens evil-args evil-anzu eval-sexp-fu elisp-slime-nav editorconfig dumb-jump dotenv-mode doom-modeline diminish devdocs define-word column-enforce-mode clean-aindent-mode centered-cursor-mode auto-highlight-symbol auto-compile aggressive-indent ace-link ace-jump-helm-line))))
+    (github-search github-clone git-gutter-fringe+ fringe-helper git-gutter+ gist gh marshal logito pcache forge ghub closql emacsql-sqlite emacsql treepy browse-at-remote command-log-mode tern doom-themes helm-ctest cmake-mode cmake-ide levenshtein nginx-mode csv-mode auto-complete ws-butler writeroom-mode winum which-key volatile-highlights vi-tilde-fringe uuidgen use-package treemacs-projectile treemacs-evil toc-org symon symbol-overlay string-inflection spaceline-all-the-icons restart-emacs request rainbow-delimiters popwin persp-mode pcre2el password-generator paradox overseer org-plus-contrib org-bullets open-junk-file nameless move-text macrostep lorem-ipsum link-hint indent-guide hungry-delete hl-todo highlight-parentheses highlight-numbers highlight-indentation helm-xref helm-themes helm-swoop helm-purpose helm-projectile helm-mode-manager helm-make helm-flx helm-descbinds helm-ag google-translate golden-ratio font-lock+ flycheck-package flx-ido fill-column-indicator fancy-battery eyebrowse expand-region evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-textobj-line evil-surround evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-lisp-state evil-lion evil-indent-plus evil-iedit-state evil-goggles evil-exchange evil-escape evil-ediff evil-cleverparens evil-args evil-anzu eval-sexp-fu elisp-slime-nav editorconfig dumb-jump dotenv-mode doom-modeline diminish devdocs define-word column-enforce-mode clean-aindent-mode centered-cursor-mode auto-highlight-symbol auto-compile aggressive-indent ace-link ace-jump-helm-line)))
+ '(pdf-view-midnight-colors (quote ("#5f5f87" . "#ffffff"))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
