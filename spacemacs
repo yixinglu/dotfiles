@@ -57,7 +57,7 @@ This function should only modify configuration layer settings."
      spell-checking
      (syntax-checking :variables syntax-checking-enable-by-default t)
      semantic
-     ;; treemacs
+     treemacs
      ;; version-control
 
      (ibuffer :variables ibuffer-group-buffers-by 'projects)
@@ -65,6 +65,12 @@ This function should only modify configuration layer settings."
      ;; fasd
      yaml
      ;; cscope
+     (lsp :variables
+          ;; lsp-treemacs-tree t
+          lsp-restart 'auto-restart) ; if the server exits, just restart it without prompting
+     (dap :variables
+          dap-enable-ui-controls nil ; don't display the mouse buttons
+          dap-auto-configure-features '(sessions locals breakpoints expressions tooltip)) ; use the auto-configure layout, but no mouse buttons
      (c-c++ :variables
             ;; c-c++-enable-auto-newline t
             ;; c-c++-enable-google-style t
@@ -92,7 +98,6 @@ This function should only modify configuration layer settings."
          godoc-at-point-function 'godoc-gogetdoc
          go-backend 'lsp
          )
-     graphviz
      (python :variables
              python-backend 'lsp
              python-test-runner 'pytest
@@ -102,9 +107,12 @@ This function should only modify configuration layer settings."
              python-save-before-test t
              python-sort-imports-on-save nil
              )
+     ;; (imenu-list :variables
+     ;;             imenu-list-position 'left)
+     ;; (xclipboard :variables xclipboard-enable-cliphist t)
+     graphviz
      vimscript
      javascript
-     dap
      ;; prodigy
      ;; docker
      csv
