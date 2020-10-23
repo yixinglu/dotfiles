@@ -2,7 +2,7 @@
 # name: #ifndef-google
 # key: once
 # --
-#ifndef ${1:`(google-cpp-header-guard)`_H}
+#ifndef ${1:`(google-cpp-header-guard)`_H_}
 #define $1
 
 $0

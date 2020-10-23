@@ -34,6 +34,7 @@ plugins=(
   python
   navi
   z
+  zsh-syntax-highlighting
   # you-get
   # youtube-dl
   )

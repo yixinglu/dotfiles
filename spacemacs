@@ -45,7 +45,7 @@ This function should only modify configuration layer settings."
      better-defaults
      emacs-lisp
      (git :variables git-magit-status-fullscreen t)
-     github
+     ;; github
      ;; ivy
      helm
      markdown
