@@ -561,6 +561,7 @@ before packages are loaded."
   (editorconfig-mode 1)
   (global-centered-cursor-mode)
   (spacemacs/toggle-centered-point-globally-on)
+  (spacemacs/toggle-indent-guide-globally-on)
   (spacemacs/toggle-auto-fill-mode-on)
   ;; (spacemacs/toggle-fill-column-indicator-on)
   (set-fill-column 120)
