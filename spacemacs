@@ -80,8 +80,8 @@ This function should only modify configuration layer settings."
             c-c++-enable-clang-format-on-save nil
             c++-enable-organize-includes-on-save nil
             c-c++-default-mode-for-headers 'c++-mode
-            ;; c-c++-backend 'lsp-clangd
-            c-c++-backend 'lsp-ccls
+            c-c++-backend 'lsp-clangd
+            ;; c-c++-backend 'lsp-ccls
             c-c++-lsp-enable-semantic-highlight 'rainbow)
      (cmake :variables cmake-backend 'lsp)
      (chinese :variables
@@ -543,6 +543,7 @@ If you are unsure, try setting them in `dotspacemacs/user-config' first."
   (setq ns-use-srgb-colorspace nil)
   (setq evil-jumps-cross-buffers nil)
   (setq powerline-default-separator 'utf-8)
+  (setq lsp-clients-clangd-args '("--j=4" "--background-index" "--log=error"))
   )
 
 (defun dotspacemacs/user-load ()
