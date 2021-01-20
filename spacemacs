@@ -133,6 +133,7 @@ This function should only modify configuration layer settings."
    dotspacemacs-additional-packages '(editorconfig
                                       ;; vue-mode
                                       ;; helpful
+                                      feature-mode
                                       )
 
    ;; A list of packages that cannot be updated.
@@ -543,7 +544,7 @@ If you are unsure, try setting them in `dotspacemacs/user-config' first."
   (setq ns-use-srgb-colorspace nil)
   (setq evil-jumps-cross-buffers nil)
   (setq powerline-default-separator 'utf-8)
-  (setq lsp-clients-clangd-args '("--j=4" "--background-index" "--log=error"))
+  (setq lsp-clients-clangd-args '("--j=2" "--background-index" "--log=error"))
   )
 
 (defun dotspacemacs/user-load ()
