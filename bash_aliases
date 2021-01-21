@@ -12,3 +12,4 @@ alias cnpm='npm --registry=https://registry.npm.taobao.org \
     --userconfig=$HOME/.cnpmrc'
 
 alias docker-clean='docker rm $(docker ps -qa -f status=exited); docker rmi $(docker images -qa -f dangling=true)'
+alias pidinfo='gdb -ex "set pagination 0" -ex "thread apply all bt" --batch -p'
