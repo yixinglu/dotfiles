@@ -16,3 +16,10 @@ mouse:
   url:
     # Command
     modifiers: None
+
+key_bindings:
+  # https://github.com/jwilm/alacritty/issues/93#issuecomment-334790547
+  - { key: F,  mods: Alt,           chars: "\x1bf"                       }
+  - { key: B,  mods: Alt,           chars: "\x1bb"                       }
+  # https://github.com/jwilm/alacritty/issues/93#issuecomment-427592040
+  - { key: D,  mods: Alt,           chars: "\x1bd"                       }
