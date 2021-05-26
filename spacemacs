@@ -65,8 +65,12 @@ This function should only modify configuration layer settings."
      ;; fasd
      yaml
      ;; cscope
+     ;; https://emacs-lsp.github.io/lsp-mode/tutorials/how-to-turn-off/
+     ;; https://github.com/syl20bnr/spacemacs/blob/develop/layers/+tools/lsp/README.org
      (lsp :variables
           ;; lsp-treemacs-tree t
+          lsp-ui-doc-enable nil
+          lsp-signature-render-documentation nil
           lsp-restart 'auto-restart) ; if the server exits, just restart it without prompting
      (dap :variables
           dap-enable-ui-controls nil ; don't display the mouse buttons
