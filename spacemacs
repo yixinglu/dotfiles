@@ -134,6 +134,7 @@ This function should only modify configuration layer settings."
                                       ;; vue-mode
                                       ;; helpful
                                       feature-mode
+                                      darkroom
                                       )
 
    ;; A list of packages that cannot be updated.
@@ -188,7 +189,7 @@ It should only modify the values of Spacemacs settings."
 
    ;; Maximum allowed time in seconds to contact an ELPA repository.
    ;; (default 5)
-   dotspacemacs-elpa-timeout 300
+   dotspacemacs-elpa-timeout 500
 
    ;; Set `gc-cons-threshold' and `gc-cons-percentage' when startup finishes.
    ;; This is an advanced option and should not be changed unless you suspect
@@ -259,12 +260,20 @@ It should only modify the values of Spacemacs settings."
    ;; List of themes, the first of the list is loaded when spacemacs starts.
    ;; Press `SPC T n' to cycle to the next theme in the list (works great
    ;; with 2 themes variants, one dark and one light)
-   dotspacemacs-themes '(doom-one
-                         wombat
-                         tsdh-dark
-                         tsdh-light
-                         spacemacs-dark
-                         spacemacs-light)
+   dotspacemacs-themes '(
+      doom-one
+      doom-one-light
+      wombat
+      tsdh-dark
+      tsdh-light
+      spacemacs-light
+      afternoon
+      alect-dark
+      apropospriate-dark
+      organic-green
+      tango
+      spacemacs-dark
+      )
 
    ;; Set the theme for the Spaceline. Supported themes are `spacemacs',
    ;; `all-the-icons', `custom', `doom', `vim-powerline' and `vanilla'. The
@@ -528,9 +537,9 @@ It is mostly for variables that should be set before packages are loaded.
 If you are unsure, try setting them in `dotspacemacs/user-config' first."
   ;; Reference https://emacs-china.org/t/elpa/9854
   (setq configuration-layer-elpa-archives
-        '(("melpa-cn" . "http://mirrors.tuna.tsinghua.edu.cn/elpa/melpa/")
-          ("org-cn"   . "http://mirrors.tuna.tsinghua.edu.cn/elpa/org/")
-          ("gnu-cn"   . "http://mirrors.tuna.tsinghua.edu.cn/elpa/gnu/")))
+       '(("melpa-cn" . "http://mirrors.ustc.edu.cn/elpa/melpa/")
+         ("org-cn"   . "http://mirrors.ustc.edu.cn/elpa/org/")
+         ("gnu-cn"   . "http://mirrors.ustc.edu.cn/elpa/gnu/")))
 
   (spacemacs/set-leader-keys "oy" 'youdao-dictionary-search-at-point+)
   (spacemacs/set-leader-keys "os" 'yas-insert-snippet)
@@ -540,6 +549,8 @@ If you are unsure, try setting them in `dotspacemacs/user-config' first."
   ;; (add-hook 'c++-mode-hook 'flycheck-mode)
   ;; (defun clang-format-bindings ()
   ;;   (define-key c++-mode-map [tab] 'clang-format-buffer))
+
+  (add-hook 'after-change-major-mode-hook 'darkroom-tentative-mode)
 
   (setq ns-use-srgb-colorspace nil)
   (setq evil-jumps-cross-buffers nil)
