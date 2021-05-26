@@ -551,6 +551,7 @@ If you are unsure, try setting them in `dotspacemacs/user-config' first."
   ;;   (define-key c++-mode-map [tab] 'clang-format-buffer))
 
   (add-hook 'after-change-major-mode-hook 'darkroom-tentative-mode)
+  (add-hook 'window-configuration-change-hook 'recenter nil)
 
   (setq ns-use-srgb-colorspace nil)
   (setq evil-jumps-cross-buffers nil)
