@@ -139,6 +139,7 @@ This function should only modify configuration layer settings."
                                       ;; helpful
                                       feature-mode
                                       darkroom
+                                      clipetty
                                       )
 
    ;; A list of packages that cannot be updated.
@@ -574,6 +575,7 @@ Put your configuration code here, except for variables that should be set
 before packages are loaded."
   (editorconfig-mode 1)
   (global-centered-cursor-mode)
+  (global-clipetty-mode)
   (spacemacs/toggle-centered-point-globally-on)
   (spacemacs/toggle-indent-guide-globally-on)
   (spacemacs/toggle-auto-fill-mode-on)
