@@ -147,7 +147,7 @@ This function should only modify configuration layer settings."
                                       darkroom
                                       clipetty
                                       vscode-dark-plus-theme
-                                      srcery-theme
+                                      ;; srcery-theme
                                       )
 
    ;; A list of packages that cannot be updated.
@@ -313,7 +313,7 @@ It should only modify the values of Spacemacs settings."
                          spacemacs-dark
                          organic-green
                          tango
-                         srcery
+                         ;; srcery
                          )
 
    ;; Set the theme for the Spaceline. Supported themes are `spacemacs',
