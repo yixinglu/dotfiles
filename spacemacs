@@ -52,8 +52,8 @@ This function should only modify configuration layer settings."
      multiple-cursors
      org
      (shell :variables
-            ;; shell-default-height 30
-            shell-default-position 'full)
+            shell-default-height 50
+            shell-default-position 'bottom)
      spell-checking
      (syntax-checking :variables syntax-checking-enable-by-default t)
      semantic
@@ -98,7 +98,7 @@ This function should only modify configuration layer settings."
               chinese-enable-youdao-dict t)
      ;; mu4e
      (go :variables
-         go-tab-width nil
+         go-tab-width 2
          go-use-golangci-lint t
          go-format-before-save t
          gofmt-command "goimports"
