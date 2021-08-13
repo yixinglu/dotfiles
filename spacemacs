@@ -88,9 +88,14 @@ This function should only modify configuration layer settings."
             c-c++-enable-clang-format-on-save nil
             c++-enable-organize-includes-on-save nil
             c-c++-default-mode-for-headers 'c++-mode
-            c-c++-backend 'lsp-clangd
-            ;; c-c++-backend 'lsp-ccls
-            c-c++-lsp-enable-semantic-highlight 'rainbow)
+            ;; c-c++-backend 'lsp-clangd
+            c-c++-backend 'lsp-ccls
+            c-c++-lsp-enable-semantic-highlight nil ; 'rainbow
+
+            ;; rtags
+            ;; c-c++-backend 'rtags
+            ;; c-c++-enable-rtags-completion nil
+            )
      (cmake :variables cmake-backend 'lsp)
      (chinese :variables
               ;; chinese-enable-fcitx t
@@ -99,7 +104,7 @@ This function should only modify configuration layer settings."
      ;; mu4e
      (go :variables
          go-tab-width 2
-         go-use-golangci-lint t
+         go-use-golangci-lint nil
          go-format-before-save t
          gofmt-command "goimports"
          go-use-test-args "-race -timeout 10s"
@@ -642,6 +647,9 @@ If you are unsure, try setting them in `dotspacemacs/user-config' first."
   (setq evil-jumps-cross-buffers t)
   (setq powerline-default-separator 'utf-8)
   (setq lsp-clients-clangd-args '("--j=2" "--background-index" "--log=error"))
+  ;; https://github.com/MaskRay/ccls/wiki/lsp-mode
+  (setq ccls-initialization-options '(:index (:threads 4)))
+  (setq ccls-sem-highlight-method nil)
   )
 
 
