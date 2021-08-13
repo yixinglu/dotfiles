@@ -629,27 +629,6 @@ If you are unsure, try setting them in `dotspacemacs/user-config' first."
        '(("melpa-cn" . "http://mirrors.ustc.edu.cn/elpa/melpa/")
          ("org-cn"   . "http://mirrors.ustc.edu.cn/elpa/org/")
          ("gnu-cn"   . "http://mirrors.ustc.edu.cn/elpa/gnu/")))
-
-  (spacemacs/set-leader-keys "oy" 'youdao-dictionary-search-at-point+)
-  (spacemacs/set-leader-keys "os" 'yas-insert-snippet)
-
-  ;; Bind clang-format-buffer to tab on the c++-mode only:
-  ;; (add-hook 'c++-mode-hook 'clang-format-bindings)
-  ;; (add-hook 'c++-mode-hook 'flycheck-mode)
-  ;; (defun clang-format-bindings ()
-  ;;   (define-key c++-mode-map [tab] 'clang-format-buffer))
-
-  ;; (add-hook 'after-change-major-mode-hook 'darkroom-tentative-mode)
-  (add-hook 'window-configuration-change-hook 'recenter nil)
-  ;; (add-hook 'window-configuration-change-hook 'darkroom--enter-or-leave 'append 'local)
-
-  (setq ns-use-srgb-colorspace nil)
-  (setq evil-jumps-cross-buffers t)
-  (setq powerline-default-separator 'utf-8)
-  (setq lsp-clients-clangd-args '("--j=2" "--background-index" "--log=error"))
-  ;; https://github.com/MaskRay/ccls/wiki/lsp-mode
-  (setq ccls-initialization-options '(:index (:threads 4)))
-  (setq ccls-sem-highlight-method nil)
   )
 
 
@@ -674,6 +653,27 @@ before packages are loaded."
   (spacemacs/toggle-auto-fill-mode-on)
   ;; (spacemacs/toggle-fill-column-indicator-on)
   (set-fill-column 120)
+
+  (spacemacs/set-leader-keys "oy" 'youdao-dictionary-search-at-point+)
+  (spacemacs/set-leader-keys "os" 'yas-insert-snippet)
+
+  ;; Bind clang-format-buffer to tab on the c++-mode only:
+  ;; (add-hook 'c++-mode-hook 'clang-format-bindings)
+  ;; (add-hook 'c++-mode-hook 'flycheck-mode)
+  ;; (defun clang-format-bindings ()
+  ;;   (define-key c++-mode-map [tab] 'clang-format-buffer))
+
+  ;; (add-hook 'after-change-major-mode-hook 'darkroom-tentative-mode)
+  (add-hook 'window-configuration-change-hook 'recenter nil)
+  ;; (add-hook 'window-configuration-change-hook 'darkroom--enter-or-leave 'append 'local)
+
+  (setq ns-use-srgb-colorspace nil)
+  (setq evil-jumps-cross-buffers t)
+  (setq powerline-default-separator 'utf-8)
+  (setq lsp-clients-clangd-args '("--j=2" "--background-index" "--log=error"))
+  ;; https://github.com/MaskRay/ccls/wiki/lsp-mode
+  (setq ccls-initialization-options '(:index (:threads 4)))
+  (setq ccls-sem-highlight-method nil)
   )
 
 
