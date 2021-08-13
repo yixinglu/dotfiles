@@ -10,7 +10,7 @@
 	l = log --graph --decorate --pretty=oneline --abbrev-commit
 	la = log --graph --decorate --pretty=oneline --abbrev-commit --all
 	lan = log --graph --decorate --pretty=oneline --abbrev-commit --all --name-status
-	hs = log --graph --decorate --pretty='%C(yellow)%h %C(cyan)%cd %Cblue%aN%C(auto)%d %Creset%s' --date=short --date-order
+	hs = log --graph --decorate --pretty='%C(yellow)%h %C(cyan)%cd %Cblue%aN%C(auto)%d %Creset%s' --date=local --date-order
 	s = status -s
 	cl = clone --recursive
 	ci = commit
