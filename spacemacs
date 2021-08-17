@@ -629,6 +629,18 @@ If you are unsure, try setting them in `dotspacemacs/user-config' first."
        '(("melpa-cn" . "http://mirrors.ustc.edu.cn/elpa/melpa/")
          ("org-cn"   . "http://mirrors.ustc.edu.cn/elpa/org/")
          ("gnu-cn"   . "http://mirrors.ustc.edu.cn/elpa/gnu/")))
+
+  (setq ns-use-srgb-colorspace nil)
+  (setq powerline-default-separator 'utf-8)
+
+  (setq evil-jumps-cross-buffers t)
+
+  (if (not (version< emacs-version "27"))
+      (progn
+        ;; (add-hook 'after-change-major-mode-hook 'darkroom-tentative-mode)
+        (add-hook 'window-configuration-change-hook 'recenter nil)
+        ;; (add-hook 'window-configuration-change-hook 'darkroom--enter-or-leave 'append 'local)
+        ))
   )
 
 
@@ -663,13 +675,6 @@ before packages are loaded."
   ;; (defun clang-format-bindings ()
   ;;   (define-key c++-mode-map [tab] 'clang-format-buffer))
 
-  ;; (add-hook 'after-change-major-mode-hook 'darkroom-tentative-mode)
-  (add-hook 'window-configuration-change-hook 'recenter nil)
-  ;; (add-hook 'window-configuration-change-hook 'darkroom--enter-or-leave 'append 'local)
-
-  (setq ns-use-srgb-colorspace nil)
-  (setq evil-jumps-cross-buffers t)
-  (setq powerline-default-separator 'utf-8)
   (setq lsp-clients-clangd-args '("--j=2" "--background-index" "--log=error"))
   ;; https://github.com/MaskRay/ccls/wiki/lsp-mode
   (setq ccls-initialization-options '(:index (:threads 4)))
