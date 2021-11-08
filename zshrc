@@ -30,7 +30,7 @@ plugins=(
   docker
   docker-compose
   git
-  osx
+  macos
   python
   navi
   z
