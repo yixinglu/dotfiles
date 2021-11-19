@@ -44,7 +44,7 @@ This function should only modify configuration layer settings."
                       :disabled-for org markdown)
      better-defaults
      emacs-lisp
-     (git :variables git-magit-status-fullscreen t)
+     (git :variables git-magit-status-fullscreen nil)
      ;; github
      ;; ivy
      helm
@@ -52,7 +52,7 @@ This function should only modify configuration layer settings."
      multiple-cursors
      org
      (shell :variables
-            shell-default-height 50
+            shell-default-height 60
             shell-default-position 'bottom)
      spell-checking
      (syntax-checking :variables syntax-checking-enable-by-default t)
@@ -125,7 +125,7 @@ This function should only modify configuration layer settings."
      ;; (xclipboard :variables xclipboard-enable-cliphist t)
      graphviz
      vimscript
-     javascript
+     (javascript :variables js-indent-level 2)
      ;; prodigy
      docker
      csv
