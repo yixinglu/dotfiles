@@ -21,7 +21,7 @@ export LANGUAGE="en_US.UTF-8"
 export FZF_BASE=/usr/bin/fzf
 
 # Navi
-export PATH=$PATH:"$ZSH/custom/plugins/navi"
+# export PATH=$PATH:"$ZSH/custom/plugins/navi"
 
 ZSH_THEME="bira"
 # ZSH_THEME="maran"
@@ -32,9 +32,9 @@ plugins=(
   docker
   docker-compose
   git
-  macos
+  # macos
   python
-  navi
+  # navi
   z
   zsh-syntax-highlighting
   # you-get
@@ -44,5 +44,5 @@ plugins=(
 fpath=(~/.zsh/completion $fpath)
 . ~/.bash_aliases
 
-source "$(navi widget zsh)"
+# source "$(navi widget zsh)"
 source $ZSH/oh-my-zsh.sh

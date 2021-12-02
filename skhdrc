@@ -18,7 +18,6 @@ alt - m : yabai -m window --toggle zoom-fullscreen
 
 # Create space on the active display
 alt - c : yabai -m space --create; yabai -m space --focus last
-
 # Delete focused space and focus first space on display
 alt - d : yabai -m space --destroy
 
