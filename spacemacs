@@ -75,6 +75,8 @@ This function should only modify configuration layer settings."
           lsp-lens-enable nil
           lsp-completion-enable t
           lsp-enable-symbol-highlighting t
+          lsp-enable-file-watchers nil
+          lsp-file-watch-threshold 16
           lsp-restart 'auto-restart) ; if the server exits, just restart it without prompting
      (dap :variables
           dap-enable-ui-controls nil ; don't display the mouse buttons
