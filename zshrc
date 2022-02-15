@@ -12,6 +12,8 @@ export GOPATH=$HOME/go
 export GOPROXY=https://goproxy.cn
 export PATH=$PATH:$GOPATH/bin
 
+export PYTHON_KEYRING_BACKEND=keyring.backends.null.Keyring
+
 # locate
 export LC_ALL="en_US.UTF-8"
 export LANG="en_US.UTF-8"
