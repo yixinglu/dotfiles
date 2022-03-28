@@ -65,6 +65,7 @@ This function should only modify configuration layer settings."
      ;; fasd
      yaml
      ;; cscope
+     ;; (gtags :variables gtags-enable-by-default nil)
      ;; https://emacs-lsp.github.io/lsp-mode/tutorials/how-to-turn-off/
      ;; https://github.com/syl20bnr/spacemacs/blob/develop/layers/+tools/lsp/README.org
      (lsp :variables
@@ -136,6 +137,10 @@ This function should only modify configuration layer settings."
      major-modes
      command-log
      ;; pdf-tools
+     ;; (vinegar :variables
+     ;;          vinegar-reuse-dired-buffer t
+     ;;          vinegar-dired-hide-details nil)
+     ;; myleetcode
      )
 
 
@@ -630,7 +635,8 @@ If you are unsure, try setting them in `dotspacemacs/user-config' first."
   (setq configuration-layer-elpa-archives
        '(("melpa-cn" . "http://mirrors.ustc.edu.cn/elpa/melpa/")
          ("org-cn"   . "http://mirrors.ustc.edu.cn/elpa/org/")
-         ("gnu-cn"   . "http://mirrors.ustc.edu.cn/elpa/gnu/")))
+         ("gnu-cn"   . "http://mirrors.ustc.edu.cn/elpa/gnu/")
+         ("nongnu"   . "http://elpa.nongnu.org/nongnu/")))
 
   (setq ns-use-srgb-colorspace nil)
   (setq powerline-default-separator 'utf-8)
@@ -659,7 +665,7 @@ This function is called at the very end of Spacemacs startup, after layer
 configuration.
 Put your configuration code here, except for variables that should be set
 before packages are loaded."
-  (editorconfig-mode 1)
+  (editorconfig-mode)
   (global-centered-cursor-mode)
   (global-clipetty-mode)
   (spacemacs/toggle-centered-point-globally-on)
@@ -681,6 +687,11 @@ before packages are loaded."
   ;; https://github.com/MaskRay/ccls/wiki/lsp-mode
   (setq ccls-initialization-options '(:index (:threads 4)))
   (setq ccls-sem-highlight-method nil)
+
+  (custom-set-variables
+   '(flycheck-python-flake8-executable "python3")
+   '(flycheck-python-pycompile-executable "python3")
+   '(flycheck-python-pylint-executable "python3"))
   )
 
 
