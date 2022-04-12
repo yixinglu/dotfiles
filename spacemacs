@@ -692,6 +692,10 @@ before packages are loaded."
    '(flycheck-python-flake8-executable "python3")
    '(flycheck-python-pycompile-executable "python3")
    '(flycheck-python-pylint-executable "python3"))
+
+  ;; https://github.com/syl20bnr/spacemacs/issues/15281
+  (with-eval-after-load 'lsp-mode
+    (define-key lsp-command-map-prefix "ga" 'projectile-find-other-file))
   )
 
 
