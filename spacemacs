@@ -695,7 +695,7 @@ before packages are loaded."
 
   ;; https://github.com/syl20bnr/spacemacs/issues/15281
   (with-eval-after-load 'lsp-mode
-    (define-key lsp-command-map-prefix "ga" 'projectile-find-other-file))
+    (define-key lsp-command-map "ga" 'projectile-find-other-file))
   )
 
 
