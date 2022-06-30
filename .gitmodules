@@ -26,3 +26,6 @@
 [submodule "oh-my-zsh/custom/plugins/fasd"]
 	path = oh-my-zsh/custom/plugins/fasd
 	url = https://github.com/clvv/fasd.git
+[submodule "tmux/plugins/tmux-cpu"]
+	path = tmux/plugins/tmux-cpu
+	url = https://github.com/tmux-plugins/tmux-cpu.git
