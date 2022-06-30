@@ -35,6 +35,15 @@ macOS
 * v2rayx
 * shadowsocksx-ng
 
+LSP
+---
+
+### python
+
+```bash
+$ pip3 install --user python-lsp-server yapf
+```
+
 Docker
 ------
 
