@@ -689,7 +689,7 @@ before packages are loaded."
   (setq ccls-sem-highlight-method nil)
 
   ;; (setq projectile-enable-caching t)
-  (setq projectile-indexing-method 'native)
+  ;; (setq projectile-indexing-method 'native)
 
   (custom-set-variables
    '(flycheck-python-flake8-executable "python3")
