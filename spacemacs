@@ -46,8 +46,8 @@ This function should only modify configuration layer settings."
      emacs-lisp
      (git :variables git-magit-status-fullscreen nil)
      ;; github
-     ;; ivy
-     helm
+     ivy
+     ;; helm
      markdown
      multiple-cursors
      org
@@ -687,6 +687,9 @@ before packages are loaded."
   ;; https://github.com/MaskRay/ccls/wiki/lsp-mode
   (setq ccls-initialization-options '(:index (:threads 4)))
   (setq ccls-sem-highlight-method nil)
+
+  ;; (setq projectile-enable-caching t)
+  (setq projectile-indexing-method 'native)
 
   (custom-set-variables
    '(flycheck-python-flake8-executable "python3")
