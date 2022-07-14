@@ -644,6 +644,8 @@ If you are unsure, try setting them in `dotspacemacs/user-config' first."
 
   (setq evil-jumps-cross-buffers t)
 
+  (setq default-tab-width 8)
+
   (if (not (version< emacs-version "27"))
       (progn
         ;; (add-hook 'after-change-major-mode-hook 'darkroom-tentative-mode)
