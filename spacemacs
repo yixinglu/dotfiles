@@ -57,7 +57,7 @@ This function should only modify configuration layer settings."
      spell-checking
      (syntax-checking :variables syntax-checking-enable-by-default t)
      semantic
-     ;; treemacs
+     treemacs
      ;; version-control
 
      (ibuffer :variables ibuffer-group-buffers-by 'projects)
@@ -659,11 +659,6 @@ If you are unsure, try setting them in `dotspacemacs/user-config' first."
         ;; (add-hook 'window-configuration-change-hook 'darkroom--enter-or-leave 'append 'local)
         ))
 
-  ;; (global-writeroom-mode)
-  (writeroom-mode)
-  (setq writeroom-width 140)
-  (setq writeroom-mode-line t)
-
   )
 
 
@@ -689,6 +684,11 @@ before packages are loaded."
   (spacemacs/toggle-auto-fill-mode-on)
   ;; (spacemacs/toggle-fill-column-indicator-on)
   (set-fill-column 120)
+
+  ;; (global-writeroom-mode 1)
+  (setq writeroom-width 140)
+  (setq writeroom-mode-line t)
+  ;; (add-hook 'c++-mode-hook (lambda() (writeroom-mode 1)))
 
   (spacemacs/set-leader-keys "oy" 'youdao-dictionary-search-at-point+)
   (spacemacs/set-leader-keys "os" 'yas-insert-snippet)
