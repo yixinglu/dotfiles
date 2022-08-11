@@ -64,12 +64,14 @@ This function should only modify configuration layer settings."
      osx
      ;; fasd
      yaml
+     sql
      ;; cscope
      ;; (gtags :variables gtags-enable-by-default nil)
      ;; https://emacs-lsp.github.io/lsp-mode/tutorials/how-to-turn-off/
      ;; https://github.com/syl20bnr/spacemacs/blob/develop/layers/+tools/lsp/README.org
      (lsp :variables
           ;; lsp-treemacs-tree t
+          lsp-headerline-breadcrumb-enable t
           lsp-ui-doc-enable nil
           lsp-signature-render-documentation nil
           lsp-headerline-breadcrumb-enable nil
@@ -136,11 +138,14 @@ This function should only modify configuration layer settings."
      protobuf
      major-modes
      command-log
+     evil-better-jumper
+     xclipboard
      ;; pdf-tools
      ;; (vinegar :variables
      ;;          vinegar-reuse-dired-buffer t
      ;;          vinegar-dired-hide-details nil)
      ;; myleetcode
+     ;; hacknews
      )
 
 
@@ -189,7 +194,7 @@ It should only modify the values of Spacemacs settings."
    ;; to compile Emacs 27 from source following the instructions in file
    ;; EXPERIMENTAL.org at to root of the git repository.
    ;; (default nil)
-   dotspacemacs-enable-emacs-pdumper nil
+   dotspacemacs-enable-emacs-pdumper t
 
    ;; Name of executable file pointing to emacs 27+. This executable must be
    ;; in your PATH.
@@ -645,6 +650,7 @@ If you are unsure, try setting them in `dotspacemacs/user-config' first."
   (setq evil-jumps-cross-buffers t)
 
   (setq default-tab-width 8)
+  (setq tab-width 8)
 
   (if (not (version< emacs-version "27"))
       (progn
@@ -652,6 +658,12 @@ If you are unsure, try setting them in `dotspacemacs/user-config' first."
         (add-hook 'window-configuration-change-hook 'recenter nil)
         ;; (add-hook 'window-configuration-change-hook 'darkroom--enter-or-leave 'append 'local)
         ))
+
+  ;; (global-writeroom-mode)
+  (writeroom-mode)
+  (setq writeroom-width 140)
+  (setq writeroom-mode-line t)
+
   )
 
 
@@ -668,6 +680,7 @@ This function is called at the very end of Spacemacs startup, after layer
 configuration.
 Put your configuration code here, except for variables that should be set
 before packages are loaded."
+  (mouse-wheel-mode -1)
   (editorconfig-mode)
   (global-centered-cursor-mode)
   (global-clipetty-mode)
