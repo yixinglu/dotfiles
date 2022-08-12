@@ -57,7 +57,8 @@ This function should only modify configuration layer settings."
      spell-checking
      (syntax-checking :variables syntax-checking-enable-by-default t)
      semantic
-     treemacs
+     ;; treemacs
+     neotree
      ;; version-control
 
      (ibuffer :variables ibuffer-group-buffers-by 'projects)
@@ -668,6 +669,11 @@ This function is called only while dumping Spacemacs configuration. You can
 `require' or `load' the libraries of your choice that will be included in the
 dump.")
 
+(defun yee/enable-writeroom-mode()
+  (if (one-window-p t)
+      (writeroom-mode)
+    (writeroom-mode -1))
+  )
 
 (defun dotspacemacs/user-config ()
   "Configuration for user code:
@@ -685,10 +691,13 @@ before packages are loaded."
   ;; (spacemacs/toggle-fill-column-indicator-on)
   (set-fill-column 120)
 
-  ;; (global-writeroom-mode 1)
-  (setq writeroom-width 140)
+  (global-writeroom-mode)
+  (setq writeroom-width 130)
   (setq writeroom-mode-line t)
-  ;; (add-hook 'c++-mode-hook (lambda() (writeroom-mode 1)))
+  (add-hook 'c++-mode-hook 'yee/enable-writeroom-mode)
+  (add-hook 'cmake-mode-hook 'yee/enable-writeroom-mode)
+  (add-hook 'markdown-mode-hook 'yee/enable-writeroom-mode)
+  (add-hook 'org-mode-hook 'yee/enable-writeroom-mode)
 
   (spacemacs/set-leader-keys "oy" 'youdao-dictionary-search-at-point+)
   (spacemacs/set-leader-keys "os" 'yas-insert-snippet)
@@ -715,6 +724,11 @@ before packages are loaded."
   ;; https://github.com/syl20bnr/spacemacs/issues/15281
   (with-eval-after-load 'lsp-mode
     (define-key lsp-command-map "ga" 'projectile-find-other-file))
+
+  (pyim-basedict-enable)
+  (setq pyim-page-tooltip '(posframe popup minibuffer))
+  (setq pyim-page-style 'one-line)
+  (setq pyim-cloudim 'baidu)
   )
 
 
