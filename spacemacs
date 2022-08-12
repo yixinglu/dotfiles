@@ -163,7 +163,7 @@ This function should only modify configuration layer settings."
                                       ;; helpful
                                       feature-mode
                                       bison-mode
-                                      darkroom
+                                      ;; darkroom
                                       clipetty
                                       ;; srcery-theme
                                       )
@@ -654,14 +654,9 @@ If you are unsure, try setting them in `dotspacemacs/user-config' first."
   (setq tab-width 8)
 
   (if (not (version< emacs-version "27"))
-      (progn
-        ;; (add-hook 'after-change-major-mode-hook 'darkroom-tentative-mode)
-        (add-hook 'window-configuration-change-hook 'recenter nil)
-        ;; (add-hook 'window-configuration-change-hook 'darkroom--enter-or-leave 'append 'local)
-        ))
-
+      (add-hook 'window-configuration-change-hook 'recenter nil))
+  ;; (progn)
   )
-
 
 (defun dotspacemacs/user-load ()
   "Library to load while dumping.
@@ -694,10 +689,13 @@ before packages are loaded."
   (global-writeroom-mode)
   (setq writeroom-width 130)
   (setq writeroom-mode-line t)
+  (add-hook 'text-mode-hook 'yee/enable-writeroom-mode)
   (add-hook 'c++-mode-hook 'yee/enable-writeroom-mode)
   (add-hook 'cmake-mode-hook 'yee/enable-writeroom-mode)
-  (add-hook 'markdown-mode-hook 'yee/enable-writeroom-mode)
-  (add-hook 'org-mode-hook 'yee/enable-writeroom-mode)
+  (add-hook 'emacs-lisp-mode-hook 'yee/enable-writeroom-mode)
+  ;; (add-hook 'markdown-mode-hook 'yee/enable-writeroom-mode)
+  ;; (add-hook 'org-mode-hook 'yee/enable-writeroom-mode)
+  ;; (darkroom-tentative-mode)
 
   (spacemacs/set-leader-keys "oy" 'youdao-dictionary-search-at-point+)
   (spacemacs/set-leader-keys "os" 'yas-insert-snippet)
