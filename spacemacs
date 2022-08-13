@@ -71,11 +71,10 @@ This function should only modify configuration layer settings."
      ;; https://emacs-lsp.github.io/lsp-mode/tutorials/how-to-turn-off/
      ;; https://github.com/syl20bnr/spacemacs/blob/develop/layers/+tools/lsp/README.org
      (lsp :variables
-          ;; lsp-treemacs-tree t
-          lsp-headerline-breadcrumb-enable t
+          lsp-treemacs-tree nil
           lsp-ui-doc-enable nil
           lsp-signature-render-documentation nil
-          lsp-headerline-breadcrumb-enable nil
+          lsp-headerline-breadcrumb-enable t
           lsp-lens-enable nil
           lsp-completion-enable t
           lsp-enable-symbol-highlighting t
@@ -693,8 +692,8 @@ before packages are loaded."
   (add-hook 'c++-mode-hook 'yee/enable-writeroom-mode)
   (add-hook 'cmake-mode-hook 'yee/enable-writeroom-mode)
   (add-hook 'emacs-lisp-mode-hook 'yee/enable-writeroom-mode)
-  ;; (add-hook 'markdown-mode-hook 'yee/enable-writeroom-mode)
-  ;; (add-hook 'org-mode-hook 'yee/enable-writeroom-mode)
+  (add-hook 'markdown-mode-hook 'yee/enable-writeroom-mode)
+  (add-hook 'org-mode-hook 'yee/enable-writeroom-mode)
   ;; (darkroom-tentative-mode)
 
   (spacemacs/set-leader-keys "oy" 'youdao-dictionary-search-at-point+)
