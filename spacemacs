@@ -694,6 +694,9 @@ before packages are loaded."
   (add-hook 'emacs-lisp-mode-hook 'yee/enable-writeroom-mode)
   (add-hook 'markdown-mode-hook 'yee/enable-writeroom-mode)
   (add-hook 'org-mode-hook 'yee/enable-writeroom-mode)
+  (add-hook 'text-mode-hook 'auto-fill-mode)
+  (add-hook 'markdown-mode-hook 'auto-fill-mode)
+  (add-hook 'org-mode-hook 'auto-fill-mode)
   ;; (darkroom-tentative-mode)
 
   (spacemacs/set-leader-keys "oy" 'youdao-dictionary-search-at-point+)
@@ -726,6 +729,9 @@ before packages are loaded."
   (setq pyim-page-tooltip '(posframe popup minibuffer))
   (setq pyim-page-style 'one-line)
   (setq pyim-cloudim 'baidu)
+
+  (add-to-list 'auto-mode-alist '("\\.yy\\'" . bison-mode))
+  (add-to-list 'auto-mode-alist '("\\.feature\\'" . feature-mode))
   )
 
 
