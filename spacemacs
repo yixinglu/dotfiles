@@ -651,9 +651,6 @@ If you are unsure, try setting them in `dotspacemacs/user-config' first."
 
   (setq default-tab-width 8)
   (setq tab-width 8)
-
-  (if (not (version< emacs-version "27"))
-      (add-hook 'window-configuration-change-hook 'recenter nil))
   ;; (progn)
   )
 
@@ -691,6 +688,7 @@ before packages are loaded."
   (add-hook 'text-mode-hook 'yee/enable-writeroom-mode)
   (add-hook 'c++-mode-hook 'yee/enable-writeroom-mode)
   (add-hook 'cmake-mode-hook 'yee/enable-writeroom-mode)
+  (add-hook 'sh-mode-hook 'yee/enable-writeroom-mode)
   (add-hook 'emacs-lisp-mode-hook 'yee/enable-writeroom-mode)
   (add-hook 'markdown-mode-hook 'yee/enable-writeroom-mode)
   (add-hook 'org-mode-hook 'yee/enable-writeroom-mode)
@@ -698,6 +696,11 @@ before packages are loaded."
   (add-hook 'markdown-mode-hook 'auto-fill-mode)
   (add-hook 'org-mode-hook 'auto-fill-mode)
   ;; (darkroom-tentative-mode)
+
+  (if (not (version< emacs-version "27"))
+      (add-hook 'window-configuration-change-hook 'recenter nil))
+  ;; TODO(yee): When window changes, rerun major mode hooks (run-hooks)
+  ;; http://www.math.utah.edu/docs/info/elisp_21.html
 
   (spacemacs/set-leader-keys "oy" 'youdao-dictionary-search-at-point+)
   (spacemacs/set-leader-keys "os" 'yas-insert-snippet)
