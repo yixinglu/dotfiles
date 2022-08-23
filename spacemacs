@@ -707,6 +707,8 @@ before packages are loaded."
 
   (spacemacs/set-leader-keys "oy" 'youdao-dictionary-search-at-point+)
   (spacemacs/set-leader-keys "os" 'yas-insert-snippet)
+  ;; (global-set-key (kbd "TAB") #'evil-jump-forward)
+  (evil-define-key 'normal 'global (kbd "TAB") #'evil-jump-forward)
 
   ;; Bind clang-format-buffer to tab on the c++-mode only:
   ;; (add-hook 'c++-mode-hook 'clang-format-bindings)
