@@ -52,6 +52,9 @@ This function should only modify configuration layer settings."
      multiple-cursors
      org
      (shell :variables
+            ;; Need to install vterm in os and exec vterm-module-compile
+            shell-default-shell 'vterm
+            close-window-with-terminal t
             shell-default-height 60
             shell-default-position 'bottom)
      spell-checking
