@@ -2,6 +2,7 @@
 
 alias vi='vim'
 alias g='git'
+alias ed='emacs --daemon -nw'
 alias e='emacsclient -t'
 alias gopen='gnome-open'
 alias mkdir='mkdir -p'
