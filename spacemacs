@@ -700,6 +700,7 @@ before packages are loaded."
   (add-hook 'markdown-mode-hook 'auto-fill-mode)
   (add-hook 'org-mode-hook 'auto-fill-mode)
   ;; (darkroom-tentative-mode)
+  ;; (add-hook 'c++-mode-hook (lambda () (evil-define-key 'normal 'global (kbd "TAB") #'evil-jump-forward)))
 
   (if (not (version< emacs-version "27"))
       (add-hook 'window-configuration-change-hook 'recenter nil))
@@ -709,7 +710,7 @@ before packages are loaded."
   (spacemacs/set-leader-keys "oy" 'youdao-dictionary-search-at-point+)
   (spacemacs/set-leader-keys "os" 'yas-insert-snippet)
   ;; (global-set-key (kbd "TAB") #'evil-jump-forward)
-  (evil-define-key 'normal 'global (kbd "TAB") #'evil-jump-forward)
+  ;; (evil-define-key 'normal 'global (kbd "TAB") #'evil-jump-forward)
 
   ;; Bind clang-format-buffer to tab on the c++-mode only:
   ;; (add-hook 'c++-mode-hook 'clang-format-bindings)
