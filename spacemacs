@@ -655,6 +655,8 @@ If you are unsure, try setting them in `dotspacemacs/user-config' first."
   (setq default-tab-width 8)
   (setq tab-width 8)
   ;; (progn)
+  (when (display-graphic-p)
+    (setq writeroom-fullscreen-effect 'maximized))
   )
 
 (defun dotspacemacs/user-load ()
