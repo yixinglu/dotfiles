@@ -38,6 +38,7 @@ macOS
 ### iTerm2 Configuration
 
 - [Key Mappings](https://apple.stackexchange.com/a/204802/472025)
+- [Emacs Jump forward](https://emacs-china.org/t/spacemacs-c-i-evil-jump-forwar/19703/12)
 
 LSP
 ---
