@@ -35,6 +35,10 @@ macOS
 * v2rayx
 * shadowsocksx-ng
 
+### iTerm2 Configuration
+
+- [Key Mappings](https://apple.stackexchange.com/a/204802/472025)
+
 LSP
 ---
 
