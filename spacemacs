@@ -44,7 +44,7 @@ This function should only modify configuration layer settings."
                       :disabled-for org markdown)
      better-defaults
      emacs-lisp
-     (git :variables git-magit-status-fullscreen nil)
+     (git :variables git-magit-status-fullscreen t)
      ;; github
      ivy
      ;; helm
@@ -591,7 +591,7 @@ It should only modify the values of Spacemacs settings."
    ;; `trailing' to delete only the whitespace at end of lines, `changed' to
    ;; delete only whitespace for changed lines or `nil' to disable cleanup.
    ;; (default nil)
-   dotspacemacs-whitespace-cleanup 'trailing
+   dotspacemacs-whitespace-cleanup 'changed
 
    ;; If non nil activate `clean-aindent-mode' which tries to correct
    ;; virtual indentation of simple modes. This can interfer with mode specific
@@ -693,6 +693,7 @@ before packages are loaded."
   (setq writeroom-mode-line t)
   (add-hook 'text-mode-hook 'yee/enable-writeroom-mode)
   (add-hook 'c++-mode-hook 'yee/enable-writeroom-mode)
+  (add-hook 'c-mode-hook 'yee/enable-writeroom-mode)
   (add-hook 'cmake-mode-hook 'yee/enable-writeroom-mode)
   (add-hook 'sh-mode-hook 'yee/enable-writeroom-mode)
   (add-hook 'emacs-lisp-mode-hook 'yee/enable-writeroom-mode)
@@ -744,6 +745,8 @@ before packages are loaded."
 
   (add-to-list 'auto-mode-alist '("\\.yy\\'" . bison-mode))
   (add-to-list 'auto-mode-alist '("\\.feature\\'" . feature-mode))
+
+  (global-set-key (kbd "\e[emacs-C-i") 'better-jumper-jump-forward)
   )
 
 
