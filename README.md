@@ -66,6 +66,8 @@ $ cd $ZSH/custom/navi
 $ sudo make install
 ```
 
+[macOS clipboard and tmux configuration](https://thoughtbot.com/blog/tmux-copy-paste-on-os-x-a-better-future)
+
 TODO
 ----
 
