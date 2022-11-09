@@ -702,6 +702,7 @@ before packages are loaded."
   (add-hook 'text-mode-hook 'auto-fill-mode)
   (add-hook 'markdown-mode-hook 'auto-fill-mode)
   (add-hook 'org-mode-hook 'auto-fill-mode)
+  (add-hook 'feature-mode-hook 'auto-fill-mode)
   ;; (darkroom-tentative-mode)
   ;; (add-hook 'c++-mode-hook (lambda () (evil-define-key 'normal 'global (kbd "TAB") #'evil-jump-forward)))
 

@@ -10,7 +10,7 @@ export GO111MODULE=on
 export GOPATH=$HOME/go
 # export GOROOT=/usr/lib/golang
 export GOPROXY=https://goproxy.cn
-export PATH=$HOME/.local/bin:$GOPATH/bin:$PATH:/opt/homebrew/bin
+export PATH=$HOME/.local/bin:$GOPATH/bin:/opt/homebrew/bin:/usr/local/go/bin:$PATH
 
 export PYTHON_KEYRING_BACKEND=keyring.backends.null.Keyring
 
