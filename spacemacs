@@ -699,10 +699,12 @@ before packages are loaded."
   (add-hook 'emacs-lisp-mode-hook 'yee/enable-writeroom-mode)
   (add-hook 'markdown-mode-hook 'yee/enable-writeroom-mode)
   (add-hook 'org-mode-hook 'yee/enable-writeroom-mode)
+  (add-hook 'feature-mode-hook 'yee/enable-writeroom-mode)
+  (add-hook 'thrift-mode-hook 'yee/enable-writeroom-mode)
+  (add-hook 'go-mode-hook 'yee/enable-writeroom-mode)
   (add-hook 'text-mode-hook 'auto-fill-mode)
   (add-hook 'markdown-mode-hook 'auto-fill-mode)
   (add-hook 'org-mode-hook 'auto-fill-mode)
-  (add-hook 'feature-mode-hook 'auto-fill-mode)
   ;; (darkroom-tentative-mode)
   ;; (add-hook 'c++-mode-hook (lambda () (evil-define-key 'normal 'global (kbd "TAB") #'evil-jump-forward)))
 
