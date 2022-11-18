@@ -1,12 +1,24 @@
+# brew
+export HOMEBREW_BREW_GIT_REMOTE=https://mirrors.ustc.edu.cn/brew.git
+export HOMEBREW_CORE_GIT_REMOTE=https://mirrors.ustc.edu.cn/homebrew-core.git
+export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.ustc.edu.cn/homebrew-bottles
 
-CLION_VERSION=2016.3.2
-IDEA_VERSION=145.972.3
+export PATH=/opt/homebrew/bin:/opt/homebrew/opt/openjdk/bin:$PATH
 
-TOOLS_DIR=$HOME/tools
+# golang settings
+export GO111MODULE=on
+export GOPATH=$HOME/go
+# export GOROOT=/usr/lib/golang
+export GOPROXY=https://goproxy.cn
 
-# clion
-PATH="$PATH:$TOOLS_DIR/clion-$CLION_VERSION/bin"
-# IntelliJ
-PATH="$PATH:$TOOLS_DIR/idea-IC-$IDEA_VERSION/bin"
+export PATH=$GOPATH/bin:/usr/local/go/bin:$PATH
 
-export PATH
+export PATH=$HOME/.local/bin:$PATH
+
+export PYTHON_KEYRING_BACKEND=keyring.backends.null.Keyring
+
+# locate
+export LC_ALL="en_US.UTF-8"
+export LANG="en_US.UTF-8"
+export LANGUAGE="en_US.UTF-8"
+
