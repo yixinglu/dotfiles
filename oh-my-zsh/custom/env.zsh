@@ -3,7 +3,8 @@ export HOMEBREW_BREW_GIT_REMOTE=https://mirrors.ustc.edu.cn/brew.git
 export HOMEBREW_CORE_GIT_REMOTE=https://mirrors.ustc.edu.cn/homebrew-core.git
 export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.ustc.edu.cn/homebrew-bottles
 
-export PATH=/opt/homebrew/opt/openjdk/bin:$PATH
+export JAVA_HOME=/opt/homebrew/opt/openjdk
+export PATH=$JAVA_HOME/bin:$PATH
 
 # golang settings
 export GO111MODULE=on
