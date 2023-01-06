@@ -19,6 +19,11 @@ zshrc
 oh-my-zsh/custom/*.zsh
 "
 
+if [[ ! -d ~/.tmux/plugins/ ]]; then
+    echo "mkdir ~/.tmux/plugins/"
+    mkdir -p ~/.tmux/plugins/
+fi
+
 if [[ ! -d ~/.oh-my-zsh ]]; then
     echo "install oh-my-zsh."
     sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
