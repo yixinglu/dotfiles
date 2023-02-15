@@ -3,7 +3,19 @@ export HOMEBREW_BREW_GIT_REMOTE=https://mirrors.ustc.edu.cn/brew.git
 export HOMEBREW_CORE_GIT_REMOTE=https://mirrors.ustc.edu.cn/homebrew-core.git
 export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.ustc.edu.cn/homebrew-bottles
 
-export JAVA_HOME=/opt/homebrew/opt/openjdk
+unameOut="$(uname -s)"
+case "${unameOut}" in
+    Linux*)
+        export JAVA_HOME=/usr/lib/jvm/java-1.8.0-openjdk-amd64
+        ;;
+    Darwin*)
+        export JAVA_HOME=/opt/homebrew/opt/openjdk
+        ;;
+    *)
+        echo "UNKNOWN:${unameOut}"
+        ;;
+esac
+
 export PATH=$JAVA_HOME/bin:$PATH
 
 # golang settings
