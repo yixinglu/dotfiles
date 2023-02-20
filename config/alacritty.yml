@@ -4,7 +4,7 @@ font:
 
 # background_opacity: 0.98
 window:
-  opacity: 0.98
+  opacity: 0.95
 
 selection:
   semantic_escape_chars: ",│`|:\"' ()[]{}<>"
@@ -26,3 +26,5 @@ key_bindings:
   # https://github.com/jwilm/alacritty/issues/93#issuecomment-427592040
   - { key: D,  mods: Alt,           chars: "\x1bd"                       }
   - { key: X,  mods: Alt,           chars: "\x1bx"                       }
+  - { key: Tab,   mods: None,       chars: "\x09" }
+  - { key: I,     mods: Control,    chars: "\x1b[105;5u" }

@@ -750,6 +750,7 @@ before packages are loaded."
   (add-to-list 'auto-mode-alist '("\\.feature\\'" . feature-mode))
 
   (global-set-key (kbd "\e[emacs-C-i") 'better-jumper-jump-forward)
+  (global-set-key (kbd "M-[ 1 0") 'better-jumper-jump-forward)
   )
 
 
