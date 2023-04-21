@@ -14,6 +14,8 @@ bash_aliases
 tmux.conf
 tmux/plugins/tpm
 ssh/config
+config/alacritty.yml
+config/wezterm
 clang-format
 zshrc
 oh-my-zsh/custom/*.zsh
