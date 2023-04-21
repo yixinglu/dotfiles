@@ -24,6 +24,11 @@ config.use_ime = false
 
 config.tab_bar_at_bottom = true
 
+config.colors = {
+  -- foreground = '#c8c8c8',
+  background = '#1f1f1f',
+}
+
 config.keys = {
   { key = 'f', mods = 'ALT', action = wezterm.action.SendString '\x1bf' },
   { key = 'b', mods = 'ALT', action = wezterm.action.SendString '\x1bb' },
