@@ -13,7 +13,8 @@ end
 -- This is where you actually apply your config choices
 
 -- For example, changing the color scheme:
--- config.color_scheme = 'AdventureTime'
+-- config.color_scheme = 'Vs Code Dark+ (Gogh)'
+-- config.color_scheme = 'zenburn (terminal.sexy)'
 -- config.font = wezterm.font('JetBrains Mono', { weight = 'Bold' })
 config.font_size=14
 
