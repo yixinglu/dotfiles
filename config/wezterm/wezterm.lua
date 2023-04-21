@@ -22,6 +22,8 @@ config.window_background_opacity = 0.95
 
 config.use_ime = false
 
+config.tab_bar_at_bottom = true
+
 config.keys = {
   { key = 'f', mods = 'ALT', action = wezterm.action.SendString '\x1bf' },
   { key = 'b', mods = 'ALT', action = wezterm.action.SendString '\x1bb' },
