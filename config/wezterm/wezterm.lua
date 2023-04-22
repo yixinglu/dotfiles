@@ -27,7 +27,7 @@ config.tab_bar_at_bottom = true
 
 config.colors = {
   -- foreground = '#c8c8c8',
-  background = '#1d1f21',
+  background = '#1e1e1e',
 }
 
 config.keys = {
