@@ -16,9 +16,10 @@ end
 -- config.color_scheme = 'Vs Code Dark+ (Gogh)'
 -- config.color_scheme = 'zenburn (terminal.sexy)'
 -- config.font = wezterm.font('JetBrains Mono', { weight = 'Bold' })
-config.font_size=14
+-- config.font = wezterm.font('Monaco', { weight = 'Bold' })
+config.font_size=15
 
-config.window_background_opacity = 0.95
+config.window_background_opacity = 0.99
 
 config.use_ime = false
 
@@ -26,7 +27,7 @@ config.tab_bar_at_bottom = true
 
 config.colors = {
   -- foreground = '#c8c8c8',
-  background = '#1f1f1f',
+  background = '#1d1f21',
 }
 
 config.keys = {
