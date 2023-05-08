@@ -703,6 +703,9 @@ before packages are loaded."
   (add-hook 'thrift-mode-hook 'yee/enable-writeroom-mode)
   (add-hook 'go-mode-hook 'yee/enable-writeroom-mode)
   (add-hook 'python-mode-hook 'yee/enable-writeroom-mode)
+  (add-hook 'dired-mode-hook 'yee/enable-writeroom-mode)
+  (add-hook 'magit-status-mode-hook 'yee/enable-writeroom-mode)
+
   (add-hook 'text-mode-hook 'auto-fill-mode)
   (add-hook 'markdown-mode-hook 'auto-fill-mode)
   (add-hook 'org-mode-hook 'auto-fill-mode)
