@@ -41,6 +41,7 @@ This function should only modify configuration layer settings."
      (auto-completion :variables
                       auto-completion-enable-sort-by-usage t
                       auto-completion-enable-snippets-in-popup t
+                      auto-completion-tab-key-behavior nil
                       :disabled-for org markdown)
      better-defaults
      emacs-lisp
@@ -149,6 +150,7 @@ This function should only modify configuration layer settings."
      ;;          vinegar-dired-hide-details nil)
      ;; myleetcode
      ;; hacknews
+     html
      )
 
 
@@ -160,15 +162,20 @@ This function should only modify configuration layer settings."
    ;; `dotspacemacs/user-config'. To use a local version of a package, use the
    ;; `:location' property: '(your-package :location "~/path/to/your-package/")
    ;; Also include the dependencies as they will not be resolved automatically.
-   dotspacemacs-additional-packages '(editorconfig
-                                      ;; vue-mode
-                                      ;; helpful
-                                      feature-mode
-                                      bison-mode
-                                      ;; darkroom
-                                      clipetty
-                                      ;; srcery-theme
-                                      )
+   dotspacemacs-additional-packages
+   '(editorconfig
+     ;; vue-mode
+     ;; helpful
+     feature-mode
+     bison-mode
+     ;; darkroom
+     clipetty
+     ;; srcery-theme
+     (copilot :location (recipe
+                         :fetcher github
+                         :repo "zerolfx/copilot.el"
+                         :files ("*.el" "dist")))
+    )
 
    ;; A list of packages that cannot be updated.
    dotspacemacs-frozen-packages '()
@@ -755,6 +762,19 @@ before packages are loaded."
 
   (global-set-key (kbd "\e[emacs-C-i") 'better-jumper-jump-forward)
   (global-set-key (kbd "M-[ 1 0") 'better-jumper-jump-forward)
+
+  ;; accept completion from copilot and fallback to company
+  (with-eval-after-load 'company
+    ;; disable inline previews
+    (delq 'company-preview-if-just-one-frontend company-frontends))
+
+  (with-eval-after-load 'copilot
+    (define-key copilot-completion-map (kbd "<tab>") 'copilot-accept-completion)
+    (define-key copilot-completion-map (kbd "TAB") 'copilot-accept-completion)
+    (define-key copilot-completion-map (kbd "C-TAB") 'copilot-accept-completion-by-word)
+    (define-key copilot-completion-map (kbd "C-<tab>") 'copilot-accept-completion-by-word))
+
+  (add-hook 'prog-mode-hook 'copilot-mode)
   )
 
 
