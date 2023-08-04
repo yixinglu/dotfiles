@@ -647,8 +647,11 @@ This function is called immediately after `dotspacemacs/init', before layer
 configuration.
 It is mostly for variables that should be set before packages are loaded.
 If you are unsure, try setting them in `dotspacemacs/user-config' first."
-  ;; Reference https://emacs-china.org/t/elpa/9854
+
+  ;; https://github.com/syl20bnr/spacemacs/issues/15144#issuecomment-1663338637
   ;; (fmakunbound 'use-package)
+
+  ;; Reference https://emacs-china.org/t/elpa/9854
   (setq configuration-layer-elpa-archives
        '(("melpa-cn" . "http://mirrors.ustc.edu.cn/elpa/melpa/")
          ("org-cn"   . "http://mirrors.ustc.edu.cn/elpa/org/")
