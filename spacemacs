@@ -77,6 +77,8 @@ This function should only modify configuration layer settings."
      (lsp :variables
           lsp-treemacs-tree nil
           lsp-ui-doc-enable nil
+          lsp-ui-sideline-enable nil
+          lsp-ui-sideline-show-hover nil
           lsp-signature-render-documentation nil
           lsp-headerline-breadcrumb-enable t
           lsp-lens-enable nil
@@ -700,7 +702,7 @@ before packages are loaded."
   (set-fill-column 120)
 
   (global-writeroom-mode)
-  (setq writeroom-width 160)
+  (setq writeroom-width 130)
   (setq writeroom-mode-line t)
   (add-hook 'text-mode-hook 'yee/enable-writeroom-mode)
   (add-hook 'c++-mode-hook 'yee/enable-writeroom-mode)
