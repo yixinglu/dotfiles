@@ -648,6 +648,7 @@ configuration.
 It is mostly for variables that should be set before packages are loaded.
 If you are unsure, try setting them in `dotspacemacs/user-config' first."
   ;; Reference https://emacs-china.org/t/elpa/9854
+  ;; (fmakunbound 'use-package)
   (setq configuration-layer-elpa-archives
        '(("melpa-cn" . "http://mirrors.ustc.edu.cn/elpa/melpa/")
          ("org-cn"   . "http://mirrors.ustc.edu.cn/elpa/org/")
@@ -696,7 +697,7 @@ before packages are loaded."
   (set-fill-column 120)
 
   (global-writeroom-mode)
-  (setq writeroom-width 130)
+  (setq writeroom-width 160)
   (setq writeroom-mode-line t)
   (add-hook 'text-mode-hook 'yee/enable-writeroom-mode)
   (add-hook 'c++-mode-hook 'yee/enable-writeroom-mode)
