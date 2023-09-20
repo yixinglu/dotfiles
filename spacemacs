@@ -725,6 +725,8 @@ before packages are loaded."
   ;; (darkroom-tentative-mode)
   ;; (add-hook 'c++-mode-hook (lambda () (evil-define-key 'normal 'global (kbd "TAB") #'evil-jump-forward)))
 
+  (add-hook 'bison-mode-hook (lambda () (setq comment-start "//" comment-end "")))
+
   (if (not (version< emacs-version "27"))
       (add-hook 'window-configuration-change-hook 'recenter nil))
   ;; TODO(yee): When window changes, rerun major mode hooks (run-hooks)
