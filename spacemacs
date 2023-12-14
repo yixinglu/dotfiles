@@ -743,9 +743,9 @@ before packages are loaded."
   ;; (defun clang-format-bindings ()
   ;;   (define-key c++-mode-map [tab] 'clang-format-buffer))
 
-  (setq lsp-clients-clangd-args '("--j=2" "--background-index" "--log=error"))
+  (setq lsp-clients-clangd-args '("--j=6" "--background-index" "--log=error"))
   ;; https://github.com/MaskRay/ccls/wiki/lsp-mode
-  (setq ccls-initialization-options '(:index (:threads 4)))
+  (setq ccls-initialization-options '(:index (:threads 6)))
   (setq ccls-sem-highlight-method nil)
 
   ;; (setq projectile-enable-caching t)
