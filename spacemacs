@@ -99,8 +99,8 @@ This function should only modify configuration layer settings."
             c-c++-enable-clang-format-on-save nil
             c++-enable-organize-includes-on-save nil
             c-c++-default-mode-for-headers 'c++-mode
-            ;; c-c++-backend 'lsp-clangd
-            c-c++-backend 'lsp-ccls
+            c-c++-backend 'lsp-clangd
+            ;; c-c++-backend 'lsp-ccls
             c-c++-lsp-enable-semantic-highlight nil ; 'rainbow
 
             ;; rtags
@@ -704,6 +704,7 @@ before packages are loaded."
   (global-writeroom-mode)
   (setq writeroom-width 130)
   (setq writeroom-mode-line t)
+
   (add-hook 'text-mode-hook 'yee/enable-writeroom-mode)
   (add-hook 'c++-mode-hook 'yee/enable-writeroom-mode)
   (add-hook 'c-mode-hook 'yee/enable-writeroom-mode)
@@ -743,7 +744,8 @@ before packages are loaded."
   ;; (defun clang-format-bindings ()
   ;;   (define-key c++-mode-map [tab] 'clang-format-buffer))
 
-  (setq lsp-clients-clangd-args '("--j=6" "--background-index" "--log=error"))
+  (setq lsp-clients-clangd-executable "/usr/bin/clangd-12")
+  (setq lsp-clients-clangd-args '("-j=6" "--background-index" "--all-scopes-completion" "--log=error" "--header-insertion=iwyu" "--cross-file-rename"))
   ;; https://github.com/MaskRay/ccls/wiki/lsp-mode
   (setq ccls-initialization-options '(:index (:threads 6)))
   (setq ccls-sem-highlight-method nil)
