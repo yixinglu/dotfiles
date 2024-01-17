@@ -183,7 +183,7 @@ This function should only modify configuration layer settings."
    dotspacemacs-frozen-packages '()
 
    ;; A list of packages that will not be installed and loaded.
-   dotspacemacs-excluded-packages '(evil-escape)
+   dotspacemacs-excluded-packages '(evil-escape undo-tree)
 
    ;; Defines the behaviour of Spacemacs when installing packages.
    ;; Possible values are `used-only', `used-but-keep-unused' and `all'.
@@ -745,7 +745,7 @@ before packages are loaded."
   ;;   (define-key c++-mode-map [tab] 'clang-format-buffer))
 
   (setq lsp-clients-clangd-executable "/usr/bin/clangd-12")
-  (setq lsp-clients-clangd-args '("-j=6" "--background-index" "--all-scopes-completion" "--log=error" "--header-insertion=iwyu" "--cross-file-rename"))
+  (setq lsp-clients-clangd-args '("-j=6" "--background-index" "--all-scopes-completion" "--log=error" "--cross-file-rename"))
   ;; https://github.com/MaskRay/ccls/wiki/lsp-mode
   (setq ccls-initialization-options '(:index (:threads 6)))
   (setq ccls-sem-highlight-method nil)
