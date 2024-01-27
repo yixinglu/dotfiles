@@ -175,7 +175,7 @@ This function should only modify configuration layer settings."
      ;; srcery-theme
      (copilot :location (recipe
                          :fetcher github
-                         :repo "zerolfx/copilot.el"
+                         :repo "copilot-emacs/copilot.el"
                          :files ("*.el" "dist")))
     )
 
