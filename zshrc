@@ -1,7 +1,5 @@
 export ZSH=$HOME/.oh-my-zsh
 
-export PATH=/opt/homebrew/bin:$PATH
-
 # Navi
 # export PATH=$PATH:"$ZSH/custom/plugins/navi"
 
@@ -28,3 +26,6 @@ fpath=(~/.zsh/completion $fpath)
 
 # source "$(navi widget zsh)"
 source $ZSH/oh-my-zsh.sh
+
+export PATH=/opt/homebrew/bin:/snap/bin:$PATH
+
