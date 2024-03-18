@@ -38,17 +38,18 @@ This function should only modify configuration layer settings."
      ;; Uncomment some layer names and press `SPC f e R' (Vim style) or
      ;; `M-m f e R' (Emacs style) to install them.
      ;; ----------------------------------------------------------------
-     (auto-completion :variables
-                      auto-completion-enable-sort-by-usage t
-                      auto-completion-enable-snippets-in-popup t
-                      auto-completion-tab-key-behavior nil
-                      :disabled-for org markdown)
+     ;; (auto-completion :variables
+     ;;                  auto-completion-enable-sort-by-usage t
+     ;;                  auto-completion-enable-snippets-in-popup t
+     ;;                  auto-completion-tab-key-behavior nil
+     ;;                  :disabled-for org markdown)
+     ;; ivy
+     ;; helm
+     compleseus
      better-defaults
      emacs-lisp
      (git :variables git-magit-status-fullscreen t)
      ;; github
-     ivy
-     ;; helm
      markdown
      multiple-cursors
      org
@@ -62,7 +63,7 @@ This function should only modify configuration layer settings."
      (syntax-checking :variables syntax-checking-enable-by-default t)
      semantic
      ;; treemacs
-     neotree
+     ;; neotree
      ;; version-control
 
      (ibuffer :variables ibuffer-group-buffers-by 'projects)
@@ -785,6 +786,62 @@ before packages are loaded."
     (define-key copilot-completion-map (kbd "C-<tab>") 'copilot-accept-completion-by-word))
 
   (add-hook 'prog-mode-hook 'copilot-mode)
+
+  (setq warning-suppress-types '((copilot copilot-exceeds-max-char)))
+
+  ;; treesit
+  ;; 1. https://www.masteringemacs.org/article/how-to-get-started-tree-sitter
+  ;; 2. https://medium.com/really-learn-programming/setting-up-tree-sitter-in-emacs-29-x-a38a9d3a9f2b
+  ;; (setq treesit-language-source-alist
+  ;;   '((bash "https://github.com/tree-sitter/tree-sitter-bash")
+  ;;     (cpp "https://github.com/tree-sitter/tree-sitter-cpp")
+  ;;     (c "https://github.com/tree-sitter/tree-sitter-c")
+  ;;     (cmake "https://github.com/uyha/tree-sitter-cmake")
+  ;;     (css "https://github.com/tree-sitter/tree-sitter-css")
+  ;;     (elisp "https://github.com/Wilfred/tree-sitter-elisp")
+  ;;     (go "https://github.com/tree-sitter/tree-sitter-go")
+  ;;     (html "https://github.com/tree-sitter/tree-sitter-html")
+  ;;     (javascript "https://github.com/tree-sitter/tree-sitter-javascript" "master" "src")
+  ;;     (json "https://github.com/tree-sitter/tree-sitter-json")
+  ;;     (make "https://github.com/alemuller/tree-sitter-make")
+  ;;     (markdown "https://github.com/ikatyang/tree-sitter-markdown")
+  ;;     (python "https://github.com/tree-sitter/tree-sitter-python")
+  ;;     (toml "https://github.com/tree-sitter/tree-sitter-toml")
+  ;;     (tsx "https://github.com/tree-sitter/tree-sitter-typescript" "master" "tsx/src")
+  ;;     (typescript "https://github.com/tree-sitter/tree-sitter-typescript" "master" "typescript/src")
+  ;;     (yaml "https://github.com/ikatyang/tree-sitter-yaml")))
+
+  ;; (dolist (lang treesit-language-source-alist)
+  ;;   (unless (treesit-language-available-p (car lang))
+  ;;     (treesit-install-language-grammar (car lang))))
+
+  ;; (setq treesit-load-name-override-list
+  ;;   '((c++ "libtree-sitter-cpp")
+  ;;     (js "libtree-sitter-js" "tree_sitter_javascript")))
+
+  ;; (setq major-mode-remap-alist
+  ;;   '((yaml-mode . yaml-ts-mode)
+  ;;     (c-mode . c-ts-mode)
+  ;;     (c++-mode . c++-ts-mode)
+  ;;     (cc-mode . c++-ts-mode)
+  ;;     (cmake-mode . cmake-ts-mode)
+  ;;     (bash-mode . bash-ts-mode)
+  ;;     (js2-mode . js-ts-mode)
+  ;;     (typescript-mode . typescript-ts-mode)
+  ;;     (json-mode . json-ts-mode)
+  ;;     (css-mode . css-ts-mode)
+  ;;     (python-mode . python-ts-mode)))
+
+  ;; (defun mp-remove-treesit-sexp-changes ()
+  ;;   (when (eq forward-sexp-function #'treesit-forward-sexp)
+  ;;     (setq forward-sexp-function nil))
+  ;;   (when (eq transpose-sexps-function #'treesit-transpose-sexps)
+  ;;     (setq transpose-sexps-function #'transpose-sexps-default-function))
+  ;;   (when (eq forward-sentence-function #'treesit-forward-sentence)
+  ;;     (setq forward-sentence-function #'forward-sentence-default-function)))
+
+  ;; (add-hook 'prog-mode-hook #'mp-remove-treesit-sexp-changes)
+
   )
 
 
