@@ -679,12 +679,6 @@ This function is called only while dumping Spacemacs configuration. You can
 `require' or `load' the libraries of your choice that will be included in the
 dump.")
 
-(defun yee/enable-writeroom-mode()
-  (if (one-window-p t)
-      (writeroom-mode)
-    (writeroom-mode -1))
-  )
-
 (defun dotspacemacs/user-config ()
   "Configuration for user code:
 This function is called at the very end of Spacemacs startup, after layer
@@ -703,18 +697,15 @@ before packages are loaded."
   (set-fill-column 120)
 
   (global-writeroom-mode)
-  (setq writeroom-width 130)
-  (setq writeroom-mode-line t)
-
-  (add-hook 'prog-mode-hook 'yee/enable-writeroom-mode)
-
-  (add-hook 'text-mode-hook 'yee/enable-writeroom-mode)
-  (add-hook 'markdown-mode-hook 'yee/enable-writeroom-mode)
-  (add-hook 'org-mode-hook 'yee/enable-writeroom-mode)
-  (add-hook 'feature-mode-hook 'yee/enable-writeroom-mode)
-  ;; (add-hook 'thrift-mode-hook 'yee/enable-writeroom-mode)
-  (add-hook 'dired-mode-hook 'yee/enable-writeroom-mode)
-  (add-hook 'magit-status-mode-hook 'yee/enable-writeroom-mode)
+  (setq split-width-threshold 120
+        writeroom-width 128
+        writeroom-fringes-outside-margins nil
+        writeroom-global-effects nil
+        writeroom-major-modes '(text-mode prog-mode conf-mode special-mode Info-mode dired-mode makefile-gmake-mode)
+        writeroom-major-modes-exceptions '(process-menu-mode proced-mode backtrace-mode lsp-help-mode)
+        writeroom-maximize-window nil
+        writeroom-mode-line t
+        writeroom-mode-line-toggle-position 'mode-line-format)
 
   (add-hook 'text-mode-hook 'auto-fill-mode)
   (add-hook 'markdown-mode-hook 'auto-fill-mode)
