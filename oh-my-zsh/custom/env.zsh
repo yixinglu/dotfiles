@@ -45,3 +45,6 @@ export NVM_DIR="$HOME/.nvm"
 export TREE_SITTER_ROOT=$HOME/.local
 export PKG_CONFIG_PATH=$PKG_CONFIG_PATH:$HOME/.local/lib/pkgconfig
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$HOME/.local/lib
+
+# lsp: https://emacs-lsp.github.io/lsp-mode/page/performance/#use-plists-for-deserialization
+export LSP_USE_PLISTS=true

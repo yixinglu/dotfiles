@@ -706,18 +706,13 @@ before packages are loaded."
   (setq writeroom-width 130)
   (setq writeroom-mode-line t)
 
+  (add-hook 'prog-mode-hook 'yee/enable-writeroom-mode)
+
   (add-hook 'text-mode-hook 'yee/enable-writeroom-mode)
-  (add-hook 'c++-mode-hook 'yee/enable-writeroom-mode)
-  (add-hook 'c-mode-hook 'yee/enable-writeroom-mode)
-  (add-hook 'cmake-mode-hook 'yee/enable-writeroom-mode)
-  (add-hook 'sh-mode-hook 'yee/enable-writeroom-mode)
-  (add-hook 'emacs-lisp-mode-hook 'yee/enable-writeroom-mode)
   (add-hook 'markdown-mode-hook 'yee/enable-writeroom-mode)
   (add-hook 'org-mode-hook 'yee/enable-writeroom-mode)
   (add-hook 'feature-mode-hook 'yee/enable-writeroom-mode)
-  (add-hook 'thrift-mode-hook 'yee/enable-writeroom-mode)
-  (add-hook 'go-mode-hook 'yee/enable-writeroom-mode)
-  (add-hook 'python-mode-hook 'yee/enable-writeroom-mode)
+  ;; (add-hook 'thrift-mode-hook 'yee/enable-writeroom-mode)
   (add-hook 'dired-mode-hook 'yee/enable-writeroom-mode)
   (add-hook 'magit-status-mode-hook 'yee/enable-writeroom-mode)
 
