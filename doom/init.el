@@ -96,7 +96,7 @@
        ;;ein               ; tame Jupyter notebooks with emacs
        (eval +overlay)     ; run code, run (also, repls)
        lookup              ; navigate your code and its documentation
-       lsp               ; M-x vscode
+       (lsp +eglot)        ; M-x vscode
        magit             ; a git porcelain for Emacs
        make              ; run make tasks from Emacs
        ;;pass              ; password manager for nerds
@@ -106,7 +106,7 @@
        ;;taskrunner        ; taskrunner for all your projects
        ;;terraform         ; infrastructure as code
        ;;tmux              ; an API for interacting with tmux
-       ;;tree-sitter       ; syntax and parsing, sitting in a tree...
+       tree-sitter       ; syntax and parsing, sitting in a tree...
        ;;upload            ; map local to remote projects via ssh/ftp
 
        :os
@@ -195,6 +195,13 @@
        (default +bindings +smartparens)
 
        :private
-       spacemacs
+       spacemacs)
 
-       )
+(after! lsp-clangd
+  (setq lsp-clients-clangd-args
+        '("-j=6"
+          "--background-index"
+          "--all-scopes-completion"
+          "--log=error"
+          "--cross-file-rename"))
+  (set-lsp-priority! 'clangd 2))
