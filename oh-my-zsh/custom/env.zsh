@@ -48,3 +48,6 @@ export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$HOME/.local/lib
 
 # lsp: https://emacs-lsp.github.io/lsp-mode/page/performance/#use-plists-for-deserialization
 export LSP_USE_PLISTS=true
+
+# doomemacs
+export PATH=$HOME/.config/emacs/bin:$PATH
