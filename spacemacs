@@ -65,6 +65,7 @@ This function should only modify configuration layer settings."
      ;; treemacs
      ;; neotree
      ;; version-control
+     tree-sitter
 
      (ibuffer :variables ibuffer-group-buffers-by 'projects)
      osx
@@ -148,6 +149,7 @@ This function should only modify configuration layer settings."
      evil-better-jumper
      xclipboard
      ;; pdf-tools
+     github-copilot
      ;; (vinegar :variables
      ;;          vinegar-reuse-dired-buffer t
      ;;          vinegar-dired-hide-details nil)
@@ -174,10 +176,6 @@ This function should only modify configuration layer settings."
      ;; darkroom
      clipetty
      ;; srcery-theme
-     (copilot :location (recipe
-                         :fetcher github
-                         :repo "copilot-emacs/copilot.el"
-                         :files ("*.el" "dist")))
     )
 
    ;; A list of packages that cannot be updated.
