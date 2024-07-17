@@ -62,7 +62,7 @@ This function should only modify configuration layer settings."
      spell-checking
      (syntax-checking :variables syntax-checking-enable-by-default t)
      semantic
-     ;; treemacs
+     treemacs
      ;; neotree
      ;; version-control
      tree-sitter

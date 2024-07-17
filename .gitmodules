@@ -16,10 +16,6 @@
 [submodule "tmux/plugins/tmux-resurrect"]
 	path = tmux/plugins/tmux-resurrect
 	url = https://github.com/tmux-plugins/tmux-resurrect.git
-[submodule "spacemacs"]
-	path = emacs/spacemacs.d
-	url = https://github.com/syl20bnr/spacemacs
-	branch = develop
 [submodule "navi"]
 	path = oh-my-zsh/custom/plugins/navi
 	url = https://github.com/denisidoro/navi
