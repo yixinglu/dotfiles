@@ -654,10 +654,10 @@ If you are unsure, try setting them in `dotspacemacs/user-config' first."
 
   ;; Reference https://emacs-china.org/t/elpa/9854
   (setq configuration-layer-elpa-archives
-       '(("melpa-cn" . "http://mirrors.ustc.edu.cn/elpa/melpa/")
-         ("org-cn"   . "http://mirrors.ustc.edu.cn/elpa/org/")
-         ("gnu-cn"   . "http://mirrors.ustc.edu.cn/elpa/gnu/")
-         ("nongnu"   . "http://elpa.nongnu.org/nongnu/")))
+        '(("melpa-cn" . "http://mirrors.ustc.edu.cn/elpa/melpa/")
+          ("org-cn"   . "http://mirrors.ustc.edu.cn/elpa/org/")
+          ("gnu-cn"   . "http://mirrors.ustc.edu.cn/elpa/gnu/")
+          ("nongnu"   . "http://elpa.nongnu.org/nongnu/")))
 
   (setq ns-use-srgb-colorspace nil)
   (setq powerline-default-separator 'utf-8)
