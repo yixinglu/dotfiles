@@ -176,7 +176,7 @@ This function should only modify configuration layer settings."
      ;; darkroom
      clipetty
      ;; srcery-theme
-    )
+     )
 
    ;; A list of packages that cannot be updated.
    dotspacemacs-frozen-packages '()
@@ -730,7 +730,11 @@ before packages are loaded."
   ;;   (define-key c++-mode-map [tab] 'clang-format-buffer))
 
   (setq lsp-clients-clangd-executable "/usr/bin/clangd-12")
-  (setq lsp-clients-clangd-args '("-j=6" "--background-index" "--all-scopes-completion" "--log=error" "--cross-file-rename"))
+  (setq lsp-clients-clangd-args '("-j=6"
+                                  "--background-index"
+                                  "--all-scopes-completion"
+                                  "--log=error"
+                                  "--cross-file-rename"))
   ;; https://github.com/MaskRay/ccls/wiki/lsp-mode
   (setq ccls-initialization-options '(:index (:threads 6)))
   (setq ccls-sem-highlight-method nil)
