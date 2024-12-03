@@ -729,9 +729,13 @@ before packages are loaded."
   ;; (defun clang-format-bindings ()
   ;;   (define-key c++-mode-map [tab] 'clang-format-buffer))
 
-  (setq lsp-clients-clangd-executable "/usr/bin/clangd-12")
-  (setq lsp-clients-clangd-args '("-j=6"
+  (setq lsp-clients-clangd-executable "/usr/bin/clangd")
+  (setq lsp-clients-clangd-args '("-j=16"
                                   "--background-index"
+                                  "--malloc-trim"
+                                  "--limit-references=200"
+                                  "--limit-results=50"
+                                  "--pch-storage=disk"
                                   "--all-scopes-completion"
                                   "--log=error"
                                   "--cross-file-rename"))
