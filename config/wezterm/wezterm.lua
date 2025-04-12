@@ -37,7 +37,7 @@ config.keys = {
   { key = 'd', mods = 'ALT', action = wezterm.action.SendString '\x1bd' },
   { key = 'x', mods = 'ALT', action = wezterm.action.SendString '\x1bx' },
   { key = 'Tab', mods = '', action = wezterm.action.SendString '\x09' },
-  { key = 'i', mods = 'CTRL', action = wezterm.action.SendString '\x1b[105;5u' },
+  { key = 'i', mods = 'CTRL', action = wezterm.action.SendString '\x1b[10' },
 }
 
 -- and finally, return the configuration to wezterm
