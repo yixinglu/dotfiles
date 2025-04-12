@@ -760,7 +760,7 @@ before packages are loaded."
     (define-key lsp-command-map "ga" 'projectile-find-other-file))
 
   (pyim-basedict-enable)
-  (pyim-default-scheme 'quanpin)
+  (pyim-default-scheme 'xiaohe-shuangpin)
   (setq pyim-page-tooltip '(posframe popup minibuffer))
   (setq pyim-page-style 'one-line)
   (setq pyim-cloudim 'baidu)
