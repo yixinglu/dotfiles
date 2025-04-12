@@ -738,6 +738,10 @@ before packages are loaded."
                                   "--pch-storage=disk"
                                   "--all-scopes-completion"
                                   "--log=error"
+                                  "--clang-tidy"
+                                  "--completion-style=detailed"
+                                  "--query-driver=/usr/bin/clang++"
+                                  "--header-insertion=iwyu"
                                   "--cross-file-rename"))
   ;; https://github.com/MaskRay/ccls/wiki/lsp-mode
   (setq ccls-initialization-options '(:index (:threads 6)))
@@ -756,6 +760,7 @@ before packages are loaded."
     (define-key lsp-command-map "ga" 'projectile-find-other-file))
 
   (pyim-basedict-enable)
+  (pyim-default-scheme 'quanpin)
   (setq pyim-page-tooltip '(posframe popup minibuffer))
   (setq pyim-page-style 'one-line)
   (setq pyim-cloudim 'baidu)
