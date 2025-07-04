@@ -6,12 +6,14 @@
 
 Host *
   ServerAliveInterval 60
+  PasswordAuthentication yes
 
 # common configuration
 Include ~/.ssh/config.d/git/config
+Include ~/.ssh/config.d/home/config
 # Include ~/.ssh/config.d/gcp/config
 
 # development machine
-Include ~/.ssh/config.d/petaextreme/config
+Include ~/.ssh/config.d/tencent/config
 Include ~/.ssh/config.d/suju/config
 Include ~/.ssh/config.d/vesoft/config
