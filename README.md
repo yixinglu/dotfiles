@@ -40,6 +40,14 @@ macOS
 - [Key Mappings](https://apple.stackexchange.com/a/204802/472025)
 - [Emacs Jump forward](https://emacs-china.org/t/spacemacs-c-i-evil-jump-forwar/19703/12)
 
+### VSCode
+
+```bash
+$ cd /path/to/dotfiles/repo
+$ ln -snf $PWD/vscode/keybindings.json ~/Library/Application\ Support/Code/User/keybindings.json
+$ ln -snf $PWD/vscode/settings.json ~/Library/Application\ Support/Code/User/settings.json
+```
+
 LSP
 ---
 
