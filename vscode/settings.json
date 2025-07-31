@@ -198,9 +198,12 @@
   "[feature]": {
     "editor.formatOnSave": false
   },
-  "git.blame.editorDecoration.enabled": true,
+  "git.blame.editorDecoration.enabled": false,
+  "git.blame.statusBarItem.enabled": true,
+  "git.blame.statusBarItem.template": "${authorName} (${authorDateAgo})",
   "[magit]": {
     "editor.renderWhitespace": "all"
   },
-  "dired.ask_directory": false
+  "dired.ask_directory": false,
+  "github.copilot.nextEditSuggestions.enabled": true
 }
