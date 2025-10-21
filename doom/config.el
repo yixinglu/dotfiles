@@ -96,3 +96,9 @@
   :config
   (add-to-list 'auto-mode-alist '("\\.lex\\'" . flex-mode))
   (add-to-list 'auto-mode-alist '("\\.yy\\'" . bison-mode)))
+
+;; accept completion from copilot and fallback to company
+(use-package! copilot
+  :config
+  (setq copilot-idle-delay 0.3))
+

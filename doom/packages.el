@@ -57,3 +57,6 @@
 (package! bison-mode)
 
 (package! vscode-dark-plus-theme)
+
+(package! copilot)
+(package! copilot-chat)
