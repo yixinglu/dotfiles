@@ -59,7 +59,7 @@ This function should only modify configuration layer settings."
             close-window-with-terminal t
             shell-default-height 60
             shell-default-position 'bottom)
-     spell-checking
+     (spell-checking :variables spell-checking-enable-by-default nil)
      (syntax-checking :variables syntax-checking-enable-by-default t)
      semantic
      treemacs
@@ -125,7 +125,7 @@ This function should only modify configuration layer settings."
          go-backend 'lsp
          )
      (python :variables
-             python-backend 'lsp
+             python-backend 'anaconda
              python-test-runner 'pytest
              python-formatter 'yapf
              python-format-on-save nil
@@ -156,6 +156,7 @@ This function should only modify configuration layer settings."
      ;; myleetcode
      ;; hacknews
      html
+     toml
      )
 
 
@@ -176,6 +177,7 @@ This function should only modify configuration layer settings."
      ;; darkroom
      clipetty
      ;; srcery-theme
+     jinja2-mode
      )
 
    ;; A list of packages that cannot be updated.
@@ -667,8 +669,13 @@ If you are unsure, try setting them in `dotspacemacs/user-config' first."
   (setq default-tab-width 8)
   (setq tab-width 8)
   ;; (progn)
-  (when (display-graphic-p)
-    (setq writeroom-fullscreen-effect 'maximized))
+  ;; (when (display-graphic-p)
+  ;;   (setq writeroom-fullscreen-effect 'maximized))
+
+  ;; (setenv "LSP_USE_PLISTS" "true")
+  (setq read-process-output-max (* 1024 1024)) ;; 1mb
+  (setq gc-cons-threshold 100000000)
+
   )
 
 (defun dotspacemacs/user-load ()
@@ -694,16 +701,16 @@ before packages are loaded."
   ;; (spacemacs/toggle-fill-column-indicator-on)
   (set-fill-column 120)
 
-  (global-writeroom-mode)
-  (setq split-width-threshold 120
-        writeroom-width 128
-        writeroom-fringes-outside-margins nil
-        writeroom-global-effects nil
-        writeroom-major-modes '(text-mode prog-mode conf-mode special-mode Info-mode dired-mode makefile-gmake-mode)
-        writeroom-major-modes-exceptions '(process-menu-mode proced-mode backtrace-mode lsp-help-mode)
-        writeroom-maximize-window nil
-        writeroom-mode-line t
-        writeroom-mode-line-toggle-position 'mode-line-format)
+  ;; (global-writeroom-mode)
+  ;; (setq split-width-threshold 120
+  ;;       writeroom-width 128
+  ;;       writeroom-fringes-outside-margins nil
+  ;;       writeroom-global-effects nil
+  ;;       writeroom-major-modes '(text-mode prog-mode conf-mode special-mode Info-mode dired-mode makefile-gmake-mode)
+  ;;       writeroom-major-modes-exceptions '(process-menu-mode proced-mode backtrace-mode lsp-help-mode)
+  ;;       writeroom-maximize-window nil
+  ;;       writeroom-mode-line t
+  ;;       writeroom-mode-line-toggle-position 'mode-line-format)
 
   (add-hook 'text-mode-hook 'auto-fill-mode)
   (add-hook 'markdown-mode-hook 'auto-fill-mode)
