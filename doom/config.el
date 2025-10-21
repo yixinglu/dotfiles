@@ -21,8 +21,8 @@
 ;; See 'C-h v doom-font' for documentation and more examples of what they
 ;; accept. For example:
 ;;
-;;(setq doom-font (font-spec :family "Fira Code" :size 12 :weight 'semi-light)
-;;      doom-variable-pitch-font (font-spec :family "Fira Sans" :size 13))
+;; (setq doom-font (font-spec :family "Source Code Pro" :size 12 :weight 'normal)
+;;       doom-variable-pitch-font (font-spec :family "Source Code Pro" :size 13))
 ;;
 ;; If you or Emacs can't find your font, use 'M-x describe-font' to look them
 ;; up, `M-x eval-region' to execute elisp code, and 'M-x doom/reload-font' to
@@ -32,7 +32,7 @@
 ;; There are two ways to load a theme. Both assume the theme is installed and
 ;; available. You can either set `doom-theme' or manually load a theme with the
 ;; `load-theme' function. This is the default:
-(setq doom-theme 'doom-tokyo-night)
+(setq doom-theme 'vscode-dark-plus)
 
 ;; This determines the style of line numbers in effect. If set to `nil', line
 ;; numbers are disabled. For relative line numbers, set this to `relative'.
@@ -76,10 +76,23 @@
 ;; they are implemented.
 
 (after! treesit
-  (add-to-list 'treesit-language-source-alist
-               '(cpp "https://github.com/tree-sitter/tree-sitter-cpp" "master" nil nil nil))
-  (add-to-list 'treesit-language-source-alist
-               '(c "https://github.com/tree-sitter/tree-sitter-c" "v0.23.6" nil nil nil)))
+  (let ((lang-sources '((gherkin "https://github.com/binhtran432k/tree-sitter-gherkin" "main" nil nil nil)
+                        (bison "https://gitlab.com/btuin2/tree-sitter-bison" "master" nil nil nil)
+                        (cpp "https://github.com/tree-sitter/tree-sitter-cpp" "master" nil nil nil)
+                        (c "https://github.com/tree-sitter/tree-sitter-c" "v0.23.6" nil nil nil))))
+    (dolist (l lang-sources)
+      (add-to-list 'treesit-language-source-alist l))))
 
 (load! "bindings/+main")
 (load! "bindings/+spacemacs")
+
+(use-package! feature-mode
+  :config
+  (add-to-list 'auto-mode-alist '("\\.feature\\'" . feature-mode))
+  (setq feature-indent-level 2)
+  (setq feature-comment-indent 0))
+
+(use-package! bison-mode
+  :config
+  (add-to-list 'auto-mode-alist '("\\.lex\\'" . flex-mode))
+  (add-to-list 'auto-mode-alist '("\\.yy\\'" . bison-mode)))

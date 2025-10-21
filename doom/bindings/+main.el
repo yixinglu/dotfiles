@@ -7,8 +7,8 @@
  :desc "Page down" :nvi "C-j" #'evil-scroll-page-down
  :desc "Beginning of line" :n "gh" #'evil-beginning-of-line
  :desc "End of line" :n "gl" #'evil-end-of-line
- :desc "Beginning of line" :n "H" #'evil-first-non-blank
- :desc "End of line" :n "L" #'evil-end-of-line
+ :desc "Beginning of line" :n "H" #'evil-window-top
+ :desc "End of line" :n "L" #'evil-window-bottom
 
  ;; Unmap this undo
  "C-x u" nil
@@ -63,13 +63,16 @@
 
   ;; window navigation
   (:prefix "w"
+   ;; Displaced by other-frame keybinding
+   :desc "Window enlargen" :n "O" #'doom/window-enlargen
    :desc "Ace-window" :n "SPC" #'ace-window
-   :desc "Maximize frame" :n "M" #'toggle-frame-maximized
-   :desc "Window left" :n [left] #'evil-window-left
-   :desc "Window down" :n [down] #'evil-window-down
-   :desc "Window up" :n [up] #'evil-window-up
-   :desc "Window up" :n [right] #'evil-window-right
-   :desc "Other window prefix" :n "o" #'other-window-prefix)
+   :desc "Delete window" :n "d" #'evil-quit
+   :desc "Maxium window" :n "m" #'doom/window-maximize-buffer
+   :desc "Other window" :n "o" #'other-window)
 
-  (:prefix "W"
-   :desc "Other frame" :n "w" #'other-frame)))
+  (:prefix "F"
+   ;; Frame
+   :desc "New frame" :n "n" #'make-frame
+   :desc "Delete frame" :n "d" #'delete-frame
+   :desc "Maximize frame" :n "m" #'toggle-frame-maximized
+   :desc "Other frame" :n "o" #'other-frame)))

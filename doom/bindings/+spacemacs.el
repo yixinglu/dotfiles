@@ -9,32 +9,23 @@
  :n "C-a" (λ! (push (cons t ?w) unread-command-events)
               (push (cons t 32) unread-command-events))
 
- ;; Free up / to use it as a leader for search
  (:leader
-  "/" nil)
-
- :leader "/" doom-leader-search-map
-
- (:leader
-  (:prefix "/"
-   :desc "Search project" :n "/" #'+default/search-project)
   (:prefix "f"
    :desc "Save file (Spacemacs)" :n "s" #'save-buffer
+   :desc "Save all buffers (Spacemacs)" :n "S" #'wgrep-save-all-buffers
    :desc "Dired (Spacemacs)" :n "j" #'dired-jump
    :desc "Find file (Spacemacs)" :n "f" #'find-file)
+  (:prefix "s"
+   :desc "Search project at point (Spacemacs)" :n "P" #'+default/search-project-for-symbol-at-point
+   :desc "iedit-mode (Spacemacs)" :n "e" #'iedit-mode
+   :desc "Highlight symbol at point (Spacemacs)" :n "h" #'highlight-symbol-at-point
+   :desc "Unhighlight symbol (Spacemacs)" :n "H" #'unhighlight-regexp)
   (:prefix "b"
    :desc "Kill buffer (Spacemacs)" :n "d" #'kill-current-buffer
    :desc "Switch buffer (Spacemacs)" :n "b" #'switch-to-buffer)
-  (:prefix "w"
-   :desc "Vertical split (Spacemacs)" :n "|" #'evil-window-vsplit
-   :desc "Horizontal split (Spacemacs)" :n "_" #'evil-window-split
-   :desc "New frame (Spacemacs)" :n "F" #'make-frame
-   :desc "Next frame (Spacemacs)" :n "o" #'other-frame
-   :desc "Delete window (Spacemacs)" :n "d" #'evil-quit
 
-   ;; Displaced by other-frame keybinding
-   :desc "Window enlargen" :n "O" #'doom/window-enlargen)
-
+  (:prefix "t"
+   :desc "Toggle truncate lines" :n "l" #'toggle-truncate-lines)
   (:prefix "g"
    :desc "Magit status" :n "s" #'magit-status)
   (:prefix "c"
