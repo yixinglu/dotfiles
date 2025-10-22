@@ -58,3 +58,5 @@
   :recipe (:host github
            :repo "tumashu/pyim-basedict"
            :branch "master"))
+
+(package! centered-cursor-mode)

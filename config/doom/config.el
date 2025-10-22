@@ -92,3 +92,7 @@
   ;; (setq pyim-cloudim 'baidu)
   (setq pyim-page-style 'two-lines)
   (setq pyim-page-tooltip '(posframe popup minibuffer)))
+
+(use-package! centered-cursor-mode
+  :config
+  (global-centered-cursor-mode))
