@@ -1,0 +1,7 @@
+#+title: README
+
+* installation
+
+#+begin_src shell
+ln -snf $PWD/doom ~/.config/doom
+#+end_src

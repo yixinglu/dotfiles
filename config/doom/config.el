@@ -83,22 +83,8 @@
     (dolist (l lang-sources)
       (add-to-list 'treesit-language-source-alist l))))
 
-(load! "bindings/+main")
-(load! "bindings/+spacemacs")
-
-(use-package! feature-mode
-  :config
-  (add-to-list 'auto-mode-alist '("\\.feature\\'" . feature-mode))
-  (setq feature-indent-level 2)
-  (setq feature-comment-indent 0))
-
-(use-package! bison-mode
-  :config
-  (add-to-list 'auto-mode-alist '("\\.lex\\'" . flex-mode))
-  (add-to-list 'auto-mode-alist '("\\.yy\\'" . bison-mode)))
-
-;; accept completion from copilot and fallback to company
-(use-package! copilot
-  :config
-  (setq copilot-idle-delay 0.3))
-
+(after! chinese
+  (pyim-default-scheme 'xiaohe-shuangpin)
+  (setq pyim-cloudim 'baidu)
+  (setq pyim-page-style 'one-line)
+  (setq pyim-page-tooltip '(posframe popup minibuffer)))

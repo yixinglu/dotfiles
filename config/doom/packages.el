@@ -53,10 +53,4 @@
 ;; ...Or *all* packages (NOT RECOMMENDED; will likely break things)
 ;; (unpin! t)
 
-(package! feature-mode)
-(package! bison-mode)
-
 (package! vscode-dark-plus-theme)
-
-(package! copilot)
-(package! copilot-chat)

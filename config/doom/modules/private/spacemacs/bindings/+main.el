@@ -1,4 +1,4 @@
-;;; ~/.doom.d/bindings/+main.el -*- lexical-binding: t; -*-
+;;; $DOOMDIR/modules/private/spacemacs/bindings/+main.el -*- lexical-binding: t; -*-
 
 
 (map!
@@ -7,6 +7,7 @@
  :desc "Page down" :nvi "C-j" #'evil-scroll-page-down
  :desc "Beginning of line" :n "gh" #'evil-beginning-of-line
  :desc "End of line" :n "gl" #'evil-end-of-line
+ :desc "lookup/references" :n "gr" #'+lookup/references
  :desc "Beginning of line" :n "H" #'evil-window-top
  :desc "End of line" :n "L" #'evil-window-bottom
 
@@ -21,17 +22,17 @@
          (:map evil-insert-state-map
                "C-u" nil))
 
+ (:prefix "z"
+  :desc "open all folds" :n "O" #'+fold/open-all
+  :desc "close all folds" :n "C" #'+fold/close-all)
+
  (:leader
   :desc "Enter command" :n "SPC" #'execute-extended-command
   (:prefix "h"
    :desc "Toggle profiler" :n "t" #'doom/toggle-profiler))
 
- (:after projectile-rails
-         (:map enh-ruby-mode-map
-               (:localleader
-                (:prefix "r"
-                         (:prefix ("f" . "find")
-                          :desc "Find view" :n "v" #'projectile-rails-find-view)))))
+ (:leader
+  :desc "Expand region" :n "v" #'er/expand-region)
 
  (:after org
          (:map org-mode-map

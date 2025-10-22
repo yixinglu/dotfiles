@@ -196,4 +196,10 @@
 
        :config
        ;;literate
-       (default +bindings +smartparens))
+       (default +bindings +smartparens)
+
+       :private
+       bison
+       feature
+       github-copilot
+       spacemacs)

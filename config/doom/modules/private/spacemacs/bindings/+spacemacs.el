@@ -1,4 +1,4 @@
-;;; ~/.doom.d/bindings/+spacemacs.el -*- lexical-binding: t; -*-
+;;; $DOOMDIR/modules/private/spacemacs/bindings/+spacemacs.el -*- lexical-binding: t; -*-
 
 (map!
  ;; Comma for shortcut to local-leader
@@ -23,7 +23,10 @@
   (:prefix "b"
    :desc "Kill buffer (Spacemacs)" :n "d" #'kill-current-buffer
    :desc "Switch buffer (Spacemacs)" :n "b" #'switch-to-buffer)
-
+  (:prefix "r"
+   :desc "Yank from kill ring" :n "y" #'consult-yank-from-kill-ring
+   :desc "Repeat select" :n "L" #'vertico-repeat-select
+   :desc "Repeat previous" :n "l" #'vertico-repeat-previous)
   (:prefix "t"
    :desc "Toggle truncate lines" :n "l" #'toggle-truncate-lines)
   (:prefix "g"
@@ -35,6 +38,7 @@
    :desc "Insert line above" :n "k" #'+evil/insert-newline-above)
   (:prefix "j"
    :desc "Goto char" :n "j" #'evil-avy-goto-char-timer
+   :desc "Jump to symbol" :n "i" #'consult-imenu
    :desc "Goto line" :n "l" #'evil-avy-goto-line)
   (:prefix "n"
    :desc "Narrow region" :n "r" #'narrow-to-region
