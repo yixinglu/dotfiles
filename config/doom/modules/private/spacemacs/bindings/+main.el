@@ -58,8 +58,8 @@
             :desc "Open journal for today" :n "j" #'org-journal-new-entry
             :desc "Open todo file" :n "t" #'popup-todo-file))
 
-  (:prefix "TAB"
-   :desc "Switch workspace" :n "SPC" #'+workspace/switch-to
+  (:prefix "l"
+   :desc "Switch workspace" :n "l" #'+workspace/switch-to
    :desc "Create workspace" :n "c" #'+workspace/new)
 
   ;; window navigation

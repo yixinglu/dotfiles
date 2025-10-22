@@ -10,6 +10,8 @@
               (push (cons t 32) unread-command-events))
 
  (:leader
+  :desc "Terminal here" :n "'" #'vterm
+  :desc "Last buffer" :n "TAB" #'evil-switch-to-windows-last-buffer
   (:prefix "f"
    :desc "Save file (Spacemacs)" :n "s" #'save-buffer
    :desc "Save all buffers (Spacemacs)" :n "S" #'wgrep-save-all-buffers
@@ -45,4 +47,5 @@
    :desc "Narrow function" :n "f" #'narrow-to-defun
    :desc "Narrow widen" :n "w" #'widen)
   (:prefix "p"
+   :desc "Terminal project" :n "'" #'projectile-run-vterm
    :desc "Find project file (Spacemacs)" :n "f" #'projectile-find-file)))
