@@ -83,8 +83,12 @@
     (dolist (l lang-sources)
       (add-to-list 'treesit-language-source-alist l))))
 
+(use-package! pyim-basedict
+  :config
+  (pyim-basedict-enable))
+
 (after! chinese
   (pyim-default-scheme 'xiaohe-shuangpin)
-  (setq pyim-cloudim 'baidu)
-  (setq pyim-page-style 'one-line)
+  ;; (setq pyim-cloudim 'baidu)
+  (setq pyim-page-style 'two-lines)
   (setq pyim-page-tooltip '(posframe popup minibuffer)))

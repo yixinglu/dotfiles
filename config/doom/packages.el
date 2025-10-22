@@ -54,3 +54,7 @@
 ;; (unpin! t)
 
 (package! vscode-dark-plus-theme)
+(package! pyim-basedict
+  :recipe (:host github
+           :repo "tumashu/pyim-basedict"
+           :branch "master"))
