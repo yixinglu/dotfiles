@@ -3,5 +3,6 @@
 (use-package! bison-mode
   :defer t
   :config
-  (add-to-list 'auto-mode-alist '("\\.lex\\'" . flex-mode))
-  (add-to-list 'auto-mode-alist '("\\.yy\\'" . bison-mode)))
+  (dolist (pair '(("\\.lex\\'" . flex-mode)
+                  ("\\.yy\\'" . bison-mode)))
+    (add-to-list 'auto-mode-alist pair)))
