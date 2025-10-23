@@ -1,5 +1,13 @@
 ;;; $DOOMDIR/modules/private/spacemacs/bindings/+spacemacs.el -*- lexical-binding: t; -*-
 
+(defun yee/flycheck-toggle-errors()
+  "toggle flycheck errors window on/off"
+  (interactive)
+  (let ((ebuf (get-buffer "*Flycheck errors*")))
+    (if ebuf
+        (kill-buffer ebuf)
+      (flycheck-list-errors))))
+
 (map!
  ;; Comma for shortcut to local-leader
  :nv "," (λ! (push (cons t ?m) unread-command-events)
@@ -48,6 +56,10 @@
    :desc "Narrow region" :n "r" #'narrow-to-region
    :desc "Narrow function" :n "f" #'narrow-to-defun
    :desc "Narrow widen" :n "w" #'widen)
+  (:prefix ("e" . "error(flycheck)")
+   :desc "list errors" :n "l" #'yee/flycheck-toggle-errors
+   :desc "next error" :n "n" #'flycheck-next-error
+   :desc "previous error" :n "p" #'flycheck-previous-error)
   (:prefix "p"
    :desc "Terminal project" :n "'" #'projectile-run-vterm
    :desc "Find project file (Spacemacs)" :n "f" #'projectile-find-file)))
