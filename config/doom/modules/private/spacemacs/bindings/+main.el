@@ -7,8 +7,8 @@
  :desc "Page down" :nvi "C-j" #'evil-scroll-page-down
  :desc "Beginning of line" :n "gh" #'evil-beginning-of-line
  :desc "End of line" :n "gl" #'evil-end-of-line
- :desc "Beginning of line" :n "H" #'evil-window-top
- :desc "End of line" :n "L" #'evil-window-bottom
+ :desc "Top of window" :n "H" #'evil-window-top
+ :desc "Bottom of window" :n "L" #'evil-window-bottom
 
  ;; Unmap this undo
  "C-x u" nil
@@ -46,10 +46,10 @@
  ;; global bindings
  (:leader
   (:prefix "b"
+   :desc "Switch buffer" :n "b" #'switch-to-buffer
    :desc "Rename buffer" :n "R" #'rename-buffer
-   :desc "Kill buffer" :n "d" #'kill-this-buffer ; consistency with `SPC w d'
-   :desc "Revert buffer" :n "v" (cmd! (revert-buffer t t))
-   :desc "Flycheck buffer" :n "c" #'flycheck-buffer)
+   :desc "Kill buffer" :n "d" #'kill-current-buffer ; consistency with `SPC w d'
+   :desc "Revert buffer" :n "v" (cmd! (revert-buffer t t)))
 
   (:prefix "o"
            (:prefix ("o" . "open org file")

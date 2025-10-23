@@ -30,9 +30,6 @@
    :desc "iedit-mode (Spacemacs)" :n "e" #'iedit-mode
    :desc "Highlight symbol at point (Spacemacs)" :n "h" #'highlight-symbol-at-point
    :desc "Unhighlight symbol (Spacemacs)" :n "H" #'unhighlight-regexp)
-  (:prefix "b"
-   :desc "Kill buffer (Spacemacs)" :n "d" #'kill-current-buffer
-   :desc "Switch buffer (Spacemacs)" :n "b" #'switch-to-buffer)
   (:prefix ("r" . "repeat")
    :desc "Yank from kill ring" :n "y" #'consult-yank-from-kill-ring
    :desc "Repeat select" :n "L" #'vertico-repeat-select
@@ -58,6 +55,7 @@
    :desc "Narrow widen" :n "w" #'widen)
   (:prefix ("e" . "error(flycheck)")
    :desc "list errors" :n "l" #'yee/flycheck-toggle-errors
+   :desc "check buffer" :n "c" #'flycheck-buffer
    :desc "next error" :n "n" #'flycheck-next-error
    :desc "previous error" :n "p" #'flycheck-previous-error)
   (:prefix "p"
