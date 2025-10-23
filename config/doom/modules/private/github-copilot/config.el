@@ -7,3 +7,9 @@
               ("TAB" . 'copilot-accept-completion))
   :config
   (setq copilot-idle-delay 0.3))
+
+(use-package! copilot-chat
+  :defer t
+  :config
+  (setq copilot-chat-openai-model "gpt-4-turbo"
+        copilot-chat-response-timeout 20))
