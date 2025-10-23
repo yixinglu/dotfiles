@@ -7,7 +7,6 @@
  :desc "Page down" :nvi "C-j" #'evil-scroll-page-down
  :desc "Beginning of line" :n "gh" #'evil-beginning-of-line
  :desc "End of line" :n "gl" #'evil-end-of-line
- :desc "lookup/references" :n "gr" #'+lookup/references
  :desc "Beginning of line" :n "H" #'evil-window-top
  :desc "End of line" :n "L" #'evil-window-bottom
 
