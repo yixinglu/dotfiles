@@ -25,7 +25,7 @@
   (:prefix "b"
    :desc "Kill buffer (Spacemacs)" :n "d" #'kill-current-buffer
    :desc "Switch buffer (Spacemacs)" :n "b" #'switch-to-buffer)
-  (:prefix "r"
+  (:prefix ("r" . "repeat")
    :desc "Yank from kill ring" :n "y" #'consult-yank-from-kill-ring
    :desc "Repeat select" :n "L" #'vertico-repeat-select
    :desc "Repeat previous" :n "l" #'vertico-repeat-previous)
@@ -38,7 +38,7 @@
   (:prefix "i"
    :desc "Insert line below" :n "j" #'+evil/insert-newline-below
    :desc "Insert line above" :n "k" #'+evil/insert-newline-above)
-  (:prefix "j"
+  (:prefix ("j" . "jump")
    :desc "Goto char" :n "j" #'evil-avy-goto-char-timer
    :desc "Jump to symbol" :n "i" #'consult-imenu
    :desc "Goto line" :n "l" #'evil-avy-goto-line)

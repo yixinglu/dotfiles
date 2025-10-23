@@ -58,7 +58,7 @@
             :desc "Open journal for today" :n "j" #'org-journal-new-entry
             :desc "Open todo file" :n "t" #'popup-todo-file))
 
-  (:prefix "l"
+  (:prefix ("l" . "workspace")
    :desc "Switch workspace" :n "l" #'+workspace/switch-to
    :desc "Create workspace" :n "c" #'+workspace/new)
 
@@ -71,7 +71,7 @@
    :desc "Maxium window" :n "m" #'doom/window-maximize-buffer
    :desc "Other window" :n "o" #'other-window)
 
-  (:prefix "F"
+  (:prefix ("F" . "frame")
    ;; Frame
    :desc "New frame" :n "n" #'make-frame
    :desc "Delete frame" :n "d" #'delete-frame

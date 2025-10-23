@@ -90,6 +90,4 @@
 (after! chinese
   (pyim-default-scheme 'xiaohe-shuangpin)
   ;; (setq pyim-cloudim 'baidu)
-  (setq pyim-page-style 'two-lines)
-  (setq pyim-page-tooltip '(posframe popup minibuffer)))
-
+  (setq pyim-page-style 'two-lines))
