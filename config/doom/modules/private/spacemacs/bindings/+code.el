@@ -12,3 +12,13 @@
 ;;   :nv "R" #'+lookup/references
 ;;   :nv "D" #'valrus/goto-def-ace-window))
 
+(map! :map c++-ts-mode-map
+      :localleader
+      (:prefix ("g" . "lookup")
+      "d" #'+lookup/definition
+      "i" #'+lookup/implementations
+      "r" #'+lookup/references
+      "a" #'projectile-find-other-file)
+      (:prefix ("r" . "refactor")
+      "r" #'eglot-rename)
+      :after cc)
