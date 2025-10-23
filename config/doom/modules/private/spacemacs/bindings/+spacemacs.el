@@ -14,7 +14,7 @@
   :desc "Last buffer" :n "TAB" #'evil-switch-to-windows-last-buffer
   (:prefix "f"
    :desc "Save file (Spacemacs)" :n "s" #'save-buffer
-   :desc "Save all buffers (Spacemacs)" :n "S" #'wgrep-save-all-buffers
+   :desc "Save all buffers (Spacemacs)" :n "S" #'save-some-buffers
    :desc "Dired (Spacemacs)" :n "j" #'dired-jump
    :desc "Find file (Spacemacs)" :n "f" #'find-file)
   (:prefix "s"
