@@ -203,4 +203,5 @@
        feature
        github-copilot
        centered-cursor
+       translate
        spacemacs)
