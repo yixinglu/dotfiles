@@ -11,4 +11,6 @@
        "r" #'eglot-rename)
       (:prefix ("h" . "help")
        "h" #'+lookup/documentation)
+      (:prefix ("=" . "format")
+       "=" #'eglot-format-buffer)
       :after cc)
