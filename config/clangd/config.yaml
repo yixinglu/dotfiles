@@ -1,0 +1,16 @@
+# Save as `.clangd` in the project root directory or `~/.config/clangd/config.yaml` for user
+CompileFlags:
+  Add:
+    - -j=16
+    - --background-index
+    - --malloc-trim
+    - --limit-references=200
+    - --limit-results=50
+    - --pch-storage=disk
+    - --all-scopes-completion
+    - --log=error
+    - --clang-tidy
+    - --completion-style=detailed
+    - --query-driver=/usr/bin/clang++
+    - --header-insertion=iwyu
+    - --cross-file-rename
