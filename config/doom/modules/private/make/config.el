@@ -9,14 +9,15 @@
 (defun make/compilation-buffer-name()
   "compilation buffer name, such as *compilation*<project-root-name>"
   (interactive)
-  (if (make/project-root-name)
-      (concat "*compilation*<" (make/project-root-name) ">")
-    "*compilation*"))
+  (let ((root-dir (make/project-root-name)))
+    (if root-dir
+        (concat "*compilation*<" root-dir ">")
+      "*compilation*")))
 
 (defun make/project-has-makefile-p()
   "check if there is a Makefile in project root directory"
-  (and (projectile-project-root)
-       (file-exists-p! (expand-file-name "Makefile" (projectile-project-root)))))
+  (let ((root (projectile-project-root)))
+    (and root (file-exists-p! (expand-file-name "Makefile" root)))))
 
 (defun make/show-hide-compilation-window()
   "show or hide compilation window"
@@ -48,12 +49,6 @@
     (when flag
       (make/project-execute-or-repeat nil))))
 
-(defun make/project-recompile()
-  "recompile project by makefile first and then projectile-project-recompile"
-  (interactive)
-  (make/project-kill-compilation)
-  (make/project-execute-or-repeat t))
-
 (defun make/project-kill-compilation ()
   "kill the compilation if exists"
   (interactive)
@@ -66,6 +61,12 @@
       (when (and proc (process-live-p proc))
         (interrupt-process proc)
         (message "Compilation interrupted!")))))
+
+(defun make/project-recompile()
+  "recompile project by makefile first and then projectile-project-recompile"
+  (interactive)
+  (make/project-kill-compilation)
+  (make/project-execute-or-repeat t))
 
 (use-package! makefile-executor
   :defer t)
