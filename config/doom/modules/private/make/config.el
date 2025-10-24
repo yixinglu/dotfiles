@@ -75,5 +75,5 @@
       :prefix "c"
       :desc "Compile project" :n "c" #'make/project-compile
       :desc "Recompile project" :n "r" #'make/project-recompile
-      :desc "Open compilation window" :n "d" #'make/show-hide-compilation-window
+      :desc "Show/hide compilation window" :n "d" #'make/show-hide-compilation-window
       :desc "Kill compilation" :n "k" #'make/project-kill-compilation)
