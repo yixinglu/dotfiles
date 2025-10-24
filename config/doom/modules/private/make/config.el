@@ -2,22 +2,27 @@
 
 (defun make/project-root-name ()
   "get project name"
-  (file-name-nondirectory (directory-file-name (projectile-project-root))))
+  (if (projectile-project-root)
+      (file-name-nondirectory (directory-file-name (projectile-project-root)))
+    nil))
 
-(defvar-local make/compilation-buffer-name (concat "*compilation*<" (make/project-root-name) ">")
-  "compilation buffer name, such as *compilation*<project-root-name>")
+(defun make/compilation-buffer-name ()
+  "compilation buffer name, such as *compilation*<project-root-name>"
+  (interactive)
+  (if (make/project-root-name)
+      (concat "*compilation*<" (make/project-root-name) ">")
+    "*compilation*"))
 
 (defun make/project-has-makefile-p()
   "check if there is a Makefile in project root directory"
-  (interactive)
   (and (projectile-project-root)
        (file-exists-p! (expand-file-name "Makefile" (projectile-project-root)))))
 
 (defun make/project-compile()
   "compile project by makefile first and then projectile-project-compile"
   (interactive)
-  (let ((compilation-buf (get-buffer make/compilation-buffer-name))
-        (compilation-win (get-buffer-window make/compilation-buffer-name)))
+  (let ((compilation-buf (get-buffer (make/compilation-buffer-name)))
+        (compilation-win (get-buffer-window (make/compilation-buffer-name))))
     (if compilation-win
         (delete-window compilation-win)
       (if (and compilation-buf (process-live-p (get-buffer-process compilation-buf)))
@@ -29,7 +34,7 @@
 (defun make/project-kill-compilation ()
   "kill the compilation if exists"
   (interactive)
-  (let ((compilation-buf (get-buffer make/compilation-buffer-name)))
+  (let ((compilation-buf (get-buffer (make/compilation-buffer-name))))
     (unless (make/project-has-makefile-p)
       (error "No Makefile in project root!"))
     (when compilation-buf

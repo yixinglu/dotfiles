@@ -2,5 +2,7 @@
 
 (use-package! gt
   :defer t
+  :init
+  (setq gt-langs '(en zh))
   :config
-  (setq gt-langs '(en zh)))
+  (setq gt-default-translator (gt-translator :engines (gt-bing-engine))))
