@@ -7,5 +7,5 @@
 (use-package! centered-cursor-mode
   :config
   (global-centered-cursor-mode)
-  (if (not (version< emacs-version "27"))
+  (when (version<= "27" emacs-version)
     (add-hook 'window-configuration-change-hook 'recenter nil)))
