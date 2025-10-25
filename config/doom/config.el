@@ -92,6 +92,4 @@
   ;; (setq pyim-cloudim 'baidu)
   (setq pyim-page-style 'two-lines))
 
-(after! emacs-lisp
-  (setq-local evil-shift-width 2))
 
