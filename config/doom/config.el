@@ -92,5 +92,3 @@
   ;; (setq pyim-cloudim 'baidu)
   (setq pyim-page-tooltip 'popup)
   (setq pyim-page-style 'two-lines))
-
-
