@@ -53,7 +53,10 @@
 ;; ...Or *all* packages (NOT RECOMMENDED; will likely break things)
 ;; (unpin! t)
 
-(package! vscode-dark-plus-theme)
+(package! vscode-dark-plus-theme
+  :recipe (:host github
+           :repo "OneContainer/vscode-dark-plus-emacs-theme"
+           :branch "master"))
 (package! pyim-basedict
   :recipe (:host github
            :repo "tumashu/pyim-basedict"
