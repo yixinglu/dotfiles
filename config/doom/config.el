@@ -90,6 +90,7 @@
 (after! chinese
   (pyim-default-scheme 'xiaohe-shuangpin)
   ;; (setq pyim-cloudim 'baidu)
+  (setq pyim-page-tooltip 'popup)
   (setq pyim-page-style 'two-lines))
 
 
