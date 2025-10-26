@@ -87,6 +87,11 @@
   :config
   (pyim-basedict-enable))
 
+(after! gptel
+  (let ((backend (gptel-make-gh-copilot "Copilot")))
+    (setq gptel-model 'gpt-4o)
+    (setq gptel-backend backend)))
+
 (after! chinese
   (pyim-default-scheme 'xiaohe-shuangpin)
   ;; (setq pyim-cloudim 'baidu)
