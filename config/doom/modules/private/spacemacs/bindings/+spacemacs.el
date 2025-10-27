@@ -35,6 +35,7 @@
    :desc "Repeat select" :n "L" #'vertico-repeat-select
    :desc "Repeat previous" :n "l" #'vertico-repeat-previous)
   (:prefix "t"
+   :desc "Toggle truncate lines" :n "n" #'doom/toggle-line-numbers
    :desc "Toggle truncate lines" :n "l" #'toggle-truncate-lines)
   (:prefix "g"
    :desc "Magit status" :n "s" #'magit-status)
