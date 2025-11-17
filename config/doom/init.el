@@ -201,7 +201,7 @@
        bison
        feature
        github-copilot
-       centered-cursor
+       ;; centered-cursor
        translate
        make
        spacemacs)
