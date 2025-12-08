@@ -98,8 +98,9 @@
   (setq pyim-page-tooltip 'popup)
   (setq pyim-page-style 'two-lines))
 
-(add-hook! '+indent-guides-inhibit-functions (lambda () t))
-
 (after! evil
   (global-set-key (kbd "\e[emacs-C-i") 'better-jumper-jump-forward)
   (global-set-key (kbd "M-[ 1 0") 'better-jumper-jump-forward))
+
+(add-hook! '+indent-guides-inhibit-functions (lambda () t))
+(setq auth-sources '("~/.authinfo"))
