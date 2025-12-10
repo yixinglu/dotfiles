@@ -1,5 +1,11 @@
 ;;; $DOOMDIR/modules/private/spacemacs/bindings/+main.el -*- lexical-binding: t; -*-
 
+(defun yee/toggle-window-maximized ()
+  "Toggle between maximized window and previous window configuration."
+  (interactive)
+  (if (one-window-p)
+      (winner-undo)
+    (doom/window-maximize-buffer)))
 
 (map!
  :desc "Redo" :n "U" #'undo-fu-only-redo
@@ -67,7 +73,7 @@
    :desc "Window enlargen" :n "O" #'doom/window-enlargen
    :desc "Ace-window" :n "SPC" #'ace-window
    :desc "Delete window" :n "d" #'evil-quit
-   :desc "Maxium window" :n "m" #'doom/window-maximize-buffer
+   :desc "Maxium window" :n "m" #'yee/toggle-window-maximized
    :desc "Other window" :n "o" #'other-window)
 
   (:prefix ("F" . "frame")
