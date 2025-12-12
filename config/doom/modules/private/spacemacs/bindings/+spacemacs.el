@@ -40,6 +40,8 @@
   (:prefix "g"
    :desc "Magit status" :n "s" #'magit-status)
   (:prefix "c"
+   :desc "Next error" :n "n" #'next-error
+   :desc "Previous error" :n "N" #'previous-error
    :desc "Comment/Uncomment line" :n "l" #'comment-line)
   (:prefix "i"
    :desc "Insert line below" :n "j" #'+evil/insert-newline-below
