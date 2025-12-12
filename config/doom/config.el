@@ -89,7 +89,7 @@
 
 (after! gptel
   (let ((backend (gptel-make-gh-copilot "Copilot")))
-    (setq gptel-model 'gpt-4o)
+    (setq gptel-model 'gpt-5.1-codex)
     (setq gptel-backend backend)))
 
 (after! chinese
