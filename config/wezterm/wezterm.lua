@@ -21,7 +21,8 @@ config.font_size=15
 
 config.window_background_opacity = 0.99
 
-config.use_ime = false
+-- disable chinese input method switch
+-- config.use_ime = false
 
 config.tab_bar_at_bottom = true
 
@@ -38,6 +39,8 @@ config.keys = {
   { key = 'x', mods = 'ALT', action = wezterm.action.SendString '\x1bx' },
   { key = 'Tab', mods = '', action = wezterm.action.SendString '\x09' },
   { key = 'i', mods = 'CTRL', action = wezterm.action.SendString '\x1b[10' },
+  -- configured by claude code CLI
+  { key="Enter", mods="SHIFT", action = wezterm.action.SendString "\x1b\r" },
 }
 
 -- and finally, return the configuration to wezterm
