@@ -89,7 +89,7 @@
 
 (after! gptel
   (let ((backend (gptel-make-gh-copilot "Copilot")))
-    (setq gptel-model 'gpt-5.1-codex)
+    (setq gptel-model 'gpt-5.1-codex-max)
     (setq gptel-backend backend)))
 
 (after! chinese
