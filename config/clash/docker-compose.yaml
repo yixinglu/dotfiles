@@ -1,0 +1,23 @@
+services:
+  mihomo:
+    image: metacubex/mihomo:latest
+    container_name: mihomo
+    restart: always
+    ports:
+      - "7897:7890" # mixed
+      - "9090:9090" # ui
+    volumes:
+      - ./config.yaml:/root/.config/mihomo/config.yaml:ro
+      - ./cache/:/root/.config/mihomo/
+    environment:
+      - TZ=Asia/Shanghai
+
+  metacubexd:
+    image: ghcr.io/metacubex/metacubexd:latest
+    container_name: mihomo-ui
+    restart: always
+    ports:
+      - "8888:80"
+    depends_on:
+      - mihomo
+
