@@ -19,7 +19,8 @@ proxy-providers:
 proxy-groups:
   - name: "红杏云"
     type: select
-    filter: "(?i)US|United States|美国|🇺🇸"
+    # filter: "(?i)US|United States|美国|🇺🇸"
+    filter: "(?i)JP|Japan|日本|🇯🇵"
     use:
       - hongxing         # 引用上面定义的订阅
 
