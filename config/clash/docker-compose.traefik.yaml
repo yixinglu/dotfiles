@@ -1,0 +1,56 @@
+services:
+  traefik:
+    image: traefik:v3.0
+    container_name: traefik
+    restart: always
+    ports:
+      - "80:80"
+      - "443:443"
+    environment:
+      # 引用 .env 中的变量
+      - TENCENTCLOUD_SECRET_ID=${TENCENT_SECRET_ID}
+      - TENCENTCLOUD_SECRET_KEY=${TENCENT_SECRET_KEY}
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+      - ./traefik_data:/letsencrypt
+    command:
+      - --api.dashboard=true
+      - --providers.docker=true
+      - --providers.docker.exposedbydefault=false
+      - --entrypoints.web.address=:80
+      - --entrypoints.websecure.address=:443
+      - --entrypoints.web.http.redirections.entryPoint.to=websecure
+      - --entrypoints.web.http.redirections.entryPoint.scheme=https
+      - --certificatesresolvers.myresolver.acme.dnschallenge=true
+      - --certificatesresolvers.myresolver.acme.dnschallenge.provider=tencentcloud
+      - --certificatesresolvers.myresolver.acme.email=${ACME_EMAIL}
+      - --certificatesresolvers.myresolver.acme.storage=/letsencrypt/acme.json
+
+  mihomo:
+    image: metacubex/mihomo:latest
+    container_name: mihomo
+    restart: always
+    ports:
+      - "7897:7890" # mixed
+    volumes:
+      - ./config.yaml:/root/.config/mihomo/config.yaml:ro
+      - ./cache/:/root/.config/mihomo/
+    environment:
+      - TZ=Asia/Shanghai
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.mihomo.rule=Host(`${MIHOMO_DOMAIN}`)"
+      - "traefik.http.routers.mihomo.entrypoints=websecure"
+      - "traefik.http.routers.mihomo.tls.certresolver=myresolver"
+      - "traefik.http.services.mihomo.loadbalancer.server.port=9090"
+
+  metacubexd:
+    image: ghcr.io/metacubex/metacubexd:latest
+    container_name: mihomo-ui
+    restart: always
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.mihomo-ui.rule=Host(`${UI_DOMAIN}`)"
+      - "traefik.http.routers.mihomo-ui.entrypoints=websecure"
+      - "traefik.http.routers.mihomo-ui.tls.certresolver=myresolver"
+      - "traefik.http.services.mihomo-ui.loadbalancer.server.port=80"
