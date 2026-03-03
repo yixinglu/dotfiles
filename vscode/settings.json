@@ -86,7 +86,7 @@
   "workbench.colorTheme": "Default Dark+",
   "workbench.editor.showTabs": "single",
   "workbench.editor.centeredLayoutAutoResize": false,
-  "workbench.editor.centeredLayoutFixedWidth": true,
+  "workbench.editor.centeredLayoutFixedWidth": false,
   "workbench.settings.applyToAllProfiles": [
     "vim.autoSwitchInputMethod.enable"
   ],
