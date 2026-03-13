@@ -11,5 +11,5 @@
 (use-package! copilot-chat
   :defer t
   :config
-  (setq copilot-chat-default-model "gpt-5.2"
+  (setq copilot-chat-default-model "gpt-5.4"
         copilot-chat-response-timeout 20))
