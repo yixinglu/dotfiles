@@ -1,2 +1,5 @@
 .DS_Store
 .dir-locals.el
+
+emacs.d/private/
+config/clash/*.tar
