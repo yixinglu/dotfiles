@@ -5,6 +5,9 @@ log-level: info
 external-controller: 0.0.0.0:9090
 secret: "helloworld"
 
+cors:
+  origin: "*"
+
 proxy-providers:
   hongxing:
     type: http
